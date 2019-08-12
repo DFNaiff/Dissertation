@@ -1,0 +1,31 @@
+# -*- coding: utf-8 -*-
+import functools
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+def meshgrid3d(X,Y):
+    """
+        input:
+            X : (m,d) tensor
+            Y : (n,d) tensor
+        returns:
+            Xd : (m x n x d) tensor
+            Yd : (m x n x d) tensor
+    """
+    Xd = X.reshape(X.shape[0],1,X.shape[1])
+    Yd = Y.reshape(1,Y.shape[0],Y.shape[1])
+    Xd = np.tile(Xd,[1,Y.shape[0],1])
+    Yd = np.tile(Yd,[X.shape[0],1,1])
+    return Xd,Yd
+
+def kernel_matrix(X,Y,k,symmetrize=False):
+    Xd,Yd = meshgrid3d(X,Y)
+    K = k(Xd,Yd,keepdims=False)
+    if symmetrize:
+        K = 0.5*(K + K.transpose(1,0))
+    return K
+
+def rbf_kernel_f(x,y,l,theta,keepdims=True):
+    return theta*np.exp(-0.5*np.sum((x-y)**2/(l**2),axis=-1,
+                                          keepdims=keepdims))
