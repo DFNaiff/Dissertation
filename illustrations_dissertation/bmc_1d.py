@@ -82,7 +82,8 @@ ax1.fill_between(xplot.flatten(),lowgp,highgp,color=color,
                  alpha=0.5)
 ax1.plot(xplot,ytrue,color="black",linestyle='-.',
          label=r"$f(x)$")
-
+ax1.plot(xsamples,ysamples,color="blue",linestyle=' ',marker='o',
+         label="Evaluations")
 
 
 ax1.set_xlabel("$x$")
