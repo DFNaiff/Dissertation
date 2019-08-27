@@ -50,7 +50,7 @@ ax1.set_xlabel("$x$")
 ax1.set_ylabel("$y$")
 ax1.set_zlabel("$g(x)$")
 ax1.set_zlim(bottom=0.0,top=0.125)
-fig1.savefig("/home/danilo/Danilo/Dissertação/Tex (copy 1)/figs/examplebvbmctrue",
+fig1.savefig("../tex/figs/examplebvbmctrue",
              bbox_inches = "tight")
 fig2 = plt.figure()
 ax2 = fig2.add_subplot(111,projection="3d")
@@ -59,7 +59,7 @@ ax2.set_xlabel("$x$")
 ax2.set_ylabel("$y$")
 ax2.set_zlabel("$q(x)$")
 ax2.set_zlim(bottom=0.0,top=0.125)
-fig2.savefig("/home/danilo/Danilo/Dissertação/Tex (copy 1)/figs/examplebvbmcestimated",
+fig2.savefig("../tex/figs/examplebvbmcestimated",
              bbox_inches = "tight")
 
 

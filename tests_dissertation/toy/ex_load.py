@@ -45,7 +45,7 @@ ax2.plot(steps,np.log10(covs/np.linalg.norm(data["true_cov"])),color=color,marke
 ax2.set_ylabel(r"$\log_{10}||\Sigma - \Sigma_0||_F/||\Sigma_0||_F$",color=color)
 ax2.set_ylim(bottom=-4.0,top=1.0)
 ax2.tick_params(axis='y', labelcolor=color)
-fig1.savefig("/home/danilo/Danilo/Dissertação/Tex/figs/%s_meancov"%folder_name)
+fig1.savefig("../../tex/figs/%s_meancov"%folder_name)
 #%%
 def gskl(mu1,mu2,cov1,cov2):
     d = len(mu1)

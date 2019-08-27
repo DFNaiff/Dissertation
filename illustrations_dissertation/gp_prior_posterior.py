@@ -66,5 +66,5 @@ for yy2 in y2:
     plt.plot(X.flatten(),yy2,'b--',alpha=0.2)
 plt.plot(X,f(X),'black',linestyle='--',alpha=0.8)
 plt.plot(xpoints,ypoints,'go')
-plt.savefig("/home/danilo/Danilo/Dissertação/Tex/figs/gprex1b")
+plt.savefig("../tex/figs/gprex1b")
 plt.show()

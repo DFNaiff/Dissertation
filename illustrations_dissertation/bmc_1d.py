@@ -99,4 +99,4 @@ ax2 = ax1.twinx()  # instantiate a second axes that shares the same x-axis
 ax2.plot(xplot,fdistrib,color=color,linestyle='--')
 ax2.set_ylabel("$p(x)$",color=color)
 ax2.tick_params(axis='y', labelcolor=color)
-fig.savefig("/home/danilo/Danilo/Dissertação/Tex/figs/exbmc")
+fig.savefig("../tex/figs/exbmc")

@@ -72,4 +72,4 @@ g.map_lower(sns.kdeplot, n_levels=10);
 set_lims_pairgrid(g,lims)
 for i, j in zip(*np.triu_indices_from(g.axes, 1)):
     g.axes[i, j].set_visible(False)
-g.savefig("/home/danilo/Danilo/Dissertação/Tex/figs/sourceproblemhistogramsvb")
+g.savefig("../../tex/figs/sourceproblemhistogramsvb")

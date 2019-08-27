@@ -54,8 +54,8 @@ ax1.set_xlabel("iteration")
 ax2.set_ylabel(r"$\log_{10}||\Sigma - \Sigma_0||_F/||\Sigma_0||_F$")
 ax2.set_ylim(bottom=-2.0,top=1.0)
 ax2.legend()
-fig1.savefig("/home/danilo/Danilo/Dissertação/Tex/figs/%s_mean"%master_name)
-fig2.savefig("/home/danilo/Danilo/Dissertação/Tex/figs/%s_cov"%master_name)
+fig1.savefig("../../tex/figs/%s_mean"%master_name)
+fig2.savefig("../../tex/figs/%s_cov"%master_name)
 print(gskl_list)
 #
 #

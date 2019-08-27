@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+#This is just an illustration of Occam's razor.
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -20,4 +20,4 @@ for i,sigma2 in enumerate([sigma21,sigma22,sigma23]):
 plt.xticks([3],[r"$\mathcal{D}$"])
 plt.xlabel(r"$\mathcal{D}'$")
 plt.legend()
-plt.savefig("/home/danilo/Danilo/Dissertação/Tex/figs/occamfig")
+plt.savefig("../tex/figs/occamfig")

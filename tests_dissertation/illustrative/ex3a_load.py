@@ -50,7 +50,7 @@ ax2.plot(steps,np.log10(covs/25.0316),color=color,marker='x',linestyle=' ')
 ax2.set_ylabel(r"$\log_{10} |\sigma^2 - \sigma^2_0|_2/|\sigma^2_0|$",color=color)
 ax2.set_ylim(bottom=-4.0,top=1.0)
 ax2.tick_params(axis='y', labelcolor=color)
-fig1.savefig("/home/danilo/Danilo/Dissertação/Tex/figs/dmcil1g_aq_%s.png"%acquisition)
+fig1.savefig("../../tex/figs/dmcil1g_aq_%s.png"%acquisition)
 
 fig3,ax3 = plt.subplots()
 #inds_of_interest = [0,5,10,1]]
@@ -65,7 +65,7 @@ ax3.plot(xplot,np.exp(true_posterior),"b-",label="True distribution")
 ax3.legend()
 ax3.set_xlabel("x")
 ax3.set_ylabel("f(x)")
-fig3.savefig("/home/danilo/Danilo/Dissertação/Tex/figs/convgraphil1g_aq_%s.png"%acquisition)
+fig3.savefig("../../tex/figs/convgraphil1g_aq_%s.png"%acquisition)
 
 fig4,ax4 = plt.subplots()
 ax4.plot(samples[:ninit],np.exp(evaluations)[:ninit],'ro',
@@ -74,4 +74,4 @@ ax4.set_xlim([-20,20])
 ax4.set_xlabel("x")
 ax4.set_ylabel("f(x)")
 ax4.legend(["Initial sampling","Active sampling"])
-#fig4.savefig("/home/danilo/Danilo/Dissertação/Tex/figs/explopattern1g_aq_%s.png"%acquisition)
+#fig4.savefig("../../tex/figs/explopattern1g_aq_%s.png"%acquisition)
