@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.6.7)  22 SEP 2019 08:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.6.7)  11 MAY 2020 16:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -648,7 +648,7 @@ Package: amsthm 2017/10/31 v2.20.4
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerinnerthemerounded.sty)
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerouterthemeinfolines.sty)
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamercolorthemewolverine.sty))
-(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamercolorthemeorchid.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamercolorthemebeaver.sty)
 (/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2016/11/25 v2.2 Span multiple rows of a table
 \multirow@colwidth=\skip57
@@ -1212,6 +1212,18 @@ LaTeX Warning: Label `fig11b' multiply defined.
 
 LaTeX Warning: Label `sub@fig11b' multiply defined.
 
+
+LaTeX Warning: Label `fig11a' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig11a' multiply defined.
+
+
+LaTeX Warning: Label `fig11b' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig11b' multiply defined.
+
 )
 \openout1 = `slide_roberto_model.aux'.
 
@@ -1406,572 +1418,629 @@ LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
 
 ] (./slide_roberto_model.toc) [2
 
-] [3
-
 ]
-LaTeX Font Info:    Try loading font information for U+msa on input line 375.
+LaTeX Font Info:    Try loading font information for U+msa on input line 369.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 375.
+LaTeX Font Info:    Try loading font information for U+msb on input line 369.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+stmry on input line 375.
+LaTeX Font Info:    Try loading font information for U+stmry on input line 369.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
-LaTeX Font Info:    Try loading font information for U+lasy on input line 375.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 369.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 375.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 369.
 
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Try loading font information for U+esint on input line 375.
+LaTeX Font Info:    Try loading font information for U+esint on input line 369.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/esint/uesint.fd
 File: uesint.fd 
 )
-LaTeX Font Info:    Try loading font information for U+wasy on input line 375.
+LaTeX Font Info:    Try loading font information for U+wasy on input line 369.
 
 (/usr/share/texlive/texmf-dist/tex/latex/wasysym/uwasy.fd
 File: uwasy.fd 2003/10/30 v2.0 Wasy-2 symbol font definitions
 )
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10.95> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 375.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 369.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <8> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 375.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 369.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <6> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 375.
- [4
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 369.
+ [3
+
+] [4
 
 ] [5
 
+] [6
+
 ]
-<figs/simulation_figure.jpg, id=116, 501.875pt x 255.95625pt>
+[7
+
+] [8
+
+]
+<figs/simulation_figure.jpg, id=137, 501.875pt x 255.95625pt>
 File: figs/simulation_figure.jpg Graphic file (type jpg)
 <use figs/simulation_figure.jpg>
-Package pdftex.def Info: figs/simulation_figure.jpg  used on input line 416.
+Package pdftex.def Info: figs/simulation_figure.jpg  used on input line 410.
 (pdftex.def)             Requested size: 160.6722pt x 81.94481pt.
- [6
-
- <./figs/simulation_figure.jpg>]
-<figs/diagram1a.png, id=123, 261.97874pt x 342.27875pt>
-File: figs/diagram1a.png Graphic file (type png)
-<use figs/diagram1a.png>
-Package pdftex.def Info: figs/diagram1a.png  used on input line 426.
-(pdftex.def)             Requested size: 130.99704pt x 171.14764pt.
- [7
-
- <./figs/diagram1a.png>]
-<figs/exampleintro1.png, id=133, 433.62pt x 289.08pt>
-File: figs/exampleintro1.png Graphic file (type png)
-<use figs/exampleintro1.png>
-Package pdftex.def Info: figs/exampleintro1.png  used on input line 450.
-(pdftex.def)             Requested size: 239.60567pt x 159.73994pt.
- [8
-
- <./figs/exampleintro1.png>]
-<figs/exampleintro2.png, id=141, 433.62pt x 289.08pt>
-File: figs/exampleintro2.png Graphic file (type png)
-<use figs/exampleintro2.png>
-Package pdftex.def Info: figs/exampleintro2.png  used on input line 450.
-(pdftex.def)             Requested size: 239.60567pt x 159.73994pt.
  [9
 
- <./figs/exampleintro2.png>]
-<figs/exampleintro3.png, id=149, 433.62pt x 289.08pt>
-File: figs/exampleintro3.png Graphic file (type png)
-<use figs/exampleintro3.png>
-Package pdftex.def Info: figs/exampleintro3.png  used on input line 450.
-(pdftex.def)             Requested size: 239.60567pt x 159.73994pt.
+ <./figs/simulation_figure.jpg>]
+File: figs/simulation_figure.jpg Graphic file (type jpg)
+<use figs/simulation_figure.jpg>
+Package pdftex.def Info: figs/simulation_figure.jpg  used on input line 410.
+(pdftex.def)             Requested size: 160.6722pt x 81.94481pt.
  [10
 
- <./figs/exampleintro3.png>]
-<figs/exampleintro4.png, id=157, 433.62pt x 289.08pt>
-File: figs/exampleintro4.png Graphic file (type png)
-<use figs/exampleintro4.png>
-Package pdftex.def Info: figs/exampleintro4.png  used on input line 450.
-(pdftex.def)             Requested size: 239.60567pt x 159.73994pt.
+]
+File: figs/simulation_figure.jpg Graphic file (type jpg)
+<use figs/simulation_figure.jpg>
+Package pdftex.def Info: figs/simulation_figure.jpg  used on input line 410.
+(pdftex.def)             Requested size: 160.6722pt x 81.94481pt.
  [11
 
- <./figs/exampleintro4.png>]
-<figs/exampleintro5.png, id=165, 433.62pt x 289.08pt>
-File: figs/exampleintro5.png Graphic file (type png)
-<use figs/exampleintro5.png>
-Package pdftex.def Info: figs/exampleintro5.png  used on input line 450.
-(pdftex.def)             Requested size: 239.60567pt x 159.73994pt.
+]
+<figs/diagram1a.png, id=156, 261.97874pt x 342.27875pt>
+File: figs/diagram1a.png Graphic file (type png)
+<use figs/diagram1a.png>
+Package pdftex.def Info: figs/diagram1a.png  used on input line 420.
+(pdftex.def)             Requested size: 130.99704pt x 171.14764pt.
  [12
 
- <./figs/exampleintro5.png>]
-<figs/exampleintro6.png, id=173, 433.62pt x 289.08pt>
-File: figs/exampleintro6.png Graphic file (type png)
-<use figs/exampleintro6.png>
-Package pdftex.def Info: figs/exampleintro6.png  used on input line 450.
+ <./figs/diagram1a.png>]
+<figs/exampleintro1.png, id=165, 433.62pt x 289.08pt>
+File: figs/exampleintro1.png Graphic file (type png)
+<use figs/exampleintro1.png>
+Package pdftex.def Info: figs/exampleintro1.png  used on input line 444.
 (pdftex.def)             Requested size: 239.60567pt x 159.73994pt.
  [13
 
- <./figs/exampleintro6.png>]
-<figs/exampleintro7.png, id=183, 433.62pt x 289.08pt>
-File: figs/exampleintro7.png Graphic file (type png)
-<use figs/exampleintro7.png>
-Package pdftex.def Info: figs/exampleintro7.png  used on input line 450.
+ <./figs/exampleintro1.png>]
+<figs/exampleintro2.png, id=175, 433.62pt x 289.08pt>
+File: figs/exampleintro2.png Graphic file (type png)
+<use figs/exampleintro2.png>
+Package pdftex.def Info: figs/exampleintro2.png  used on input line 444.
 (pdftex.def)             Requested size: 239.60567pt x 159.73994pt.
  [14
 
- <./figs/exampleintro7.png>]
-<figs/exampleintro8.png, id=191, 433.62pt x 289.08pt>
-File: figs/exampleintro8.png Graphic file (type png)
-<use figs/exampleintro8.png>
-Package pdftex.def Info: figs/exampleintro8.png  used on input line 450.
+ <./figs/exampleintro2.png>]
+<figs/exampleintro3.png, id=183, 433.62pt x 289.08pt>
+File: figs/exampleintro3.png Graphic file (type png)
+<use figs/exampleintro3.png>
+Package pdftex.def Info: figs/exampleintro3.png  used on input line 444.
 (pdftex.def)             Requested size: 239.60567pt x 159.73994pt.
  [15
 
- <./figs/exampleintro8.png>]
-<figs/exampleintro9.png, id=199, 433.62pt x 289.08pt>
-File: figs/exampleintro9.png Graphic file (type png)
-<use figs/exampleintro9.png>
-Package pdftex.def Info: figs/exampleintro9.png  used on input line 450.
+ <./figs/exampleintro3.png>]
+<figs/exampleintro4.png, id=191, 433.62pt x 289.08pt>
+File: figs/exampleintro4.png Graphic file (type png)
+<use figs/exampleintro4.png>
+Package pdftex.def Info: figs/exampleintro4.png  used on input line 444.
 (pdftex.def)             Requested size: 239.60567pt x 159.73994pt.
  [16
 
- <./figs/exampleintro9.png>]
-<figs/exampleintro10.png, id=207, 433.62pt x 289.08pt>
-File: figs/exampleintro10.png Graphic file (type png)
-<use figs/exampleintro10.png>
-Package pdftex.def Info: figs/exampleintro10.png  used on input line 450.
+ <./figs/exampleintro4.png>]
+<figs/exampleintro5.png, id=199, 433.62pt x 289.08pt>
+File: figs/exampleintro5.png Graphic file (type png)
+<use figs/exampleintro5.png>
+Package pdftex.def Info: figs/exampleintro5.png  used on input line 444.
 (pdftex.def)             Requested size: 239.60567pt x 159.73994pt.
  [17
 
- <./figs/exampleintro10.png>]
-<figs/exampleintro11.png, id=215, 433.62pt x 289.08pt>
-File: figs/exampleintro11.png Graphic file (type png)
-<use figs/exampleintro11.png>
-Package pdftex.def Info: figs/exampleintro11.png  used on input line 450.
+ <./figs/exampleintro5.png>]
+<figs/exampleintro6.png, id=207, 433.62pt x 289.08pt>
+File: figs/exampleintro6.png Graphic file (type png)
+<use figs/exampleintro6.png>
+Package pdftex.def Info: figs/exampleintro6.png  used on input line 444.
 (pdftex.def)             Requested size: 239.60567pt x 159.73994pt.
  [18
 
- <./figs/exampleintro11.png>]
-<figs/exampleintro12.png, id=223, 433.62pt x 289.08pt>
-File: figs/exampleintro12.png Graphic file (type png)
-<use figs/exampleintro12.png>
-Package pdftex.def Info: figs/exampleintro12.png  used on input line 450.
+ <./figs/exampleintro6.png>]
+<figs/exampleintro7.png, id=215, 433.62pt x 289.08pt>
+File: figs/exampleintro7.png Graphic file (type png)
+<use figs/exampleintro7.png>
+Package pdftex.def Info: figs/exampleintro7.png  used on input line 444.
 (pdftex.def)             Requested size: 239.60567pt x 159.73994pt.
  [19
 
- <./figs/exampleintro12.png>]
-<figs/exampleintro13.png, id=232, 433.62pt x 289.08pt>
-File: figs/exampleintro13.png Graphic file (type png)
-<use figs/exampleintro13.png>
-Package pdftex.def Info: figs/exampleintro13.png  used on input line 450.
+ <./figs/exampleintro7.png>]
+<figs/exampleintro8.png, id=224, 433.62pt x 289.08pt>
+File: figs/exampleintro8.png Graphic file (type png)
+<use figs/exampleintro8.png>
+Package pdftex.def Info: figs/exampleintro8.png  used on input line 444.
 (pdftex.def)             Requested size: 239.60567pt x 159.73994pt.
  [20
 
- <./figs/exampleintro13.png>]
-<figs/exampleintro14.png, id=240, 433.62pt x 289.08pt>
-File: figs/exampleintro14.png Graphic file (type png)
-<use figs/exampleintro14.png>
-Package pdftex.def Info: figs/exampleintro14.png  used on input line 450.
+ <./figs/exampleintro8.png>]
+<figs/exampleintro9.png, id=232, 433.62pt x 289.08pt>
+File: figs/exampleintro9.png Graphic file (type png)
+<use figs/exampleintro9.png>
+Package pdftex.def Info: figs/exampleintro9.png  used on input line 444.
+(pdftex.def)             Requested size: 239.60567pt x 159.73994pt.
+ [21
+
+ <./figs/exampleintro9.png>]
+<figs/exampleintro10.png, id=240, 433.62pt x 289.08pt>
+File: figs/exampleintro10.png Graphic file (type png)
+<use figs/exampleintro10.png>
+Package pdftex.def Info: figs/exampleintro10.png  used on input line 444.
+(pdftex.def)             Requested size: 239.60567pt x 159.73994pt.
+ [22
+
+ <./figs/exampleintro10.png>]
+<figs/exampleintro11.png, id=248, 433.62pt x 289.08pt>
+File: figs/exampleintro11.png Graphic file (type png)
+<use figs/exampleintro11.png>
+Package pdftex.def Info: figs/exampleintro11.png  used on input line 444.
+(pdftex.def)             Requested size: 239.60567pt x 159.73994pt.
+ [23
+
+ <./figs/exampleintro11.png>]
+<figs/exampleintro12.png, id=256, 433.62pt x 289.08pt>
+File: figs/exampleintro12.png Graphic file (type png)
+<use figs/exampleintro12.png>
+Package pdftex.def Info: figs/exampleintro12.png  used on input line 444.
+(pdftex.def)             Requested size: 239.60567pt x 159.73994pt.
+ [24
+
+ <./figs/exampleintro12.png>]
+<figs/exampleintro13.png, id=264, 433.62pt x 289.08pt>
+File: figs/exampleintro13.png Graphic file (type png)
+<use figs/exampleintro13.png>
+Package pdftex.def Info: figs/exampleintro13.png  used on input line 444.
 (pdftex.def)             Requested size: 239.60567pt x 159.73994pt.
 
-[21
+[25
+
+ <./figs/exampleintro13.png>]
+<figs/exampleintro14.png, id=273, 433.62pt x 289.08pt>
+File: figs/exampleintro14.png Graphic file (type png)
+<use figs/exampleintro14.png>
+Package pdftex.def Info: figs/exampleintro14.png  used on input line 444.
+(pdftex.def)             Requested size: 239.60567pt x 159.73994pt.
+ [26
 
  <./figs/exampleintro14.png>]
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <8> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 467.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 461.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <6> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 467.
- [22
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 461.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 461.
 
-] [23
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd
+File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
+) [27
+
+] [28
 
 ]
-<figs/gprex1a.png, id=261, 433.62pt x 289.08pt>
+<figs/gprex1a.png, id=295, 433.62pt x 289.08pt>
 File: figs/gprex1a.png Graphic file (type png)
 <use figs/gprex1a.png>
-Package pdftex.def Info: figs/gprex1a.png  used on input line 497.
+Package pdftex.def Info: figs/gprex1a.png  used on input line 491.
 (pdftex.def)             Requested size: 171.14764pt x 114.09932pt.
-<figs/gprex1b.png, id=262, 433.62pt x 289.08pt>
+<figs/gprex1b.png, id=296, 433.62pt x 289.08pt>
 File: figs/gprex1b.png Graphic file (type png)
 <use figs/gprex1b.png>
-Package pdftex.def Info: figs/gprex1b.png  used on input line 497.
+Package pdftex.def Info: figs/gprex1b.png  used on input line 491.
 (pdftex.def)             Requested size: 171.14764pt x 114.09932pt.
- [24
+ [29
 
- <./figs/gprex1a.png> <./figs/gprex1b.png>] [25
+ <./figs/gprex1a.png> <./figs/gprex1b.png>] [30
 
-] [26
+] [31
 
-]
-LaTeX Font Info:    Try loading font information for T1+ptm on input line 556.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd
-File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
-)
-[27
+] [32
 
 ]
-<figs/exbmc.png, id=293, 433.62pt x 289.08pt>
+<figs/exbmc.png, id=327, 433.62pt x 289.08pt>
 File: figs/exbmc.png Graphic file (type png)
 <use figs/exbmc.png>
-Package pdftex.def Info: figs/exbmc.png  used on input line 562.
+Package pdftex.def Info: figs/exbmc.png  used on input line 554.
 (pdftex.def)             Requested size: 273.83728pt x 182.56686pt.
- [28
+ [33
 
- <./figs/exbmc.png>] [29
-
-] [30
-
-]
-<figs/klil3a.png, id=314, 433.62pt x 289.08pt>
-File: figs/klil3a.png Graphic file (type png)
-<use figs/klil3a.png>
-Package pdftex.def Info: figs/klil3a.png  used on input line 612.
-(pdftex.def)             Requested size: 154.03183pt x 102.68806pt.
-LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <9> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 612.
-LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <5> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 612.
-LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 612.
-LaTeX Font Info:    Font shape `T1/phv/m/it' in size <5> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 612.
-<figs/klil3b.png, id=315, 433.62pt x 289.08pt>
-File: figs/klil3b.png Graphic file (type png)
-<use figs/klil3b.png>
-Package pdftex.def Info: figs/klil3b.png  used on input line 612.
-(pdftex.def)             Requested size: 154.03183pt x 102.68806pt.
- [31
-
- <./figs/klil3a.png> <./figs/klil3b.png>] [32
-
-] [33
-
-] [34
+ <./figs/exbmc.png>]
+[34
 
 ] [35
 
 ] [36
 
-] [37
+]
+<figs/klil3a.png, id=352, 433.62pt x 289.08pt>
+File: figs/klil3a.png Graphic file (type png)
+<use figs/klil3a.png>
+Package pdftex.def Info: figs/klil3a.png  used on input line 626.
+(pdftex.def)             Requested size: 154.03183pt x 102.68806pt.
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <9> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 626.
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <5> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 626.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 626.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <5> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 626.
+<figs/klil3b.png, id=353, 433.62pt x 289.08pt>
+File: figs/klil3b.png Graphic file (type png)
+<use figs/klil3b.png>
+Package pdftex.def Info: figs/klil3b.png  used on input line 626.
+(pdftex.def)             Requested size: 154.03183pt x 102.68806pt.
+ [37
 
-] [38
+ <./figs/klil3a.png> <./figs/klil3b.png>] [38
 
 ] [39
 
 ] [40
 
-] [41
+]
+[41
+
+] [42
+
+] [43
+
+] [44
+
+] [45
+
+] [46
+
+] [47
 
 ]
 \openout4 = `slide_roberto_model.vrb'.
 
-
-(./slide_roberto_model.vrb
+ (./slide_roberto_model.vrb
 LaTeX Font Info:    Try loading font information for TS1+phv on input line 9.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1phv.fd
 File: ts1phv.fd 2001/06/04 scalable font definitions for TS1/phv.
-)) [42
+)) [48
 
 ]
-<figs/examplebvbmctrue.png, id=399, 425.59pt x 281.05pt>
+<figs/examplebvbmctrue.png, id=436, 425.59pt x 281.05pt>
 File: figs/examplebvbmctrue.png Graphic file (type png)
 <use figs/examplebvbmctrue.png>
-Package pdftex.def Info: figs/examplebvbmctrue.png  used on input line 868.
+Package pdftex.def Info: figs/examplebvbmctrue.png  used on input line 883.
 (pdftex.def)             Requested size: 171.14764pt x 113.02267pt.
-<figs/examplebvbmcestimated.png, id=400, 425.59pt x 281.05pt>
+<figs/examplebvbmcestimated.png, id=437, 425.59pt x 281.05pt>
 File: figs/examplebvbmcestimated.png Graphic file (type png)
 <use figs/examplebvbmcestimated.png>
-Package pdftex.def Info: figs/examplebvbmcestimated.png  used on input line 868
+Package pdftex.def Info: figs/examplebvbmcestimated.png  used on input line 883
 .
 (pdftex.def)             Requested size: 171.14764pt x 113.02267pt.
- [43
+ [49
 
  <./figs/examplebvbmctrue.png> <./figs/examplebvbmcestimated.png>]
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 883.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 898.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 883.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 898.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <7> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 883.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 898.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 883.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 898.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <7> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 883.
- [44
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 898.
+ [50
 
 ]
-<figs/targetexil1a.png, id=421, 433.62pt x 289.08pt>
+<figs/targetexil1a.png, id=459, 433.62pt x 289.08pt>
 File: figs/targetexil1a.png Graphic file (type png)
 <use figs/targetexil1a.png>
-Package pdftex.def Info: figs/targetexil1a.png  used on input line 896.
+Package pdftex.def Info: figs/targetexil1a.png  used on input line 911.
 (pdftex.def)             Requested size: 205.37926pt x 136.92184pt.
- [45
+ [51
 
  <./figs/targetexil1a.png>]pdfTeX warning (ext4): destination with the same ide
 ntifier (name{fig11a}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.914 \end{frame}
+l.926 \end{frame}
                  
-<figs/dmcil1fk52.png, id=428, 433.62pt x 289.08pt>
+<figs/dmcil1fk52.png, id=466, 433.62pt x 289.08pt>
 File: figs/dmcil1fk52.png Graphic file (type png)
 <use figs/dmcil1fk52.png>
-Package pdftex.def Info: figs/dmcil1fk52.png  used on input line 914.
-(pdftex.def)             Requested size: 136.91603pt x 91.27681pt.
+Package pdftex.def Info: figs/dmcil1fk52.png  used on input line 926.
+(pdftex.def)             Requested size: 171.14764pt x 114.09932pt.
 pdfTeX warning (ext4): destination with the same identifier (name{fig11b}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.914 \end{frame}
+l.926 \end{frame}
                  
-<figs/convgraphil1fk52.png, id=429, 433.62pt x 289.08pt>
+<figs/convgraphil1fk52.png, id=467, 433.62pt x 289.08pt>
 File: figs/convgraphil1fk52.png Graphic file (type png)
 <use figs/convgraphil1fk52.png>
-Package pdftex.def Info: figs/convgraphil1fk52.png  used on input line 914.
-(pdftex.def)             Requested size: 136.91603pt x 91.27681pt.
-pdfTeX warning (ext4): destination with the same identifier (name{fig11a}) has 
-been already used, duplicate ignored
+Package pdftex.def Info: figs/convgraphil1fk52.png  used on input line 926.
+(pdftex.def)             Requested size: 171.14764pt x 114.09932pt.
+ [52
+
+ <./figs/dmcil1fk52.png> <./figs/convgraphil1fk52.png>]pdfTeX warning (ext4): d
+estination with the same identifier (name{fig11a}) has been already used, dupli
+cate ignored
 <to be read again> 
                    \relax 
-l.914 \end{frame}
+l.940 \end{frame}
                  
-<figs/dmcil1fkSQE.png, id=430, 433.62pt x 289.08pt>
+<figs/dmcil1fkSQE.png, id=477, 433.62pt x 289.08pt>
 File: figs/dmcil1fkSQE.png Graphic file (type png)
 <use figs/dmcil1fkSQE.png>
-Package pdftex.def Info: figs/dmcil1fkSQE.png  used on input line 914.
-(pdftex.def)             Requested size: 136.91603pt x 91.27681pt.
+Package pdftex.def Info: figs/dmcil1fkSQE.png  used on input line 940.
+(pdftex.def)             Requested size: 171.14764pt x 114.09932pt.
 pdfTeX warning (ext4): destination with the same identifier (name{fig11b}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.914 \end{frame}
+l.940 \end{frame}
                  
-<figs/convgraphil1fkSQE.png, id=431, 433.62pt x 289.08pt>
+<figs/convgraphil1fkSQE.png, id=478, 433.62pt x 289.08pt>
 File: figs/convgraphil1fkSQE.png Graphic file (type png)
 <use figs/convgraphil1fkSQE.png>
-Package pdftex.def Info: figs/convgraphil1fkSQE.png  used on input line 914.
-(pdftex.def)             Requested size: 136.91603pt x 91.27681pt.
+Package pdftex.def Info: figs/convgraphil1fkSQE.png  used on input line 940.
+(pdftex.def)             Requested size: 171.14764pt x 114.09932pt.
+ [53
 
-Overfull \vbox (9.81818pt too high) detected at line 914
- []
-
-[46
-
- <./figs/dmcil1fk52.png> <./figs/convgraphil1fk52.png> <./figs/dmcil1fkSQE.png>
- <./figs/convgraphil1fkSQE.png>]pdfTeX warning (ext4): destination with the sam
-e identifier (name{fig11a}) has been already used, duplicate ignored
+ <./figs/dmcil1fkSQE.png> <./figs/convgraphil1fkSQE.png>]pdfTeX warning (ext4):
+ destination with the same identifier (name{fig11a}) has been already used, dup
+licate ignored
 <to be read again> 
                    \relax 
-l.932 \end{frame}
+l.954 \end{frame}
                  
-<figs/dmcil1ati1.png, id=443, 433.62pt x 289.08pt>
+<figs/dmcil1ati1.png, id=487, 433.62pt x 289.08pt>
 File: figs/dmcil1ati1.png Graphic file (type png)
 <use figs/dmcil1ati1.png>
-Package pdftex.def Info: figs/dmcil1ati1.png  used on input line 932.
-(pdftex.def)             Requested size: 119.80544pt x 79.86996pt.
+Package pdftex.def Info: figs/dmcil1ati1.png  used on input line 954.
+(pdftex.def)             Requested size: 171.14764pt x 114.09932pt.
 pdfTeX warning (ext4): destination with the same identifier (name{fig11b}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.932 \end{frame}
+l.954 \end{frame}
                  
-<figs/timegraphil1ati1.png, id=444, 433.62pt x 289.08pt>
+<figs/timegraphil1ati1.png, id=488, 433.62pt x 289.08pt>
 File: figs/timegraphil1ati1.png Graphic file (type png)
 <use figs/timegraphil1ati1.png>
-Package pdftex.def Info: figs/timegraphil1ati1.png  used on input line 932.
-(pdftex.def)             Requested size: 119.80544pt x 79.86996pt.
-pdfTeX warning (ext4): destination with the same identifier (name{fig11a}) has 
-been already used, duplicate ignored
+Package pdftex.def Info: figs/timegraphil1ati1.png  used on input line 954.
+(pdftex.def)             Requested size: 171.14764pt x 114.09932pt.
+ [54
+
+ <./figs/dmcil1ati1.png> <./figs/timegraphil1ati1.png>]pdfTeX warning (ext4): d
+estination with the same identifier (name{fig11a}) has been already used, dupli
+cate ignored
 <to be read again> 
                    \relax 
-l.932 \end{frame}
+l.968 \end{frame}
                  
-<figs/dmcil1ati10.png, id=445, 433.62pt x 289.08pt>
+<figs/dmcil1ati10.png, id=497, 433.62pt x 289.08pt>
 File: figs/dmcil1ati10.png Graphic file (type png)
 <use figs/dmcil1ati10.png>
-Package pdftex.def Info: figs/dmcil1ati10.png  used on input line 932.
-(pdftex.def)             Requested size: 119.80544pt x 79.86996pt.
+Package pdftex.def Info: figs/dmcil1ati10.png  used on input line 968.
+(pdftex.def)             Requested size: 171.14764pt x 114.09932pt.
 pdfTeX warning (ext4): destination with the same identifier (name{fig11b}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.932 \end{frame}
+l.968 \end{frame}
                  
-<figs/timegraphil1ati10.png, id=446, 433.62pt x 289.08pt>
+<figs/timegraphil1ati10.png, id=498, 433.62pt x 289.08pt>
 File: figs/timegraphil1ati10.png Graphic file (type png)
 <use figs/timegraphil1ati10.png>
-Package pdftex.def Info: figs/timegraphil1ati10.png  used on input line 932.
-(pdftex.def)             Requested size: 119.80544pt x 79.86996pt.
- [47
+Package pdftex.def Info: figs/timegraphil1ati10.png  used on input line 968.
+(pdftex.def)             Requested size: 171.14764pt x 114.09932pt.
+ [55
 
- <./figs/dmcil1ati1.png> <./figs/timegraphil1ati1.png> <./figs/dmcil1ati10.png>
- <./figs/timegraphil1ati10.png>]pdfTeX warning (ext4): destination with the sam
-e identifier (name{fig11a}) has been already used, duplicate ignored
+ <./figs/dmcil1ati10.png> <./figs/timegraphil1ati10.png>]pdfTeX warning (ext4):
+ destination with the same identifier (name{fig11a}) has been already used, dup
+licate ignored
 <to be read again> 
                    \relax 
-l.951 \end{frame}
+l.982 \end{frame}
                  
-<figs/dmcil1g_aq_prospective.png, id=457, 433.62pt x 289.08pt>
-File: figs/dmcil1g_aq_prospective.png Graphic file (type png)
-<use figs/dmcil1g_aq_prospective.png>
-Package pdftex.def Info: figs/dmcil1g_aq_prospective.png  used on input line 95
-1.
-(pdftex.def)             Requested size: 119.80544pt x 79.86996pt.
+<figs/dmcil1ati1000.png, id=508, 433.62pt x 289.08pt>
+File: figs/dmcil1ati1000.png Graphic file (type png)
+<use figs/dmcil1ati1000.png>
+Package pdftex.def Info: figs/dmcil1ati1000.png  used on input line 982.
+(pdftex.def)             Requested size: 171.14764pt x 114.09932pt.
 pdfTeX warning (ext4): destination with the same identifier (name{fig11b}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.951 \end{frame}
+l.982 \end{frame}
                  
-<figs/explopattern1g_aq_prospective.png, id=458, 433.62pt x 289.08pt>
+<figs/timegraphil1ati1000.png, id=509, 433.62pt x 289.08pt>
+File: figs/timegraphil1ati1000.png Graphic file (type png)
+<use figs/timegraphil1ati1000.png>
+Package pdftex.def Info: figs/timegraphil1ati1000.png  used on input line 982.
+(pdftex.def)             Requested size: 171.14764pt x 114.09932pt.
+ [56
+
+ <./figs/dmcil1ati1000.png> <./figs/timegraphil1ati1000.png>]pdfTeX warning (ex
+t4): destination with the same identifier (name{fig11a}) has been already used,
+ duplicate ignored
+<to be read again> 
+                   \relax 
+l.996 \end{frame}
+                 
+<figs/dmcil1g_aq_prospective.png, id=518, 433.62pt x 289.08pt>
+File: figs/dmcil1g_aq_prospective.png Graphic file (type png)
+<use figs/dmcil1g_aq_prospective.png>
+Package pdftex.def Info: figs/dmcil1g_aq_prospective.png  used on input line 99
+6.
+(pdftex.def)             Requested size: 171.14764pt x 114.09932pt.
+pdfTeX warning (ext4): destination with the same identifier (name{fig11b}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.996 \end{frame}
+                 
+<figs/explopattern1g_aq_prospective.png, id=519, 433.62pt x 289.08pt>
 File: figs/explopattern1g_aq_prospective.png Graphic file (type png)
 <use figs/explopattern1g_aq_prospective.png>
 Package pdftex.def Info: figs/explopattern1g_aq_prospective.png  used on input 
-line 951.
-(pdftex.def)             Requested size: 119.80544pt x 79.86996pt.
-pdfTeX warning (ext4): destination with the same identifier (name{fig11a}) has 
-been already used, duplicate ignored
+line 996.
+(pdftex.def)             Requested size: 171.14764pt x 114.09932pt.
+ [57
+
+ <./figs/dmcil1g_aq_prospective.png> <./figs/explopattern1g_aq_prospective.png>
+]pdfTeX warning (ext4): destination with the same identifier (name{fig11a}) has
+ been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.951 \end{frame}
-                 
-<figs/dmcil1g_aq_mmlt.png, id=459, 433.62pt x 289.08pt>
+l.1011 \end{frame}
+                  
+<figs/dmcil1g_aq_mmlt.png, id=528, 433.62pt x 289.08pt>
 File: figs/dmcil1g_aq_mmlt.png Graphic file (type png)
 <use figs/dmcil1g_aq_mmlt.png>
-Package pdftex.def Info: figs/dmcil1g_aq_mmlt.png  used on input line 951.
-(pdftex.def)             Requested size: 119.80544pt x 79.86996pt.
+Package pdftex.def Info: figs/dmcil1g_aq_mmlt.png  used on input line 1011.
+(pdftex.def)             Requested size: 171.14764pt x 114.09932pt.
 pdfTeX warning (ext4): destination with the same identifier (name{fig11b}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.951 \end{frame}
-                 
-<figs/explopattern1g_aq_mmlt.png, id=460, 433.62pt x 289.08pt>
+l.1011 \end{frame}
+                  
+<figs/explopattern1g_aq_mmlt.png, id=529, 433.62pt x 289.08pt>
 File: figs/explopattern1g_aq_mmlt.png Graphic file (type png)
 <use figs/explopattern1g_aq_mmlt.png>
-Package pdftex.def Info: figs/explopattern1g_aq_mmlt.png  used on input line 95
-1.
-(pdftex.def)             Requested size: 119.80544pt x 79.86996pt.
- [48
+Package pdftex.def Info: figs/explopattern1g_aq_mmlt.png  used on input line 10
+11.
+(pdftex.def)             Requested size: 171.14764pt x 114.09932pt.
+ [58
 
- <./figs/dmcil1g_aq_prospective.png> <./figs/explopattern1g_aq_prospective.png>
- <./figs/dmcil1g_aq_mmlt.png> <./figs/explopattern1g_aq_mmlt.png>] [49
+ <./figs/dmcil1g_aq_mmlt.png> <./figs/explopattern1g_aq_mmlt.png>] [59
 
-] [50
+] [60
+
+] [61
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{fig11a}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1018 \end{frame}
+l.1080 \end{frame}
                   
-<figs/ex1b_mean.png, id=485, 433.62pt x 289.08pt>
+<figs/ex1b_mean.png, id=557, 433.62pt x 289.08pt>
 File: figs/ex1b_mean.png Graphic file (type png)
 <use figs/ex1b_mean.png>
-Package pdftex.def Info: figs/ex1b_mean.png  used on input line 1018.
-(pdftex.def)             Requested size: 136.91603pt x 91.27681pt.
+Package pdftex.def Info: figs/ex1b_mean.png  used on input line 1080.
+(pdftex.def)             Requested size: 171.14764pt x 114.09932pt.
 pdfTeX warning (ext4): destination with the same identifier (name{fig11b}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1018 \end{frame}
+l.1080 \end{frame}
                   
-<figs/ex1b_cov.png, id=486, 433.62pt x 289.08pt>
+<figs/ex1b_cov.png, id=558, 433.62pt x 289.08pt>
 File: figs/ex1b_cov.png Graphic file (type png)
 <use figs/ex1b_cov.png>
-Package pdftex.def Info: figs/ex1b_cov.png  used on input line 1018.
-(pdftex.def)             Requested size: 136.91603pt x 91.27681pt.
-pdfTeX warning (ext4): destination with the same identifier (name{fig11a}) has 
-been already used, duplicate ignored
+Package pdftex.def Info: figs/ex1b_cov.png  used on input line 1080.
+(pdftex.def)             Requested size: 171.14764pt x 114.09932pt.
+ [62
+
+ <./figs/ex1b_mean.png> <./figs/ex1b_cov.png>]pdfTeX warning (ext4): destinatio
+n with the same identifier (name{fig11a}) has been already used, duplicate igno
+red
 <to be read again> 
                    \relax 
-l.1018 \end{frame}
+l.1094 \end{frame}
                   
-<figs/ex4b_mean.png, id=487, 433.62pt x 289.08pt>
+<figs/ex4b_mean.png, id=567, 433.62pt x 289.08pt>
 File: figs/ex4b_mean.png Graphic file (type png)
 <use figs/ex4b_mean.png>
-Package pdftex.def Info: figs/ex4b_mean.png  used on input line 1018.
-(pdftex.def)             Requested size: 136.91603pt x 91.27681pt.
+Package pdftex.def Info: figs/ex4b_mean.png  used on input line 1094.
+(pdftex.def)             Requested size: 171.14764pt x 114.09932pt.
 pdfTeX warning (ext4): destination with the same identifier (name{fig11b}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1018 \end{frame}
+l.1094 \end{frame}
                   
-<figs/ex4b_cov.png, id=488, 433.62pt x 289.08pt>
+<figs/ex4b_cov.png, id=568, 433.62pt x 289.08pt>
 File: figs/ex4b_cov.png Graphic file (type png)
 <use figs/ex4b_cov.png>
-Package pdftex.def Info: figs/ex4b_cov.png  used on input line 1018.
-(pdftex.def)             Requested size: 136.91603pt x 91.27681pt.
- [51
+Package pdftex.def Info: figs/ex4b_cov.png  used on input line 1094.
+(pdftex.def)             Requested size: 171.14764pt x 114.09932pt.
+ [63
 
- <./figs/ex1b_mean.png> <./figs/ex1b_cov.png> <./figs/ex4b_mean.png> <./figs/ex
-4b_cov.png>]pdfTeX warning (ext4): destination with the same identifier (name{f
-ig11a}) has been already used, duplicate ignored
+ <./figs/ex4b_mean.png> <./figs/ex4b_cov.png>]pdfTeX warning (ext4): destinatio
+n with the same identifier (name{fig11a}) has been already used, duplicate igno
+red
 <to be read again> 
                    \relax 
-l.1028 \end{frame}
+l.1107 \end{frame}
                   
-<figs/ex5b_mean.png, id=499, 433.62pt x 289.08pt>
+<figs/ex5b_mean.png, id=577, 433.62pt x 289.08pt>
 File: figs/ex5b_mean.png Graphic file (type png)
 <use figs/ex5b_mean.png>
-Package pdftex.def Info: figs/ex5b_mean.png  used on input line 1028.
-(pdftex.def)             Requested size: 136.91603pt x 91.27681pt.
+Package pdftex.def Info: figs/ex5b_mean.png  used on input line 1107.
+(pdftex.def)             Requested size: 171.14764pt x 114.09932pt.
 pdfTeX warning (ext4): destination with the same identifier (name{fig11b}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1028 \end{frame}
+l.1107 \end{frame}
                   
-<figs/ex5b_cov.png, id=500, 433.62pt x 289.08pt>
+<figs/ex5b_cov.png, id=578, 433.62pt x 289.08pt>
 File: figs/ex5b_cov.png Graphic file (type png)
 <use figs/ex5b_cov.png>
-Package pdftex.def Info: figs/ex5b_cov.png  used on input line 1028.
-(pdftex.def)             Requested size: 136.91603pt x 91.27681pt.
- [52
+Package pdftex.def Info: figs/ex5b_cov.png  used on input line 1107.
+(pdftex.def)             Requested size: 171.14764pt x 114.09932pt.
+ [64
 
- <./figs/ex5b_mean.png> <./figs/ex5b_cov.png>] [53
+ <./figs/ex5b_mean.png> <./figs/ex5b_cov.png>] [65
 
 ]
-Overfull \vbox (5.5707pt too high) detected at line 1080
+Overfull \vbox (5.5707pt too high) detected at line 1159
  []
 
-[54
+[66
 
-] [55
+] [67
 
-] [56
+] [68
 
 ]
-<figs/sourceproblemhistogramsvb.png, id=534, 712.6625pt x 714.67pt>
+<figs/sourceproblemhistogramsvb.png, id=612, 712.6625pt x 714.67pt>
 File: figs/sourceproblemhistogramsvb.png Graphic file (type png)
 <use figs/sourceproblemhistogramsvb.png>
 Package pdftex.def Info: figs/sourceproblemhistogramsvb.png  used on input line
- 1116.
+ 1195.
 (pdftex.def)             Requested size: 205.37926pt x 205.9513pt.
- [57
+ [69
 
  <./figs/sourceproblemhistogramsvb.png>]
-<figs/sourceproblemhistogramsemcee.png, id=542, 712.6625pt x 714.67pt>
+<figs/sourceproblemhistogramsemcee.png, id=620, 712.6625pt x 714.67pt>
 File: figs/sourceproblemhistogramsemcee.png Graphic file (type png)
 <use figs/sourceproblemhistogramsemcee.png>
 Package pdftex.def Info: figs/sourceproblemhistogramsemcee.png  used on input l
-ine 1124.
+ine 1203.
 (pdftex.def)             Requested size: 205.37926pt x 205.9513pt.
- [58
+ [70
 
- <./figs/sourceproblemhistogramsemcee.png>] [59
+ <./figs/sourceproblemhistogramsemcee.png>] [71
 
 ]
 \tf@nav=\write6
@@ -1983,11 +2052,11 @@ ine 1124.
 \tf@snm=\write8
 \openout8 = `slide_roberto_model.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1140.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1140.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1219.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1219.
  (./slide_roberto_model.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1140.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1140.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1219.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1219.
 
 Package rerunfilecheck Info: File `slide_roberto_model.out' has not changed.
 (rerunfilecheck)             Checksum: 3108BDE2DB916010B104AB1FF0F55EF2;434.
@@ -1997,10 +2066,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 26646 strings out of 492982
- 493307 string characters out of 6134897
- 786514 words of memory out of 5000000
- 29380 multiletter control sequences out of 15000+600000
+ 26696 strings out of 492982
+ 493889 string characters out of 6134897
+ 786081 words of memory out of 5000000
+ 29404 multiletter control sequences out of 15000+600000
  92766 words of font info for 135 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  56i,25n,61p,820b,1391s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2022,10 +2091,10 @@ texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/ur
 w/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/u
 hvro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on slide_roberto_model.pdf (59 pages, 1096273 bytes).
+Output written on slide_roberto_model.pdf (71 pages, 1161350 bytes).
 PDF statistics:
- 650 PDF objects out of 1000 (max. 8388607)
- 462 compressed objects within 5 object streams
- 135 named destinations out of 1000 (max. 500000)
- 387 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 734 PDF objects out of 1000 (max. 8388607)
+ 529 compressed objects within 6 object streams
+ 159 named destinations out of 1000 (max. 500000)
+ 397 words of extra memory for PDF output out of 10000 (max. 10000000)
 

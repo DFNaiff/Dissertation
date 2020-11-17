@@ -1,8 +1,8 @@
 \babel@toc {brazilian}{}
-\beamer@sectionintoc {2}{Introduction}{4}{0}{1}
-\beamer@sectionintoc {3}{Gaussian Processes}{22}{0}{2}
-\beamer@sectionintoc {4}{Bayesian Monte Carlo}{27}{0}{3}
-\beamer@sectionintoc {5}{Variational Inference}{30}{0}{4}
-\beamer@sectionintoc {6}{Boosted Variational Bayesian Monte Carlo}{39}{0}{5}
-\beamer@sectionintoc {7}{Experiments}{45}{0}{6}
-\beamer@sectionintoc {8}{Challenges and conclusion}{59}{0}{7}
+\beamer@sectionintoc {2}{Introduction}{3}{0}{1}
+\beamer@sectionintoc {3}{Gaussian Processes}{27}{0}{2}
+\beamer@sectionintoc {4}{Bayesian Monte Carlo}{32}{0}{3}
+\beamer@sectionintoc {5}{Variational Inference}{36}{0}{4}
+\beamer@sectionintoc {6}{Boosted Variational Bayesian Monte Carlo}{45}{0}{5}
+\beamer@sectionintoc {7}{Experiments}{51}{0}{6}
+\beamer@sectionintoc {8}{Challenges and conclusion}{71}{0}{7}

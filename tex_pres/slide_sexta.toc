@@ -1,0 +1,8 @@
+\babel@toc {brazilian}{}
+\beamer@sectionintoc {2}{Introduction}{3}{0}{1}
+\beamer@sectionintoc {3}{Variational Inference}{10}{0}{2}
+\beamer@sectionintoc {4}{Gaussian Processes}{38}{0}{3}
+\beamer@sectionintoc {5}{Bayesian Monte Carlo}{43}{0}{4}
+\beamer@sectionintoc {6}{Boosted Variational Bayesian Monte Carlo}{49}{0}{5}
+\beamer@sectionintoc {7}{Experiments}{55}{0}{6}
+\beamer@sectionintoc {8}{Challenges and conclusion}{75}{0}{7}

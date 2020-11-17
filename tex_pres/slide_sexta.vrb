@@ -1,0 +1,32 @@
+\vspace{-0.25cm}
+	\begin{lstlisting}[frame=single, title={Usage of BVBMC package}]
+	#Import necessary packages
+	import torch #PyTorch package
+	from variational_boosting_bmc import VariationalBoosting #BVBMC package
+
+	#Approximating unnormalized 2-d Cauchy
+	def logjoint(theta):
+		return torch.sum(-torch.log(1+theta**2))
+
+	#Set up parameters
+	dim=2 #Dimension of problem
+	samples = torch.randn(20,dim) #Initial samples
+	mu0 = torch.zeros(dim) #Initial mean
+	cov0 = 20.0*torch.ones(dim) #Initial covariance
+	acquisition = "prospective" #Acquisition function
+
+	#Initialize algorithm
+	vb = VariationalBoosting(dim,logjoint,samples,mu0,cov0)
+	vb.optimize_bmc_model() #Optimize GP model
+	vb.update_full() #Fit first component
+
+	#Training loop
+	for i in range(100):
+		_ = vb.update() #Choose new boosting component
+		vb.update_bmcmodel(acquisition=acquisition) #Choose new evaluation
+		vb.cutweights(1e-3) #Weights prunning
+		if ((i+1)%20) == 0:
+			vb.update_full(cutoff=1e-3) #Joint parameter updating
+
+	vb.save_distrib("finaldistrib") #Save distribution
+	\end{lstlisting}

@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.6.7)  17 OCT 2019 10:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.6.7)  18 OCT 2019 09:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**slide.tex
-(./slide.tex
+**slide_sexta.tex
+(./slide_sexta.tex
 LaTeX2e <2017-04-15>
 Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamer.cls
@@ -648,7 +648,7 @@ Package: amsthm 2017/10/31 v2.20.4
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerinnerthemerounded.sty)
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerouterthemeinfolines.sty)
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamercolorthemewolverine.sty))
-(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamercolorthemeorchid.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamercolorthemebeaver.sty)
 (/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2016/11/25 v2.2 Span multiple rows of a table
 \multirow@colwidth=\skip57
@@ -849,24 +849,410 @@ File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
-))) (./slide.aux)
-\openout1 = `slide.aux'.
+)))
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/times.sty
+Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2017/04/11 v1.8q multicolumn formatting (FMi)
+\c@tracingmulticols=\count189
+\mult@box=\box62
+\multicol@leftmargin=\dimen276
+\c@unbalance=\count190
+\c@collectmore=\count191
+\doublecol@number=\count192
+\multicoltolerance=\count193
+\multicolpretolerance=\count194
+\full@width=\dimen277
+\page@free=\dimen278
+\premulticols=\dimen279
+\postmulticols=\dimen280
+\multicolsep=\skip67
+\multicolbaselineskip=\skip68
+\partial@page=\box63
+\last@line=\box64
+\maxbalancingoverflow=\dimen281
+\mult@rightbox=\box65
+\mult@grightbox=\box66
+\mult@gfirstbox=\box67
+\mult@firstbox=\box68
+\@tempa=\box69
+\@tempa=\box70
+\@tempa=\box71
+\@tempa=\box72
+\@tempa=\box73
+\@tempa=\box74
+\@tempa=\box75
+\@tempa=\box76
+\@tempa=\box77
+\@tempa=\box78
+\@tempa=\box79
+\@tempa=\box80
+\@tempa=\box81
+\@tempa=\box82
+\@tempa=\box83
+\@tempa=\box84
+\@tempa=\box85
+\c@columnbadness=\count195
+\c@finalcolumnbadness=\count196
+\last@try=\dimen282
+\multicolovershoot=\dimen283
+\multicolundershoot=\dimen284
+\mult@nat@firstbox=\box86
+\colbreak@box=\box87
+\mc@col@check@num=\count197
+)
+(/usr/share/texlive/texmf-dist/tex/latex/mathtools/mathtools.sty
+Package: mathtools 2018/01/08 v1.21 mathematical typesetting tools
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
+(/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count198
+\calc@Bcount=\count199
+\calc@Adimen=\dimen285
+\calc@Bdimen=\dimen286
+\calc@Askip=\skip69
+\calc@Bskip=\skip70
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count266
+\calc@Cskip=\skip71
+)
+(/usr/share/texlive/texmf-dist/tex/latex/mathtools/mhsetup.sty
+Package: mhsetup 2017/03/31 v1.3 programming setup (MH)
+)
+LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
+\g_MT_multlinerow_int=\count267
+\l_MT_multwidth_dim=\dimen287
+\origjot=\skip72
+\l_MT_shortvdotswithinadjustabove_dim=\dimen288
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen289
+\l_MT_above_intertext_sep=\dimen290
+\l_MT_below_intertext_sep=\dimen291
+\l_MT_above_shortintertext_sep=\dimen292
+\l_MT_below_shortintertext_sep=\dimen293
+)
+(/usr/share/texlive/texmf-dist/tex/generic/dvips/colordvi.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2017/06/30 v3.9a Extensive control of page headers and footer
+s
+\f@nch@headwidth=\skip73
+\f@nch@O@elh=\skip74
+\f@nch@O@erh=\skip75
+\f@nch@O@olh=\skip76
+\f@nch@O@orh=\skip77
+\f@nch@O@elf=\skip78
+\f@nch@O@erf=\skip79
+\f@nch@O@olf=\skip80
+\f@nch@O@orf=\skip81
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
 
+(/usr/share/texlive/texmf-dist/tex/latex/base/ot1enc.def
+File: ot1enc.def 2017/04/05 v2.0i Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding OT1 on input line 48.
+))
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def
+File: t1enc.def 2017/04/05 v2.0i Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
+))
+(/usr/share/texlive/texmf-dist/tex/latex/stmaryrd/stmaryrd.sty
+Package: stmaryrd 1994/03/03 St Mary's Road symbol package
+\symstmry=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `stmry' in version `bold'
+(Font)                  U/stmry/m/n --> U/stmry/b/n on input line 89.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/latexsym.sty
+Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
+\symlasy=\mathgroup7
+LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
+(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 52.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/epigraph/epigraph.sty
+Package: epigraph 2009/09/02 v1.5c typesetting epigraphs
+\beforeepigraphskip=\skip82
+\afterepigraphskip=\skip83
+\epigraphwidth=\skip84
+\epigraphrule=\skip85
+)
+(/usr/share/texlive/texmf-dist/tex/generic/genmisc/default.sty 1.3 13/7/98
+    DEFAULT.STY version 1.3 July 1998 By Z Jiang
+    University of New England, Australia
+    Email: zhuhan@neumann.une.edu.au
+)
+(/usr/share/texlive/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
+Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
+\symrsfs=\mathgroup8
+)
+(/usr/share/texlive/texmf-dist/tex/latex/esint/esint.sty
+Package: esint 
+\symlargesymbolsA=\mathgroup9
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2017/04/05 v2.0i Standard LaTeX package
+Package textcomp Info: Sub-encoding information:
+(textcomp)               5 = only ISO-Adobe without \textcurrency
+(textcomp)               4 = 5 + \texteuro
+(textcomp)               3 = 4 + \textohm
+(textcomp)               2 = 3 + \textestimated + \textcurrency
+(textcomp)               1 = TS1 - \textcircled - \t
+(textcomp)               0 = TS1 (full)
+(textcomp)             Font families with sub-encoding setting implement
+(textcomp)             only a restricted character set as indicated.
+(textcomp)             Family '?' is the default used for unknown fonts.
+(textcomp)             See the documentation for details.
+Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 79.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.def
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+)
+LaTeX Info: Redefining \oldstylenums on input line 334.
+Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 349.
+Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 350.
+Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 351.
+Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 352.
+Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 353.
+Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 354.
+Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 355.
+Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 356.
+Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 357.
+Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 358.
+Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 359.
+Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 360.
+Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 361.
+Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 362.
+Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 363.
+Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 364.
+Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 365.
+Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 366.
+Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 367.
+Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 368.
+Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 369.
+Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 370.
+Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 371.
+Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 372.
+
+Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 373.
+Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 374.
+Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 375.
+Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 376.
+Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 377.
+Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 378.
+Package textcomp Info: Setting lmr sub-encoding to TS1/0 on input line 379.
+Package textcomp Info: Setting lmdh sub-encoding to TS1/0 on input line 380.
+Package textcomp Info: Setting lmss sub-encoding to TS1/0 on input line 381.
+Package textcomp Info: Setting lmssq sub-encoding to TS1/0 on input line 382.
+Package textcomp Info: Setting lmvtt sub-encoding to TS1/0 on input line 383.
+Package textcomp Info: Setting lmtt sub-encoding to TS1/0 on input line 384.
+Package textcomp Info: Setting qhv sub-encoding to TS1/0 on input line 385.
+Package textcomp Info: Setting qag sub-encoding to TS1/0 on input line 386.
+Package textcomp Info: Setting qbk sub-encoding to TS1/0 on input line 387.
+Package textcomp Info: Setting qcr sub-encoding to TS1/0 on input line 388.
+Package textcomp Info: Setting qcs sub-encoding to TS1/0 on input line 389.
+Package textcomp Info: Setting qpl sub-encoding to TS1/0 on input line 390.
+Package textcomp Info: Setting qtm sub-encoding to TS1/0 on input line 391.
+Package textcomp Info: Setting qzc sub-encoding to TS1/0 on input line 392.
+Package textcomp Info: Setting qhvc sub-encoding to TS1/0 on input line 393.
+Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 394.
+Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 395.
+Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 396.
+Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 397.
+Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 398.
+Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 399.
+Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 400.
+Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 401.
+Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 402.
+Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 403.
+Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 404.
+Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 405.
+Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 406.
+Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
+Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
+Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/wasysym/wasysym.sty
+Package: wasysym 2003/10/30 v2.0 Wasy-2 symbol support package
+\symwasy=\mathgroup10
+LaTeX Font Info:    Overwriting symbol font `wasy' in version `bold'
+(Font)                  U/wasy/m/n --> U/wasy/b/n on input line 90.
+LaTeX Font Info:    Redeclaring math symbol \ocircle on input line 240.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+)
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\new@ifnextchar' on input line 329.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\\' on input line 329.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\\' on input line 329.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\new@ifnextchar' on input line 329.
+
+(./slide_sexta.aux
+
+LaTeX Warning: Label `fig11a' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig11a' multiply defined.
+
+
+LaTeX Warning: Label `fig11b' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig11b' multiply defined.
+
+
+LaTeX Warning: Label `fig11a' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig11a' multiply defined.
+
+
+LaTeX Warning: Label `fig11b' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig11b' multiply defined.
+
+
+LaTeX Warning: Label `fig11a' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig11a' multiply defined.
+
+
+LaTeX Warning: Label `fig11b' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig11b' multiply defined.
+
+
+LaTeX Warning: Label `fig11a' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig11a' multiply defined.
+
+
+LaTeX Warning: Label `fig11b' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig11b' multiply defined.
+
+
+LaTeX Warning: Label `fig11a' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig11a' multiply defined.
+
+
+LaTeX Warning: Label `fig11b' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig11b' multiply defined.
+
+
+LaTeX Warning: Label `fig11a' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig11a' multiply defined.
+
+
+LaTeX Warning: Label `fig11b' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig11b' multiply defined.
+
+
+LaTeX Warning: Label `fig11a' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig11a' multiply defined.
+
+
+LaTeX Warning: Label `fig11b' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig11b' multiply defined.
+
+
+LaTeX Warning: Label `fig11a' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig11a' multiply defined.
+
+
+LaTeX Warning: Label `fig11b' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig11b' multiply defined.
+
+
+LaTeX Warning: Label `fig11a' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig11a' multiply defined.
+
+
+LaTeX Warning: Label `fig11b' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig11b' multiply defined.
+
+
+LaTeX Warning: Label `fig11a' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig11a' multiply defined.
+
+
+LaTeX Warning: Label `fig11b' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig11b' multiply defined.
+
+)
+\openout1 = `slide_sexta.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 337.
+LaTeX Font Info:    ... okay on input line 337.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 337.
+LaTeX Font Info:    ... okay on input line 337.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 337.
+LaTeX Font Info:    ... okay on input line 337.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 337.
+LaTeX Font Info:    ... okay on input line 337.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 337.
+LaTeX Font Info:    ... okay on input line 337.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 337.
+LaTeX Font Info:    ... okay on input line 337.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 337.
+LaTeX Font Info:    ... okay on input line 337.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 337.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 337.
+
+ (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
+File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 337.
+LaTeX Font Info:    Try loading font information for T1+phv on input line 337.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd
+File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
+)
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -903,17 +1289,17 @@ LaTeX Font Info:    ... okay on input line 45.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count189
-\scratchdimen=\dimen276
-\scratchbox=\box62
-\nofMPsegments=\count190
-\nofMParguments=\count191
-\everyMPshowfont=\toks49
-\MPscratchCnt=\count192
-\MPscratchDim=\dimen277
-\MPnumerator=\count193
-\makeMPintoPDFobject=\count194
-\everyMPtoPDFconversion=\toks50
+\scratchcounter=\count273
+\scratchdimen=\dimen297
+\scratchbox=\box91
+\nofMPsegments=\count274
+\nofMParguments=\count275
+\everyMPshowfont=\toks61
+\MPscratchCnt=\count276
+\MPscratchDim=\dimen298
+\MPnumerator=\count277
+\makeMPintoPDFobject=\count278
+\everyMPtoPDFconversion=\toks62
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -932,8 +1318,8 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 ABD: EveryShipout initializing macros
-\AtBeginShipoutBox=\box63
-Package hyperref Info: Link coloring OFF on input line 45.
+\AtBeginShipoutBox=\box92
+Package hyperref Info: Link coloring OFF on input line 337.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -941,68 +1327,58 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count195
+\c@section@level=\count279
 )
-LaTeX Info: Redefining \ref on input line 45.
-LaTeX Info: Redefining \pageref on input line 45.
-LaTeX Info: Redefining \nameref on input line 45.
+LaTeX Info: Redefining \ref on input line 337.
+LaTeX Info: Redefining \pageref on input line 337.
+LaTeX Info: Redefining \nameref on input line 337.
 
-(./slide.out) (./slide.out)
+(./slide_sexta.out) (./slide_sexta.out)
 \@outlinefile=\write5
-\openout5 = `slide.out'.
+\openout5 = `slide_sexta.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 45.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 337.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 45.
-\symnumbers=\mathgroup6
-\sympureletters=\mathgroup7
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 337.
+\symnumbers=\mathgroup11
+\sympureletters=\mathgroup12
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 45.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 45.
+(Font)                  OT1/cmss/m/n --> T1/ptm/m/n on input line 337.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 337.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 45.
+(Font)                  OT1/cmr/bx/n --> T1/phv/bx/n on input line 337.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 45.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 45.
+(Font)                  OT1/cmr/bx/n --> T1/phv/bx/n on input line 337.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 337.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 45.
+(Font)                  OT1/cmss/m/n --> T1/phv/m/n on input line 337.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 45.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 45.
+(Font)                  OT1/cmss/bx/n --> T1/phv/m/n on input line 337.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 337.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 45.
+(Font)                  OT1/cmr/m/it --> T1/phv/m/it on input line 337.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 45.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 45.
+(Font)                  OT1/cmr/bx/it --> T1/phv/m/it on input line 337.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 337.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 45.
+(Font)                  OT1/cmtt/m/n --> T1/pcr/m/n on input line 337.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 45.
+(Font)                  OT1/cmtt/m/n --> T1/pcr/m/n on input line 337.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 45.
+(Font)                  T1/phv/m/n --> T1/phv/bx/n on input line 337.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 45.
+(Font)                  T1/phv/m/it --> T1/phv/bx/it on input line 337.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmr/bx/n on input line 45.
+(Font)                  OT1/cmss/bx/n --> T1/ptm/bx/n on input line 337.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/bx/n on input line 45.
+(Font)                  T1/phv/bx/n --> T1/phv/bx/n on input line 337.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 45.
+(Font)                  T1/phv/m/n --> T1/phv/bx/n on input line 337.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 45.
+(Font)                  T1/phv/m/it --> T1/phv/bx/it on input line 337.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/bx/n on input line 45.
-LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 45.
-LaTeX Font Info:    Overwriting symbol font `pureletters' in version `normal'
-(Font)                  OT1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 4
-5.
-LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/cmss/bx/it --> OT1/mathkerncmss/m/sl on input line 
-45.
-LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on inp
-ut line 45.
+(Font)                  T1/pcr/m/n --> T1/pcr/bx/n on input line 337.
 
 (/usr/share/texlive/texmf-dist/tex/latex/translator/translator-basic-dictionary
 -English.dict
@@ -1032,261 +1408,312 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count196
- (./slide.nav)
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2015/06/04 1.6 listings language file
-) [1
+\c@lstlisting=\count280
+ (./slide_sexta.nav)
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 338.
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 338.
+ [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./slide.toc) [2
-
-] [3
-
-] [4
+] (./slide_sexta.toc) [2
 
 ]
-LaTeX Font Info:    Try loading font information for U+msa on input line 103.
+LaTeX Font Info:    Try loading font information for U+msa on input line 369.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 103.
+LaTeX Font Info:    Try loading font information for U+msb on input line 369.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for OT1+mathkerncmss on input 
-line 103.
+LaTeX Font Info:    Try loading font information for U+stmry on input line 369.
 
-(/usr/share/texlive/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
-File: ot1mathkerncmss.fd 2013/03/27 Fontinst v1.933 font definitions for OT1/ma
-thkerncmss.
+
+(/usr/share/texlive/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
+LaTeX Font Info:    Try loading font information for U+lasy on input line 369.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-[5
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 369.
+
+(/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+)
+LaTeX Font Info:    Try loading font information for U+esint on input line 369.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/esint/uesint.fd
+File: uesint.fd 
+)
+LaTeX Font Info:    Try loading font information for U+wasy on input line 369.
+
+(/usr/share/texlive/texmf-dist/tex/latex/wasysym/uwasy.fd
+File: uwasy.fd 2003/10/30 v2.0 Wasy-2 symbol font definitions
+)
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10.95> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 369.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <8> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 369.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <6> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 369.
+ [3
+
+] [4
+
+] [5
 
 ] [6
 
-] [7
+]
+[7
 
 ] [8
 
 ] [9
 
+] [10
+
 ]
-<figs/simulation_figure.jpg, id=330, 501.875pt x 255.95625pt>
+<figs/klil3a.png, id=146, 433.62pt x 289.08pt>
+File: figs/klil3a.png Graphic file (type png)
+<use figs/klil3a.png>
+Package pdftex.def Info: figs/klil3a.png  used on input line 447.
+(pdftex.def)             Requested size: 154.03183pt x 102.68806pt.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 447.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <5> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 447.
+<figs/klil3b.png, id=148, 433.62pt x 289.08pt>
+File: figs/klil3b.png Graphic file (type png)
+<use figs/klil3b.png>
+Package pdftex.def Info: figs/klil3b.png  used on input line 447.
+(pdftex.def)             Requested size: 154.03183pt x 102.68806pt.
+ [11
+
+ <./figs/klil3a.png> <./figs/klil3b.png>] [12
+
+] [13
+
+]
+[14
+
+]
+<figs/reinforce_x_reparameterization.png, id=183, 755.82375pt x 274.02374pt>
+File: figs/reinforce_x_reparameterization.png Graphic file (type png)
+<use figs/reinforce_x_reparameterization.png>
+Package pdftex.def Info: figs/reinforce_x_reparameterization.png  used on input
+ line 511.
+(pdftex.def)             Requested size: 330.45294pt x 119.80544pt.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 511.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+)
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 511.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <7> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 511.
+ [15
+
+ <./figs/reinforce_x_reparameterization.png>]
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <8> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 530.
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <6> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 530.
+ [16
+
+] [17
+
+] [18
+
+] [19
+
+]
+<figs/simulation_figure.jpg, id=220, 501.875pt x 255.95625pt>
 File: figs/simulation_figure.jpg Graphic file (type jpg)
 <use figs/simulation_figure.jpg>
-Package pdftex.def Info: figs/simulation_figure.jpg  used on input line 143.
+Package pdftex.def Info: figs/simulation_figure.jpg  used on input line 611.
 (pdftex.def)             Requested size: 160.6722pt x 81.94481pt.
- [10
+ [20
 
  <./figs/simulation_figure.jpg>]
 File: figs/simulation_figure.jpg Graphic file (type jpg)
 <use figs/simulation_figure.jpg>
-Package pdftex.def Info: figs/simulation_figure.jpg  used on input line 143.
+Package pdftex.def Info: figs/simulation_figure.jpg  used on input line 611.
 (pdftex.def)             Requested size: 160.6722pt x 81.94481pt.
- [11
+ [21
 
 ]
 File: figs/simulation_figure.jpg Graphic file (type jpg)
 <use figs/simulation_figure.jpg>
-Package pdftex.def Info: figs/simulation_figure.jpg  used on input line 143.
+Package pdftex.def Info: figs/simulation_figure.jpg  used on input line 611.
 (pdftex.def)             Requested size: 160.6722pt x 81.94481pt.
- [12
-
-]
-<figs/diagram1a.png, id=413, 261.97874pt x 342.27875pt>
-File: figs/diagram1a.png Graphic file (type png)
-<use figs/diagram1a.png>
-Package pdftex.def Info: figs/diagram1a.png  used on input line 153.
-(pdftex.def)             Requested size: 130.99704pt x 171.14764pt.
- [13
-
- <./figs/diagram1a.png>]
-<figs/exampleintro1.png, id=444, 433.62pt x 289.08pt>
-File: figs/exampleintro1.png Graphic file (type png)
-<use figs/exampleintro1.png>
-Package pdftex.def Info: figs/exampleintro1.png  used on input line 176.
-(pdftex.def)             Requested size: 239.60567pt x 159.73994pt.
- [14
-
- <./figs/exampleintro1.png>]
-<figs/exampleintro2.png, id=473, 433.62pt x 289.08pt>
-File: figs/exampleintro2.png Graphic file (type png)
-<use figs/exampleintro2.png>
-Package pdftex.def Info: figs/exampleintro2.png  used on input line 176.
-(pdftex.def)             Requested size: 239.60567pt x 159.73994pt.
- [15
-
- <./figs/exampleintro2.png>]
-<figs/exampleintro3.png, id=503, 433.62pt x 289.08pt>
-File: figs/exampleintro3.png Graphic file (type png)
-<use figs/exampleintro3.png>
-Package pdftex.def Info: figs/exampleintro3.png  used on input line 176.
-(pdftex.def)             Requested size: 239.60567pt x 159.73994pt.
-
-[16
-
- <./figs/exampleintro3.png>]
-<figs/exampleintro4.png, id=532, 433.62pt x 289.08pt>
-File: figs/exampleintro4.png Graphic file (type png)
-<use figs/exampleintro4.png>
-Package pdftex.def Info: figs/exampleintro4.png  used on input line 176.
-(pdftex.def)             Requested size: 239.60567pt x 159.73994pt.
- [17
-
- <./figs/exampleintro4.png>]
-<figs/exampleintro5.png, id=561, 433.62pt x 289.08pt>
-File: figs/exampleintro5.png Graphic file (type png)
-<use figs/exampleintro5.png>
-Package pdftex.def Info: figs/exampleintro5.png  used on input line 176.
-(pdftex.def)             Requested size: 239.60567pt x 159.73994pt.
- [18
-
- <./figs/exampleintro5.png>]
-<figs/exampleintro6.png, id=590, 433.62pt x 289.08pt>
-File: figs/exampleintro6.png Graphic file (type png)
-<use figs/exampleintro6.png>
-Package pdftex.def Info: figs/exampleintro6.png  used on input line 176.
-(pdftex.def)             Requested size: 239.60567pt x 159.73994pt.
- [19
-
- <./figs/exampleintro6.png>]
-<figs/exampleintro7.png, id=621, 433.62pt x 289.08pt>
-File: figs/exampleintro7.png Graphic file (type png)
-<use figs/exampleintro7.png>
-Package pdftex.def Info: figs/exampleintro7.png  used on input line 176.
-(pdftex.def)             Requested size: 239.60567pt x 159.73994pt.
- [20
-
- <./figs/exampleintro7.png>]
-<figs/exampleintro8.png, id=650, 433.62pt x 289.08pt>
-File: figs/exampleintro8.png Graphic file (type png)
-<use figs/exampleintro8.png>
-Package pdftex.def Info: figs/exampleintro8.png  used on input line 176.
-(pdftex.def)             Requested size: 239.60567pt x 159.73994pt.
- [21
-
- <./figs/exampleintro8.png>]
-<figs/exampleintro9.png, id=679, 433.62pt x 289.08pt>
-File: figs/exampleintro9.png Graphic file (type png)
-<use figs/exampleintro9.png>
-Package pdftex.def Info: figs/exampleintro9.png  used on input line 176.
-(pdftex.def)             Requested size: 239.60567pt x 159.73994pt.
  [22
 
- <./figs/exampleintro9.png>]
-<figs/exampleintro10.png, id=709, 433.62pt x 289.08pt>
-File: figs/exampleintro10.png Graphic file (type png)
-<use figs/exampleintro10.png>
-Package pdftex.def Info: figs/exampleintro10.png  used on input line 176.
-(pdftex.def)             Requested size: 239.60567pt x 159.73994pt.
+]
+<figs/diagram1a.png, id=245, 261.97874pt x 342.27875pt>
+File: figs/diagram1a.png Graphic file (type png)
+<use figs/diagram1a.png>
+Package pdftex.def Info: figs/diagram1a.png  used on input line 621.
+(pdftex.def)             Requested size: 130.99704pt x 171.14764pt.
  [23
 
- <./figs/exampleintro10.png>]
-<figs/exampleintro11.png, id=738, 433.62pt x 289.08pt>
-File: figs/exampleintro11.png Graphic file (type png)
-<use figs/exampleintro11.png>
-Package pdftex.def Info: figs/exampleintro11.png  used on input line 176.
+ <./figs/diagram1a.png>]
+<figs/exampleintro1.png, id=253, 433.62pt x 289.08pt>
+File: figs/exampleintro1.png Graphic file (type png)
+<use figs/exampleintro1.png>
+Package pdftex.def Info: figs/exampleintro1.png  used on input line 645.
 (pdftex.def)             Requested size: 239.60567pt x 159.73994pt.
  [24
 
- <./figs/exampleintro11.png>]
-<figs/exampleintro12.png, id=767, 433.62pt x 289.08pt>
-File: figs/exampleintro12.png Graphic file (type png)
-<use figs/exampleintro12.png>
-Package pdftex.def Info: figs/exampleintro12.png  used on input line 176.
+ <./figs/exampleintro1.png>]
+<figs/exampleintro2.png, id=261, 433.62pt x 289.08pt>
+File: figs/exampleintro2.png Graphic file (type png)
+<use figs/exampleintro2.png>
+Package pdftex.def Info: figs/exampleintro2.png  used on input line 645.
 (pdftex.def)             Requested size: 239.60567pt x 159.73994pt.
- [25
+[25
 
- <./figs/exampleintro12.png>]
-<figs/exampleintro13.png, id=797, 433.62pt x 289.08pt>
-File: figs/exampleintro13.png Graphic file (type png)
-<use figs/exampleintro13.png>
-Package pdftex.def Info: figs/exampleintro13.png  used on input line 176.
+ <./figs/exampleintro2.png>]
+<figs/exampleintro3.png, id=270, 433.62pt x 289.08pt>
+File: figs/exampleintro3.png Graphic file (type png)
+<use figs/exampleintro3.png>
+Package pdftex.def Info: figs/exampleintro3.png  used on input line 645.
 (pdftex.def)             Requested size: 239.60567pt x 159.73994pt.
  [26
 
- <./figs/exampleintro13.png>]
-<figs/exampleintro14.png, id=826, 433.62pt x 289.08pt>
-File: figs/exampleintro14.png Graphic file (type png)
-<use figs/exampleintro14.png>
-Package pdftex.def Info: figs/exampleintro14.png  used on input line 176.
+ <./figs/exampleintro3.png>]
+<figs/exampleintro4.png, id=278, 433.62pt x 289.08pt>
+File: figs/exampleintro4.png Graphic file (type png)
+<use figs/exampleintro4.png>
+Package pdftex.def Info: figs/exampleintro4.png  used on input line 645.
 (pdftex.def)             Requested size: 239.60567pt x 159.73994pt.
  [27
 
- <./figs/exampleintro14.png>]
-[28
+ <./figs/exampleintro4.png>]
+<figs/exampleintro5.png, id=286, 433.62pt x 289.08pt>
+File: figs/exampleintro5.png Graphic file (type png)
+<use figs/exampleintro5.png>
+Package pdftex.def Info: figs/exampleintro5.png  used on input line 645.
+(pdftex.def)             Requested size: 239.60567pt x 159.73994pt.
+ [28
 
-] [29
+ <./figs/exampleintro5.png>]
+<figs/exampleintro6.png, id=294, 433.62pt x 289.08pt>
+File: figs/exampleintro6.png Graphic file (type png)
+<use figs/exampleintro6.png>
+Package pdftex.def Info: figs/exampleintro6.png  used on input line 645.
+(pdftex.def)             Requested size: 239.60567pt x 159.73994pt.
+ [29
 
-] [30
+ <./figs/exampleintro6.png>]
+<figs/exampleintro7.png, id=302, 433.62pt x 289.08pt>
+File: figs/exampleintro7.png Graphic file (type png)
+<use figs/exampleintro7.png>
+Package pdftex.def Info: figs/exampleintro7.png  used on input line 645.
+(pdftex.def)             Requested size: 239.60567pt x 159.73994pt.
+ [30
 
-]
-<figs/gprex1a.png, id=939, 433.62pt x 289.08pt>
-File: figs/gprex1a.png Graphic file (type png)
-<use figs/gprex1a.png>
-Package pdftex.def Info: figs/gprex1a.png  used on input line 222.
-(pdftex.def)             Requested size: 171.14764pt x 114.09932pt.
-<figs/gprex1b.png, id=940, 433.62pt x 289.08pt>
-File: figs/gprex1b.png Graphic file (type png)
-<use figs/gprex1b.png>
-Package pdftex.def Info: figs/gprex1b.png  used on input line 222.
-(pdftex.def)             Requested size: 171.14764pt x 114.09932pt.
+ <./figs/exampleintro7.png>]
+<figs/exampleintro8.png, id=310, 433.62pt x 289.08pt>
+File: figs/exampleintro8.png Graphic file (type png)
+<use figs/exampleintro8.png>
+Package pdftex.def Info: figs/exampleintro8.png  used on input line 645.
+(pdftex.def)             Requested size: 239.60567pt x 159.73994pt.
  [31
 
- <./figs/gprex1a.png> <./figs/gprex1b.png>] [32
+ <./figs/exampleintro8.png>]
+<figs/exampleintro9.png, id=320, 433.62pt x 289.08pt>
+File: figs/exampleintro9.png Graphic file (type png)
+<use figs/exampleintro9.png>
+Package pdftex.def Info: figs/exampleintro9.png  used on input line 645.
+(pdftex.def)             Requested size: 239.60567pt x 159.73994pt.
+ [32
 
-] [33
+ <./figs/exampleintro9.png>]
+<figs/exampleintro10.png, id=328, 433.62pt x 289.08pt>
+File: figs/exampleintro10.png Graphic file (type png)
+<use figs/exampleintro10.png>
+Package pdftex.def Info: figs/exampleintro10.png  used on input line 645.
+(pdftex.def)             Requested size: 239.60567pt x 159.73994pt.
+ [33
+
+ <./figs/exampleintro10.png>]
+<figs/exampleintro11.png, id=336, 433.62pt x 289.08pt>
+File: figs/exampleintro11.png Graphic file (type png)
+<use figs/exampleintro11.png>
+Package pdftex.def Info: figs/exampleintro11.png  used on input line 645.
+(pdftex.def)             Requested size: 239.60567pt x 159.73994pt.
+ [34
+
+ <./figs/exampleintro11.png>]
+<figs/exampleintro12.png, id=344, 433.62pt x 289.08pt>
+File: figs/exampleintro12.png Graphic file (type png)
+<use figs/exampleintro12.png>
+Package pdftex.def Info: figs/exampleintro12.png  used on input line 645.
+(pdftex.def)             Requested size: 239.60567pt x 159.73994pt.
+ [35
+
+ <./figs/exampleintro12.png>]
+<figs/exampleintro13.png, id=352, 433.62pt x 289.08pt>
+File: figs/exampleintro13.png Graphic file (type png)
+<use figs/exampleintro13.png>
+Package pdftex.def Info: figs/exampleintro13.png  used on input line 645.
+(pdftex.def)             Requested size: 239.60567pt x 159.73994pt.
+ [36
+
+ <./figs/exampleintro13.png>]
+<figs/exampleintro14.png, id=360, 433.62pt x 289.08pt>
+File: figs/exampleintro14.png Graphic file (type png)
+<use figs/exampleintro14.png>
+Package pdftex.def Info: figs/exampleintro14.png  used on input line 645.
+(pdftex.def)             Requested size: 239.60567pt x 159.73994pt.
+
+[37
+
+ <./figs/exampleintro14.png>]
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 662.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd
+File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
+) [38
+
+] [39
 
 ]
-[34
+<figs/gprex1a.png, id=381, 433.62pt x 289.08pt>
+File: figs/gprex1a.png Graphic file (type png)
+<use figs/gprex1a.png>
+Package pdftex.def Info: figs/gprex1a.png  used on input line 692.
+(pdftex.def)             Requested size: 171.14764pt x 114.09932pt.
+<figs/gprex1b.png, id=382, 433.62pt x 289.08pt>
+File: figs/gprex1b.png Graphic file (type png)
+<use figs/gprex1b.png>
+Package pdftex.def Info: figs/gprex1b.png  used on input line 692.
+(pdftex.def)             Requested size: 171.14764pt x 114.09932pt.
+ [40
 
-] [35
+ <./figs/gprex1a.png> <./figs/gprex1b.png>] [41
 
-] [36
-
-] [37
-
-]
-<figs/exbmc.png, id=1139, 433.62pt x 289.08pt>
-File: figs/exbmc.png Graphic file (type png)
-<use figs/exbmc.png>
-Package pdftex.def Info: figs/exbmc.png  used on input line 287.
-(pdftex.def)             Requested size: 273.83728pt x 182.56686pt.
- [38
-
- <./figs/exbmc.png>] [39
-
-] [40
-
-]
-<figs/klil3a.png, id=1224, 433.62pt x 289.08pt>
-File: figs/klil3a.png Graphic file (type png)
-<use figs/klil3a.png>
-Package pdftex.def Info: figs/klil3a.png  used on input line 336.
-(pdftex.def)             Requested size: 154.03183pt x 102.68806pt.
-<figs/klil3b.png, id=1225, 433.62pt x 289.08pt>
-File: figs/klil3b.png Graphic file (type png)
-<use figs/klil3b.png>
-Package pdftex.def Info: figs/klil3b.png  used on input line 336.
-(pdftex.def)             Requested size: 154.03183pt x 102.68806pt.
- [41
-
- <./figs/klil3a.png> <./figs/klil3b.png>] [42
+] [42
 
 ] [43
 
-] [44
-
-] [45
-
 ]
+<figs/exbmc.png, id=412, 433.62pt x 289.08pt>
+File: figs/exbmc.png Graphic file (type png)
+<use figs/exbmc.png>
+Package pdftex.def Info: figs/exbmc.png  used on input line 755.
+(pdftex.def)             Requested size: 273.83728pt x 182.56686pt.
+ [44
 
-LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <10.95> not available
-(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 439.
+ <./figs/exbmc.png>]
+[45
 
-[46
+] [46
 
 ] [47
 
@@ -1299,63 +1726,391 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <10.95> not available
 ] [51
 
 ]
-<figs/targetexil1a.png, id=1535, 433.62pt x 289.08pt>
+\openout4 = `slide_sexta.vrb'.
+
+ (./slide_sexta.vrb
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <5> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 7.
+LaTeX Font Info:    Try loading font information for TS1+phv on input line 9.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1phv.fd
+File: ts1phv.fd 2001/06/04 scalable font definitions for TS1/phv.
+)) [52
+
+]
+<figs/examplebvbmctrue.png, id=470, 425.59pt x 281.05pt>
+File: figs/examplebvbmctrue.png Graphic file (type png)
+<use figs/examplebvbmctrue.png>
+Package pdftex.def Info: figs/examplebvbmctrue.png  used on input line 947.
+(pdftex.def)             Requested size: 171.14764pt x 113.02267pt.
+<figs/examplebvbmcestimated.png, id=471, 425.59pt x 281.05pt>
+File: figs/examplebvbmcestimated.png Graphic file (type png)
+<use figs/examplebvbmcestimated.png>
+Package pdftex.def Info: figs/examplebvbmcestimated.png  used on input line 947
+.
+(pdftex.def)             Requested size: 171.14764pt x 113.02267pt.
+ [53
+
+ <./figs/examplebvbmctrue.png> <./figs/examplebvbmcestimated.png>]
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 962.
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <7> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 962.
+ [54
+
+]
+<figs/targetexil1a.png, id=490, 433.62pt x 289.08pt>
 File: figs/targetexil1a.png Graphic file (type png)
 <use figs/targetexil1a.png>
-Package pdftex.def Info: figs/targetexil1a.png  used on input line 558.
+Package pdftex.def Info: figs/targetexil1a.png  used on input line 975.
 (pdftex.def)             Requested size: 205.37926pt x 136.92184pt.
- [52
+ [55
 
- <./figs/targetexil1a.png>] [53
+ <./figs/targetexil1a.png>]pdfTeX warning (ext4): destination with the same ide
+ntifier (name{fig11a}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.990 \end{frame}
+                 
+<figs/dmcil1fk52.png, id=498, 433.62pt x 289.08pt>
+File: figs/dmcil1fk52.png Graphic file (type png)
+<use figs/dmcil1fk52.png>
+Package pdftex.def Info: figs/dmcil1fk52.png  used on input line 990.
+(pdftex.def)             Requested size: 171.14764pt x 114.09932pt.
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <9> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 990.
+pdfTeX warning (ext4): destination with the same identifier (name{fig11b}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.990 \end{frame}
+                 
+<figs/convgraphil1fk52.png, id=499, 433.62pt x 289.08pt>
+File: figs/convgraphil1fk52.png Graphic file (type png)
+<use figs/convgraphil1fk52.png>
+Package pdftex.def Info: figs/convgraphil1fk52.png  used on input line 990.
+(pdftex.def)             Requested size: 171.14764pt x 114.09932pt.
+ [56
+
+ <./figs/dmcil1fk52.png> <./figs/convgraphil1fk52.png>]pdfTeX warning (ext4): d
+estination with the same identifier (name{fig11a}) has been already used, dupli
+cate ignored
+<to be read again> 
+                   \relax 
+l.1004 \end{frame}
+                  
+<figs/dmcil1fkSQE.png, id=509, 433.62pt x 289.08pt>
+File: figs/dmcil1fkSQE.png Graphic file (type png)
+<use figs/dmcil1fkSQE.png>
+Package pdftex.def Info: figs/dmcil1fkSQE.png  used on input line 1004.
+(pdftex.def)             Requested size: 171.14764pt x 114.09932pt.
+pdfTeX warning (ext4): destination with the same identifier (name{fig11b}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1004 \end{frame}
+                  
+<figs/convgraphil1fkSQE.png, id=510, 433.62pt x 289.08pt>
+File: figs/convgraphil1fkSQE.png Graphic file (type png)
+<use figs/convgraphil1fkSQE.png>
+Package pdftex.def Info: figs/convgraphil1fkSQE.png  used on input line 1004.
+(pdftex.def)             Requested size: 171.14764pt x 114.09932pt.
+ [57
+
+ <./figs/dmcil1fkSQE.png> <./figs/convgraphil1fkSQE.png>]pdfTeX warning (ext4):
+ destination with the same identifier (name{fig11a}) has been already used, dup
+licate ignored
+<to be read again> 
+                   \relax 
+l.1018 \end{frame}
+                  
+<figs/dmcil1ati1.png, id=519, 433.62pt x 289.08pt>
+File: figs/dmcil1ati1.png Graphic file (type png)
+<use figs/dmcil1ati1.png>
+Package pdftex.def Info: figs/dmcil1ati1.png  used on input line 1018.
+(pdftex.def)             Requested size: 171.14764pt x 114.09932pt.
+pdfTeX warning (ext4): destination with the same identifier (name{fig11b}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1018 \end{frame}
+                  
+<figs/timegraphil1ati1.png, id=520, 433.62pt x 289.08pt>
+File: figs/timegraphil1ati1.png Graphic file (type png)
+<use figs/timegraphil1ati1.png>
+Package pdftex.def Info: figs/timegraphil1ati1.png  used on input line 1018.
+(pdftex.def)             Requested size: 171.14764pt x 114.09932pt.
+ [58
+
+ <./figs/dmcil1ati1.png> <./figs/timegraphil1ati1.png>]pdfTeX warning (ext4): d
+estination with the same identifier (name{fig11a}) has been already used, dupli
+cate ignored
+<to be read again> 
+                   \relax 
+l.1032 \end{frame}
+                  
+<figs/dmcil1ati10.png, id=529, 433.62pt x 289.08pt>
+File: figs/dmcil1ati10.png Graphic file (type png)
+<use figs/dmcil1ati10.png>
+Package pdftex.def Info: figs/dmcil1ati10.png  used on input line 1032.
+(pdftex.def)             Requested size: 171.14764pt x 114.09932pt.
+pdfTeX warning (ext4): destination with the same identifier (name{fig11b}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1032 \end{frame}
+                  
+<figs/timegraphil1ati10.png, id=530, 433.62pt x 289.08pt>
+File: figs/timegraphil1ati10.png Graphic file (type png)
+<use figs/timegraphil1ati10.png>
+Package pdftex.def Info: figs/timegraphil1ati10.png  used on input line 1032.
+(pdftex.def)             Requested size: 171.14764pt x 114.09932pt.
+ [59
+
+ <./figs/dmcil1ati10.png> <./figs/timegraphil1ati10.png>]pdfTeX warning (ext4):
+ destination with the same identifier (name{fig11a}) has been already used, dup
+licate ignored
+<to be read again> 
+                   \relax 
+l.1046 \end{frame}
+                  
+<figs/dmcil1ati1000.png, id=539, 433.62pt x 289.08pt>
+File: figs/dmcil1ati1000.png Graphic file (type png)
+<use figs/dmcil1ati1000.png>
+Package pdftex.def Info: figs/dmcil1ati1000.png  used on input line 1046.
+(pdftex.def)             Requested size: 171.14764pt x 114.09932pt.
+pdfTeX warning (ext4): destination with the same identifier (name{fig11b}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1046 \end{frame}
+                  
+<figs/timegraphil1ati1000.png, id=540, 433.62pt x 289.08pt>
+File: figs/timegraphil1ati1000.png Graphic file (type png)
+<use figs/timegraphil1ati1000.png>
+Package pdftex.def Info: figs/timegraphil1ati1000.png  used on input line 1046.
+
+(pdftex.def)             Requested size: 171.14764pt x 114.09932pt.
+ [60
+
+ <./figs/dmcil1ati1000.png> <./figs/timegraphil1ati1000.png>]pdfTeX warning (ex
+t4): destination with the same identifier (name{fig11a}) has been already used,
+ duplicate ignored
+<to be read again> 
+                   \relax 
+l.1060 \end{frame}
+                  
+<figs/dmcil1g_aq_prospective.png, id=549, 433.62pt x 289.08pt>
+File: figs/dmcil1g_aq_prospective.png Graphic file (type png)
+<use figs/dmcil1g_aq_prospective.png>
+Package pdftex.def Info: figs/dmcil1g_aq_prospective.png  used on input line 10
+60.
+(pdftex.def)             Requested size: 171.14764pt x 114.09932pt.
+pdfTeX warning (ext4): destination with the same identifier (name{fig11b}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1060 \end{frame}
+                  
+<figs/explopattern1g_aq_prospective.png, id=550, 433.62pt x 289.08pt>
+File: figs/explopattern1g_aq_prospective.png Graphic file (type png)
+<use figs/explopattern1g_aq_prospective.png>
+Package pdftex.def Info: figs/explopattern1g_aq_prospective.png  used on input 
+line 1060.
+(pdftex.def)             Requested size: 171.14764pt x 114.09932pt.
+ [61
+
+ <./figs/dmcil1g_aq_prospective.png> <./figs/explopattern1g_aq_prospective.png>
+]pdfTeX warning (ext4): destination with the same identifier (name{fig11a}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1075 \end{frame}
+                  
+<figs/dmcil1g_aq_mmlt.png, id=560, 433.62pt x 289.08pt>
+File: figs/dmcil1g_aq_mmlt.png Graphic file (type png)
+<use figs/dmcil1g_aq_mmlt.png>
+Package pdftex.def Info: figs/dmcil1g_aq_mmlt.png  used on input line 1075.
+(pdftex.def)             Requested size: 171.14764pt x 114.09932pt.
+pdfTeX warning (ext4): destination with the same identifier (name{fig11b}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1075 \end{frame}
+                  
+<figs/explopattern1g_aq_mmlt.png, id=561, 433.62pt x 289.08pt>
+File: figs/explopattern1g_aq_mmlt.png Graphic file (type png)
+<use figs/explopattern1g_aq_mmlt.png>
+Package pdftex.def Info: figs/explopattern1g_aq_mmlt.png  used on input line 10
+75.
+(pdftex.def)             Requested size: 171.14764pt x 114.09932pt.
+ [62
+
+ <./figs/dmcil1g_aq_mmlt.png> <./figs/explopattern1g_aq_mmlt.png>] [63
+
+] [64
+
+] [65
+
+]pdfTeX warning (ext4): destination with the same identifier (name{fig11a}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1144 \end{frame}
+                  
+<figs/ex1b_mean.png, id=588, 433.62pt x 289.08pt>
+File: figs/ex1b_mean.png Graphic file (type png)
+<use figs/ex1b_mean.png>
+Package pdftex.def Info: figs/ex1b_mean.png  used on input line 1144.
+(pdftex.def)             Requested size: 171.14764pt x 114.09932pt.
+pdfTeX warning (ext4): destination with the same identifier (name{fig11b}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1144 \end{frame}
+                  
+<figs/ex1b_cov.png, id=589, 433.62pt x 289.08pt>
+File: figs/ex1b_cov.png Graphic file (type png)
+<use figs/ex1b_cov.png>
+Package pdftex.def Info: figs/ex1b_cov.png  used on input line 1144.
+(pdftex.def)             Requested size: 171.14764pt x 114.09932pt.
+ [66
+
+ <./figs/ex1b_mean.png> <./figs/ex1b_cov.png>]pdfTeX warning (ext4): destinatio
+n with the same identifier (name{fig11a}) has been already used, duplicate igno
+red
+<to be read again> 
+                   \relax 
+l.1158 \end{frame}
+                  
+<figs/ex4b_mean.png, id=598, 433.62pt x 289.08pt>
+File: figs/ex4b_mean.png Graphic file (type png)
+<use figs/ex4b_mean.png>
+Package pdftex.def Info: figs/ex4b_mean.png  used on input line 1158.
+(pdftex.def)             Requested size: 171.14764pt x 114.09932pt.
+pdfTeX warning (ext4): destination with the same identifier (name{fig11b}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1158 \end{frame}
+                  
+<figs/ex4b_cov.png, id=599, 433.62pt x 289.08pt>
+File: figs/ex4b_cov.png Graphic file (type png)
+<use figs/ex4b_cov.png>
+Package pdftex.def Info: figs/ex4b_cov.png  used on input line 1158.
+(pdftex.def)             Requested size: 171.14764pt x 114.09932pt.
+ [67
+
+ <./figs/ex4b_mean.png> <./figs/ex4b_cov.png>]pdfTeX warning (ext4): destinatio
+n with the same identifier (name{fig11a}) has been already used, duplicate igno
+red
+<to be read again> 
+                   \relax 
+l.1171 \end{frame}
+                  
+<figs/ex5b_mean.png, id=609, 433.62pt x 289.08pt>
+File: figs/ex5b_mean.png Graphic file (type png)
+<use figs/ex5b_mean.png>
+Package pdftex.def Info: figs/ex5b_mean.png  used on input line 1171.
+(pdftex.def)             Requested size: 171.14764pt x 114.09932pt.
+pdfTeX warning (ext4): destination with the same identifier (name{fig11b}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1171 \end{frame}
+                  
+<figs/ex5b_cov.png, id=610, 433.62pt x 289.08pt>
+File: figs/ex5b_cov.png Graphic file (type png)
+<use figs/ex5b_cov.png>
+Package pdftex.def Info: figs/ex5b_cov.png  used on input line 1171.
+(pdftex.def)             Requested size: 171.14764pt x 114.09932pt.
+ [68
+
+ <./figs/ex5b_mean.png> <./figs/ex5b_cov.png>] [69
+
+]
+Overfull \vbox (5.5707pt too high) detected at line 1223
+ []
+
+[70
+
+] [71
+
+] [72
+
+]
+<figs/sourceproblemhistogramsvb.png, id=644, 712.6625pt x 714.67pt>
+File: figs/sourceproblemhistogramsvb.png Graphic file (type png)
+<use figs/sourceproblemhistogramsvb.png>
+Package pdftex.def Info: figs/sourceproblemhistogramsvb.png  used on input line
+ 1259.
+(pdftex.def)             Requested size: 205.37926pt x 205.9513pt.
+ [73
+
+ <./figs/sourceproblemhistogramsvb.png>]
+<figs/sourceproblemhistogramsemcee.png, id=653, 712.6625pt x 714.67pt>
+File: figs/sourceproblemhistogramsemcee.png Graphic file (type png)
+<use figs/sourceproblemhistogramsemcee.png>
+Package pdftex.def Info: figs/sourceproblemhistogramsemcee.png  used on input l
+ine 1267.
+(pdftex.def)             Requested size: 205.37926pt x 205.9513pt.
+ [74
+
+ <./figs/sourceproblemhistogramsemcee.png>] [75
 
 ]
 \tf@nav=\write6
-\openout6 = `slide.nav'.
+\openout6 = `slide_sexta.nav'.
 
 \tf@toc=\write7
-\openout7 = `slide.toc'.
+\openout7 = `slide_sexta.toc'.
 
 \tf@snm=\write8
-\openout8 = `slide.snm'.
+\openout8 = `slide_sexta.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 565.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 565.
- (./slide.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 565.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 565.
-Package rerunfilecheck Info: File `slide.out' has not changed.
-(rerunfilecheck)             Checksum: 22A648D44C1D7FDFED1600DAEF35A8A4;374.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1283.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1283.
+ (./slide_sexta.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1283.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1283.
+
+Package rerunfilecheck Info: File `slide_sexta.out' has not changed.
+(rerunfilecheck)             Checksum: B8D40502192CD22A3076589322E2A977;434.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 23923 strings out of 492982
- 456216 string characters out of 6134897
- 546458 words of memory out of 5000000
- 26825 multiletter control sequences out of 15000+600000
- 17014 words of font info for 61 fonts, out of 8000000 for 9000
+ 26727 strings out of 492982
+ 494228 string characters out of 6134897
+ 786081 words of memory out of 5000000
+ 29422 multiletter control sequences out of 15000+600000
+ 92766 words of font info for 135 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 56i,25n,61p,806b,882s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmss9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss
-i8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on slide.pdf (53 pages, 763639 bytes).
+ 56i,25n,61p,812b,1391s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmss9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
+10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/ur
+w/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/u
+hvro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
+Output written on slide_sexta.pdf (75 pages, 1196605 bytes).
 PDF statistics:
- 1681 PDF objects out of 1728 (max. 8388607)
- 1531 compressed objects within 16 object streams
- 120 named destinations out of 1000 (max. 500000)
- 269 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 769 PDF objects out of 1000 (max. 8388607)
+ 559 compressed objects within 6 object streams
+ 171 named destinations out of 1000 (max. 500000)
+ 402 words of extra memory for PDF output out of 10000 (max. 10000000)
 

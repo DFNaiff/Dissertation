@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import sys
-sys.path.insert(0,"../../src2")
+sys.path.insert(0,"../../src")
 import math
 import functools
 import time
@@ -13,6 +13,7 @@ from mpl_toolkits.mplot3d import Axes3D
 import emcee
 import pandas as pd
 import seaborn as sns
+import pymc3
 
 from source_1d_likelihood_fn import compute_log_likelihood
 
@@ -50,7 +51,6 @@ counter=0
 def logjoint_emcee(x):
     global counter
     counter += 1
-    print(counter)
     return logjoint_np(x)
 
 #%%
@@ -72,7 +72,12 @@ samples[:,1] = sigmoid(samples[:,1],b=0.4)
 samples[:,2] = exp(samples[:,2])
 samples[:,3] = exp(samples[:,3])
 
-names = [r"$x_0$",r"$t_s$",r"$q_0$",r"\rho"]
+for i in range(4):
+    print("Data %i"%i)
+    mean = samples[:,i].mean()
+    print(pymc3.stats.hpd(samples[:,i],0.3))
+
+names = [r"$x_0$",r"$t_s$",r"$q_0$",r"$\rho$"]
 datadict = dict([(names[i],samples[:,i]) for i in range(len(names))])
 dataframe = pd.DataFrame(datadict)
 

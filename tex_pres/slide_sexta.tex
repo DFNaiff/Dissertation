@@ -325,10 +325,10 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\title{Boosted Variational Inference via Bayesian Monte Carlo}
-\author[Danilo Naiff]{{{\bf \large Danilo de Freitas Naiff} \vspace{0.75cm} \\{\bf IM-UFRJ}} \\ \vspace{0.8cm}}
+\title{Variational Inference and Bayesian Monte Carlo}
+\author[Danilo Naiff]{{{\bf \large Danilo de Freitas Naiff} \vspace{0.75cm} \\{\bf NIDF-UFRJ}} \\ \vspace{0.8cm}}
 %\institute{\Large AIMS 2016 - Orlando}
-\date{Sept. 23nd 2019}
+\date{Oct. 18nd 2019}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -350,7 +350,7 @@
 Objective: update knowledge of parameter $\theta$ given data $\mathcal{D}$.
 \pause
 
-Building blocks
+Probabilistic model $M$
 \begin{itemize}
 \item Prior probability $p(\theta)$
 \item Likelihood $p(\mathcal{D}|\theta)$
@@ -368,7 +368,32 @@ Using posterior probability:
 \end{block}
 \end{frame}
 
-
+\begin{frame}{}
+\begin{block}{Bayesian decision theory}
+To use posterior probabilities to make decisions, formally one requires a loss function $L : \Theta \times \mathcal{A} \to \mathbb{R}^+$. Optimal decision:
+\begin{equation*}\label{generalloss}
+a^* = \argmin_{a \in \mathcal{A}} \int_\Theta L(\theta,a) p(\theta|\mathcal{D},M) d \theta,
+\end{equation*}
+Considering estimation as decision:
+\begin{equation*}
+\hat{\theta} = \argmin_{\tilde{\theta}} \int L(\theta,\tilde{\theta}) p(\theta|\mathcal{D},M) d \theta
+\end{equation*}
+For some losses:
+\begin{itemize}
+	\item The $l_2$ (quadratic) loss $L(\theta,\tilde{\theta}) = ||\theta - \tilde{\theta}||_2^2$, for which $\hat{\theta} = \Ev[\theta|\mathcal{D},M]$
+	\item The $l_1$ (absolute) loss $L(\theta,\tilde{\theta}) = ||\theta - \tilde{\theta}||_1$, for which, at each coordinate $i$, $\hat{\theta}_i = \text{median}(\theta_i|\mathcal{D},M)$.
+\end{itemize}
+\end{block}
+\end{frame}
+\begin{frame}{}
+\begin{block}{Model selection}
+Obviously, we don't know in principle which model is correct. So we must choose between models.
+\begin{equation*}\label{modelselectionobjective}
+\hat{M} = \argmax_{M \in \mathcal{M}} p(\mathcal{D} | M) = \argmax_{M \in \mathcal{M}} \int p(\mathcal{D} | \theta_M, M) p(\theta_M | M) d\theta_M.
+\end{equation*}
+Model selection in Bayesian theory is interesting, since it displays the Occam's razor effect.
+\end{block}
+\end{frame}
 
 \begin{frame}{}
 \begin{block}{Approximate inference}
@@ -384,12 +409,188 @@ p(\theta|\mathcal{D}) \approx q(\theta), \quad \langle f(\theta) \rangle \approx
 \end{equation*}
 \end{itemize}
 
-\pause
-\begin{block}{}
-\centering{Usual methods demands many evaluations of $p(\mathcal{D}|\theta) p(\theta)$. However, \textit{this is not always feasible.}}
+\end{block}
+\end{frame}
+
+\section{Variational Inference}
+\begin{frame}{}
+\begin{block}{Approximating posteriors}
+	\begin{equation*}
+	p(\theta|\mathcal{D}) = g(\theta) \approx q(\theta;\lambda)
+	\end{equation*}
+	Choosing $q$: minimizing some measure of dissimilarity. The family $q(\theta;\lambda)$ must be easy to treat, in order for the approximation to be useful.
+	
+	Variational inference: uses $D_{KL}(q(\cdot;\lambda)||g)$ for measure of dissimilarity
+	\begin{equation*}
+	D_{KL}(q||g) = -\int \log \frac{p(\theta)}{q(\theta)} q(\theta) d\theta
+	\end{equation*}
+	
+\end{block}
+\begin{block}{$D_{KL}(q||g)$ vs $D_{KL}(g||q)$}
+	$D_{KL}(q||g) \geq 0$, $D_{KL}(q||g) = 0 \iff q=g$, but $D_{KL}(q||g) \neq D_{KL}(g||q)$. 
+	Then, KL divergence minimization gives two different algorithms, the second one being \textit{expectation propagation}.
+	
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{Illustration}
+\begin{figure}
+	\centering
+	\captionsetup[subfigure]{labelformat=empty}
+	\subfloat[$D_{KL}(q||g)$ ]{\label{vixep1a}\includegraphics[width=0.45\textwidth]
+		{figs/klil3a.png}}
+	\subfloat[$D_{KL}(g||q)$]{\label{vixep1b}\includegraphics[width=0.45\textwidth]
+		{figs/klil3b.png}}
+\end{figure}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{Evidence lower bound}
+Usually, one only has access to $p(\mathcal{D}|\theta) p(\theta) = \gu(\theta)$. Fortunately, minimizing $D_{KL}(q||g)$ is equivalent to maximizing the \textit{evidence lower bound} (ELBO).
+
+\begin{equation*}
+\mathcal{L}_\gu(q) = 
+\int \log \gu(\theta) q(\theta) d\theta - \int \log q(\theta) q(\theta) d\theta
+\end{equation*}
+\end{block}{}
+\begin{block}{Model selection using ELBO}
+\begin{equation*}
+\begin{split}
+\log p(\mathcal{D}) & = \log \Ev_{\theta \sim p(\theta)} [p(\mathcal{D}|\theta)] \\
+& = \log \Ev_{\theta \sim q(\theta)} \left[\frac{p(\mathcal{D}|\theta) p(\theta)}{q(\theta)} \right] \\
+& \geq \Ev_{\theta \sim q(\theta)} \left[ \log \frac{p(\mathcal{D}|\theta) p(\theta)}{q(\theta)} \right] = \mathcal{L}(q).
+\end{split}
+\end{equation*}
+Moreover, $\mathcal{L}_\gu(q) \leq \log p(\mathcal{D})$. Can be used for model selection.
+\end{block}
+\end{frame}
+\begin{frame}
+\begin{block}{Maximizing the ELBO}
+For parameterized $q(\theta;\lambda)$: access to stochastic estimation of $\nabla \mathcal{L}(\lambda)$ can be used for stochastic gradient ascent.
+\end{block}
+\begin{block}{REINFORCE}
+\begin{equation*}\label{reinforce}
+\nabla \mathcal{L}(\lambda) = \Ev_{\theta \sim q(\theta;\lambda)} \left[ \log \frac{\gu(\theta)}{q(\theta;\lambda)} \nabla_{\lambda} \log q(\theta;\lambda) \right], 
+\end{equation*}
+Approximation by Monte Carlo estimator. 
+\begin{equation*}\label{reinforcemc}
+\nabla \mathcal{L}(\lambda) \approx \frac{1}{K} \sum_{i \in [K], \theta_i \sim q(\theta;\lambda)} \log \frac{\gu(\theta_i)}{q(\theta_i;\lambda)} \nabla_{\lambda} \log q(\theta_i;\lambda),
+\end{equation*}
+One option for controlling high variance:
+\begin{equation*}
+\Ev_{\theta \sim q(\theta;\lambda)} \left[ \left( \log \left( \frac{\gu(\theta)}{q(\theta;\lambda)}\right) + C\right) \nabla_{\lambda} \log q(\theta;\lambda) \right], 
+\end{equation*}
+\end{block}
+\end{frame}
+\begin{frame}{}
+\begin{block}{Reparameterization}
+Reparametrization: if samples $X_\lambda \sim q(\theta;\lambda)$ can be writen as $s(Y,\lambda)$, with $Y \sim r(\epsilon)$:
+
+$\nabla \mathcal{L}(\lambda) = \nabla \left( \Ev_{r(\epsilon)} \left[\log \frac{ \gu(s(\epsilon;\lambda))}{q(s(\epsilon;\lambda);\lambda)}\right]\right) \approx \frac{1}{K} \sum_{Y_i \sim r(\epsilon)} \nabla \left( \log \frac{ \gu(s(Y_i;\lambda))}{q(s(Y_i;\lambda);\lambda)} \right).$
+\end{block}
+\begin{block}{Possible distributions for reparamaterization}
+Distributions that can be used for reparameterization:
+\begin{itemize}
+	\item Tractable inverse CDF. Examples: Exponential, Cauchy, Logistic, Rayleigh, Pareto, Weibull, Reciprocal,Gompertz, Gumbel, Erlang and Kumaraswamy distributions.
+	\item Location-scale families. Examples: Gaussian, Laplace, Elliptical, Student's t, Uniform.
+	\item Compositions. Examples: Log-normal, Chi-squared
+\end{itemize}
+\end{block}
+\end{frame}
+\begin{frame}{}
+\begin{block}{Reparameterization x REINFORCE}
+\begin{figure}[h]
+	\centering
+	\includegraphics[height=.35\linewidth]{figs/reinforce_x_reparameterization.png}
+	%\includegraphics[height=6cm]{figCoordEsf02}
+\end{figure}
+Source: \url{http://stillbreeze.github.io/REINFORCE-vs-Reparameterization-trick/}.
+\end{block}
+\end{frame}
+\begin{frame}{}
+\begin{block}{Mixture of Gaussians}
+$q_k(\theta;\lambda) = \sum_{i=1}^k w_i f_i(\theta) = \sum_{i=1}^k w_i \mathcal{N}(\theta;\mu_,\Sigma_i)$. Analytical mean and covariance. Samples can be easily generated. Are in a sense universal approximators. \text{Good choice for variational approximation}.
+\end{block}
+\begin{block}{Parameterizing mixtures of Gaussian}
+Covariance parameterizations: 
+\begin{itemize}
+\item $\Sigma_i = \text{diag}(\sigma_{i,1}^2,\ldots,\sigma_{i,D}^2)$
+\item $\Sigma_i = \u_i \u_i^T + \text{diag}(\sigma_{i,1}^2,\ldots,\sigma_{i,D}^2)$
+\end{itemize}
+
+Weights parameterizations $w_i(\nu_i) = \frac{\phi(\nu_i)}{\sum_{i=1}^k \phi(\nu_k)}$. $\phi(\nu)$ can be $\exp(\nu)$ or $\text{softplus}(\nu) = \log(1+\exp(\nu))$
+\end{block}
+\begin{block}{ELBO for mixtures of Gaussians}
+\begin{equation*}
+\mathcal{L}(\lambda) = \sum_{i=1}^k w_i(\nu_i) \Ev_{\epsilon \sim \mathcal{N}(0,I)}\left[\log \frac{ \gu(s(\epsilon;\mu_i,\sigma_i))}{q_k(s(\epsilon;\mu_i,\sigma_i);\lambda)}\right]
+\end{equation*}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{Boosting mixtures}
+Problem: no way to know how many mixtures is needed. Adding mixtures sequentially can become costly. One solution: boosting.
+$q_{i-1}(\theta) = \sum_{j=1}^{i-1} w_j f_j(\theta)$
+
+$q_{i}(\theta) = \sum_{j=1}^{i-1} (1-w_{i}) w_j f_j(\theta) + w_{i} f_i(\theta)$
+
+How to find $w_{i}$ and $f_i(\theta) = \mathcal{N}(\theta;\mu_{i},\Sigma_{i})$?
+\end{block}
+\begin{block}{Setting component weights}
+Given component $f_i(\theta)$, maximize 
+$\mathcal{L}_i(w_i) = \mathcal{L}((1-w_{i}) q_{i-1}(\theta) + w_{i} f_i(\theta))$
+via its derivative
+\begin{equation*}
+\begin{split}
+\mathcal{L}'_{i}(w_{i}) & = \int \log (\gu(\theta)) (f_{i}(\theta) - q_{i-1}(\theta)) d\theta - \\
+& \qquad{} \int \log((1-w_{i}) q_{i-1}(\theta) + w_{i} f_{i}(\theta)) (f_i(\theta) - q_{i-1}(\theta)) d\theta.
+\end{split}
+\end{equation*}
+Fortunately, $\mathcal{L}_i(w_i)$ is a concave objective.
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{Finding components}
+Gradient boosting: technique for finding new components.
+\begin{equation*}
+\begin{split}
+f_i = \argmin_{f} \nabla D_{KL}(q_{i-1} || g) \cdot f = \argmin_{f} \int \log \frac{q_{i-1}(\theta)}{g(\theta)} f(\theta) d\theta.
+\end{split}
+\end{equation*}
+Problem: degenerate solution. Needs regularization.
+
+Maximization objective for mixture of Gaussians:
+\begin{equation*}
+\begin{split}
+\text{RELBO}(\mu_i,\Sigma_i) = & \int \log(\gu(\theta)) \mathcal{N}(\theta|\mu_i,\Sigma_i) d\theta - \\
+& \int \log(q_{i-1}(\theta)) \mathcal{N}(\theta|\mu_i,\Sigma_i) d\theta + \frac{\lambda}{4} \log |\Sigma|,
+\end{split}
+\end{equation*}
+Reparameterization trick can be used.
 \end{block}
 
-\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{figure}
+\begin{algorithmic}[1]\label{vbalgorithm}
+\Procedure{VariationalBoosting}{$\log \gu,\mu_0$,$\Sigma_0$}
+\LineComment{$\mu_0,\Sigma_0$ the are initial boosting values}
+\State $w_0 := 1.0$
+\For{$t=1,...,T$}
+\State $\mu_{t},\Sigma_{t} := \argmax RELBO(\mu_{t},\Sigma_{t})$ \Comment{Using reparameterization}
+\State $w_{t} := \argmax \mathcal{L}_i(w_i)$ \Comment{Using $\mathcal{L}'_t(w_t)$ for gradient descent}
+\For{$j=0,...,t-1$}
+\State $w_{j} \gets (1-w_t)w_j$
+\EndFor
+\EndFor
+\State \Return $\{(\mu_t,\Sigma_t,w_t)\}_{t=1}^T$
+\EndProcedure
+\end{algorithmic}
+\end{figure}
 \end{frame}
 
 \begin{frame}
@@ -591,143 +792,6 @@ Examples:
 \end{block}
 \end{frame}
 
-\section{Variational Inference}
-\begin{frame}{}
-\begin{block}{Back to approximating posteriors}
-\begin{equation*}
-p(\theta|\mathcal{D}) = g(\theta) \approx q(\theta;\lambda)
-\end{equation*}
-Choosing $q$: minimizing some measure of dissimilarity. The family $q(\theta;\lambda)$ must be easy to treat, in order for the approximation to be useful.
-
-Variational inference: uses $D_{KL}(q(\cdot;\lambda)||g)$ for measure of dissimilarity
-\begin{equation*}
- D_{KL}(q||g) = -\int \log \frac{p(\theta)}{q(\theta)} q(\theta) d\theta
-\end{equation*}
-
-\end{block}
-\begin{block}{$D_{KL}(q||g)$ vs $D_{KL}(g||q)$}
-$D_{KL}(q||g) \geq 0$, $D_{KL}(q||g) = 0 \iff q=g$, but $D_{KL}(q||g) \neq D_{KL}(g||q)$. 
-Then, KL divergence minimization gives two different algorithms, the second one being \textit{expectation propagation}.
-
-\end{block}
-\end{frame}
-
-\begin{frame}{}
-\begin{block}{Illustration}
-\begin{figure}
-\centering
-\captionsetup[subfigure]{labelformat=empty}
-\subfloat[$D_{KL}(q||g)$ ]{\label{vixep1a}\includegraphics[width=0.45\textwidth]
-{figs/klil3a.png}}
-\subfloat[$D_{KL}(g||q)$]{\label{vixep1b}\includegraphics[width=0.45\textwidth]
-{figs/klil3b.png}}
-\end{figure}
-\end{block}
-\end{frame}
-
-\begin{frame}{}
-\begin{block}{Evidence lower bound}
-	Usually, one only has access to $p(\mathcal{D}|\theta) p(\theta) = \gu(\theta)$. Fortunately, minimizing $D_{KL}(q||g)$ is equivalent to maximizing the \textit{evidence lower bound} (ELBO).
-	
-	\begin{equation*}
-	\mathcal{L}_\gu(q) = 
-	\int \log \gu(\theta) q(\theta) d\theta - \int \log q(\theta) q(\theta) d\theta
-	\end{equation*}
-	Moreover, $\mathcal{L}_\gu(q) \leq \log p(\mathcal{D})$. Can be used for model selection.
-\end{block}
-
-\begin{block}{Maximizing the ELBO}
-For parameterized $q(\theta;\lambda)$: access to stochastic estimation of $\nabla \mathcal{L}(\lambda)$ can be used for stochastic gradient ascent.
-
-Reparametrization: if samples $X_\lambda \sim q(\theta;\lambda)$ can be writen as $s(Y,\lambda)$, with $Y \sim r(\epsilon)$:
-
-$\nabla \mathcal{L}(\lambda) = \nabla \left( \Ev_{r(\epsilon)} \left[\log \frac{ \gu(s(\epsilon;\lambda))}{q(s(\epsilon;\lambda);\lambda)}\right]\right) \approx \frac{1}{K} \sum_{Y_i \sim r(\epsilon)} \nabla \left( \log \frac{ \gu(s(Y_i;\lambda))}{q(s(Y_i;\lambda);\lambda)} \right).$
-\end{block}
-\end{frame}
-
-\begin{frame}{}
-\begin{block}{Mixture of Gaussians}
-$q_k(\theta;\lambda) = \sum_{i=1}^k w_i f_i(\theta) = \sum_{i=1}^k w_i \mathcal{N}(\theta;\mu_,\Sigma_i)$. Analytical mean and covariance. Samples can be easily generated. Are in a sense universal approximators. \text{Good choice for variational approximation}.
-\end{block}
-\begin{block}{Parameterizing mixtures of Gaussian}
-Covariance parameterizations: 
-\begin{itemize}
-\item $\Sigma_i = \text{diag}(\sigma_{i,1}^2,\ldots,\sigma_{i,D}^2)$
-\item $\Sigma_i = \u_i \u_i^T + \text{diag}(\sigma_{i,1}^2,\ldots,\sigma_{i,D}^2)$
-\end{itemize}
-
-Weights parameterizations $w_i(\nu_i) = \frac{\phi(\nu_i)}{\sum_{i=1}^k \phi(\nu_k)}$. $\phi(\nu)$ can be $\exp(\nu)$ or $\text{softplus}(\nu) = \log(1+\exp(\nu))$
-\end{block}
-\begin{block}{ELBO for mixtures of Gaussians}
-\begin{equation*}
-\mathcal{L}(\lambda) = \sum_{i=1}^k w_i(\nu_i) \Ev_{\epsilon \sim \mathcal{N}(0,I)}\left[\log \frac{ \gu(s(\epsilon;\mu_i,\sigma_i))}{q_k(s(\epsilon;\mu_i,\sigma_i);\lambda)}\right]
-\end{equation*}
-\end{block}
-\end{frame}
-
-\begin{frame}{}
-\begin{block}{Boosting mixtures}
-Problem: no way to know how many mixtures is needed. Adding mixtures sequentially can become costly. One solution: boosting.
-$q_{i-1}(\theta) = \sum_{j=1}^{i-1} w_j f_j(\theta)$
-
-$q_{i}(\theta) = \sum_{j=1}^{i-1} (1-w_{i}) w_j f_j(\theta) + w_{i} f_i(\theta)$
-
-How to find $w_{i}$ and $f_i(\theta) = \mathcal{N}(\theta;\mu_{i},\Sigma_{i})$?
-\end{block}
-\begin{block}{Setting component weights}
-Given component $f_i(\theta)$, maximize 
-$\mathcal{L}_i(w_i) = \mathcal{L}((1-w_{i}) q_{i-1}(\theta) + w_{i} f_i(\theta))$
-via its derivative
-\begin{equation*}
-\begin{split}
-\mathcal{L}'_{i}(w_{i}) & = \int \log (\gu(\theta)) (f_{i}(\theta) - q_{i-1}(\theta)) d\theta - \\
-& \qquad{} \int \log((1-w_{i}) q_{i-1}(\theta) + w_{i} f_{i}(\theta)) (f_i(\theta) - q_{i-1}(\theta)) d\theta.
-\end{split}
-\end{equation*}
-Fortunately, $\mathcal{L}_i(w_i)$ is a concave objective.
-\end{block}
-\end{frame}
-
-\begin{frame}{}
-\begin{block}{Finding components}
-Gradient boosting: technique for finding new components.
-\begin{equation*}
-\begin{split}
-f_i = \argmin_{f} \nabla D_{KL}(q_{i-1} || g) \cdot f = \argmin_{f} \int \log \frac{q_{i-1}(\theta)}{g(\theta)} f(\theta) d\theta.
-\end{split}
-\end{equation*}
-Problem: degenerate solution. Needs regularization.
-
-Maximization objective for mixture of Gaussians:
-\begin{equation*}
-\begin{split}
-\text{RELBO}(\mu_i,\Sigma_i) = & \int \log(\gu(\theta)) \mathcal{N}(\theta|\mu_i,\Sigma_i) d\theta - \\
-& \int \log(q_{i-1}(\theta)) \mathcal{N}(\theta|\mu_i,\Sigma_i) d\theta + \frac{\lambda}{4} \log |\Sigma|,
-\end{split}
-\end{equation*}
-Reparameterization trick can be used.
-\end{block}
-
-\end{frame}
-
-\begin{frame}{}
-\begin{figure}
-\begin{algorithmic}[1]\label{vbalgorithm}
-\Procedure{VariationalBoosting}{$\log \gu,\mu_0$,$\Sigma_0$}
-\LineComment{$\mu_0,\Sigma_0$ the are initial boosting values}
-\State $w_0 := 1.0$
-\For{$t=1,...,T$}
-\State $\mu_{t},\Sigma_{t} := \argmax RELBO(\mu_{t},\Sigma_{t})$ \Comment{Using reparameterization}
-\State $w_{t} := \argmax \mathcal{L}_i(w_i)$ \Comment{Using $\mathcal{L}'_t(w_t)$ for gradient descent}
-\For{$j=0,...,t-1$}
-\State $w_{j} \gets (1-w_t)w_j$
-\EndFor
-\EndFor
-\State \Return $\{(\mu_t,\Sigma_t,w_t)\}_{t=1}^T$
-\EndProcedure
-\end{algorithmic}
-\end{figure}
-\end{frame}
 
 \begin{frame}{}
 \begin{block}{Variational Bayesian Monte Carlo (VBMC)}
