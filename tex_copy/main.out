@@ -1,0 +1,74 @@
+\BOOKMARK [0][-]{chapter.1}{Summary}{}% 1
+\BOOKMARK [0][-]{chapter.2}{Bayesian inference and learning}{}% 2
+\BOOKMARK [1][-]{section.2.1}{Learning described as Bayesian inference}{chapter.2}% 3
+\BOOKMARK [1][-]{section.2.2}{Decision theory}{chapter.2}% 4
+\BOOKMARK [1][-]{section.2.3}{Model selection}{chapter.2}% 5
+\BOOKMARK [1][-]{section.2.4}{Approximate inference}{chapter.2}% 6
+\BOOKMARK [2][-]{subsection.2.4.1}{Monte Carlo integration methods}{section.2.4}% 7
+\BOOKMARK [2][-]{subsection.2.4.2}{Laplace's approximation}{section.2.4}% 8
+\BOOKMARK [1][-]{section.2.5}{Expensive and intractable likelihoods}{chapter.2}% 9
+\BOOKMARK [2][-]{subsection.2.5.1}{Pseudo-marginals}{section.2.5}% 10
+\BOOKMARK [2][-]{subsection.2.5.2}{Approximate Bayesian computation}{section.2.5}% 11
+\BOOKMARK [2][-]{subsection.2.5.3}{Expensive likelihoods}{section.2.5}% 12
+\BOOKMARK [0][-]{chapter.3}{Gaussian processes}{}% 13
+\BOOKMARK [1][-]{section.3.1}{Parametric and nonparametric regression}{chapter.3}% 14
+\BOOKMARK [1][-]{section.3.2}{Gaussian process regression}{chapter.3}% 15
+\BOOKMARK [2][-]{subsection.3.2.1}{Gaussian noise}{section.3.2}% 16
+\BOOKMARK [2][-]{subsection.3.2.2}{General noise}{section.3.2}% 17
+\BOOKMARK [2][-]{subsection.3.2.3}{Mean function}{section.3.2}% 18
+\BOOKMARK [1][-]{section.3.3}{Covariance functions}{chapter.3}% 19
+\BOOKMARK [2][-]{subsection.3.3.1}{Derived kernels}{section.3.3}% 20
+\BOOKMARK [1][-]{section.3.4}{Model selection}{chapter.3}% 21
+\BOOKMARK [1][-]{section.3.5}{Computational issues}{chapter.3}% 22
+\BOOKMARK [2][-]{subsection.3.5.1}{Jittering}{section.3.5}% 23
+\BOOKMARK [2][-]{subsection.3.5.2}{Scaling with data}{section.3.5}% 24
+\BOOKMARK [1][-]{section.3.6}{Online learning}{chapter.3}% 25
+\BOOKMARK [0][-]{chapter.4}{Bayesian Monte Carlo}{}% 26
+\BOOKMARK [1][-]{section.4.1}{GP approximation for the integrand}{chapter.4}% 27
+\BOOKMARK [2][-]{subsection.4.1.1}{Philosophical remark}{section.4.1}% 28
+\BOOKMARK [1][-]{section.4.2}{Kernel-distribution combinations}{chapter.4}% 29
+\BOOKMARK [2][-]{subsection.4.2.1}{SQE kernel with Gaussian distributions}{section.4.2}% 30
+\BOOKMARK [2][-]{subsection.4.2.2}{Mixture distributions}{section.4.2}% 31
+\BOOKMARK [2][-]{subsection.4.2.3}{Tensor product kernels and diagonal-covariance Gaussian distributions}{section.4.2}% 32
+\BOOKMARK [2][-]{subsection.4.2.4}{Importance reweighting for Bayesian Monte Carlo}{section.4.2}% 33
+\BOOKMARK [1][-]{section.4.3}{Bayesian Monte Carlo for positive integrands}{chapter.4}% 34
+\BOOKMARK [1][-]{section.4.4}{Choosing evaluation points}{chapter.4}% 35
+\BOOKMARK [1][-]{section.4.5}{Bayesian Monte Carlo and Bayesian Optimization}{chapter.4}% 36
+\BOOKMARK [0][-]{chapter.5}{Variational inference}{}% 37
+\BOOKMARK [1][-]{section.5.1}{Variational inference}{chapter.5}% 38
+\BOOKMARK [2][-]{subsection.5.1.1}{KL divergence and evidence lower bound}{section.5.1}% 39
+\BOOKMARK [1][-]{section.5.2}{Mean field variational inference}{chapter.5}% 40
+\BOOKMARK [1][-]{section.5.3}{Generic variational inference}{chapter.5}% 41
+\BOOKMARK [2][-]{subsection.5.3.1}{REINFORCE}{section.5.3}% 42
+\BOOKMARK [2][-]{subsection.5.3.2}{Reparameterization trick}{section.5.3}% 43
+\BOOKMARK [1][-]{section.5.4}{Mixtures of gaussians for variational approximations}{chapter.5}% 44
+\BOOKMARK [2][-]{subsection.5.4.1}{Boosting mixtures of gaussians}{section.5.4}% 45
+\BOOKMARK [2][-]{subsection.5.4.2}{Gradient boosting mixture of gaussians}{section.5.4}% 46
+\BOOKMARK [1][-]{section.5.5}{Using Bayesian Monte Carlo in Variational Inference}{chapter.5}% 47
+\BOOKMARK [2][-]{subsection.5.5.1}{Quadratic mean function}{section.5.5}% 48
+\BOOKMARK [2][-]{subsection.5.5.2}{Remarks on acquisition functions for VBMC}{section.5.5}% 49
+\BOOKMARK [0][-]{chapter.6}{Boosted Variational Bayesian Monte Carlo}{}% 50
+\BOOKMARK [1][-]{section.6.1}{Boosting Variational Bayesian Monte Carlo}{chapter.6}% 51
+\BOOKMARK [2][-]{subsection.6.1.1}{Practical issues}{section.6.1}% 52
+\BOOKMARK [2][-]{subsection.6.1.2}{Other acquisition functions for active evaluation}{section.6.1}% 53
+\BOOKMARK [1][-]{section.6.2}{Implementation}{chapter.6}% 54
+\BOOKMARK [2][-]{subsection.6.2.1}{Backpropagation}{section.6.2}% 55
+\BOOKMARK [0][-]{chapter.7}{Experiments}{}% 56
+\BOOKMARK [1][-]{section.7.1}{1-d Mixture of Gaussians}{chapter.7}% 57
+\BOOKMARK [2][-]{subsection.7.1.1}{Passive evaluation}{section.7.1}% 58
+\BOOKMARK [2][-]{subsection.7.1.2}{Active evaluation}{section.7.1}% 59
+\BOOKMARK [1][-]{section.7.2}{N-d toy examples}{chapter.7}% 60
+\BOOKMARK [1][-]{section.7.3}{Contamination source estimation}{chapter.7}% 61
+\BOOKMARK [1][-]{section.7.4}{Checking performance}{chapter.7}% 62
+\BOOKMARK [0][-]{chapter.8}{Future challenges and conclusion}{}% 63
+\BOOKMARK [1][-]{section.8.1}{Reparameterization trick with Gaussian Processes}{chapter.8}% 64
+\BOOKMARK [1][-]{section.8.2}{Extending BVBMC to pseudo-marginal likelihoods}{chapter.8}% 65
+\BOOKMARK [1][-]{section.8.3}{Scaling BVBMC to a larger number of evaluations}{chapter.8}% 66
+\BOOKMARK [1][-]{section.8.4}{Conclusion}{chapter.8}% 67
+\BOOKMARK [0][-]{chapter*.18}{References}{}% 68
+\BOOKMARK [0][-]{appendix.A}{SPARSE GAUSSIAN PROCESSES}{}% 69
+\BOOKMARK [0][-]{appendix.B}{RELEVANT GAUSSIAN AND MATRIX IDENTITIES}{}% 70
+\BOOKMARK [0][-]{appendix.C}{Alternative derivation of GP predictions}{}% 71
+\BOOKMARK [0][-]{appendix.D}{Spectral mixture kernels and Bayesian Monte Carlo}{}% 72
+\BOOKMARK [0][-]{appendix.E}{Derivations for VFE}{}% 73
+\BOOKMARK [0][-]{appendix.F}{REINFORCE gradient}{}% 74

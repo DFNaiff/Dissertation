@@ -1,0 +1,707 @@
+\begin{thebibliography}{100}
+
+\bibitem{Beaumont_2003}
+Mark A~Beaumont, Wenyang Zhang, and David J~Balding.
+\newblock Approximate bayesian computation in population genetics.
+\newblock {\em Genetics}, 162:2025--35, 01 2003.
+
+\bibitem{Acerbi_2018}
+Luigi Acerbi.
+\newblock Variational bayesian monte carlo.
+\newblock In S.~Bengio, H.~Wallach, H.~Larochelle, K.~Grauman, N.~Cesa-Bianchi,
+  and R.~Garnett, editors, {\em Advances in Neural Information Processing
+  Systems 31}, pages 8213--8223. Curran Associates, Inc., 2018.
+
+\bibitem{CIS-4647}
+Robert~J. Adler.
+\newblock {\em The geometry of random fields}.
+\newblock John Wiley and Sons, 1981.
+
+\bibitem{Andrieu_2010}
+Christophe Andrieu, Arnaud Doucet, and Roman Holenstein.
+\newblock Particle markov chain monte carlo methods.
+\newblock {\em Journal of the Royal Statistical Society: Series B (Statistical
+  Methodology)}, 72(3):269–342, Jun 2010.
+
+\bibitem{Andrieu_2009}
+Christophe Andrieu and Gareth~O. Roberts.
+\newblock The pseudo-marginal approach for efficient monte carlo computations.
+\newblock {\em Annals of Statistics}, pages 697--725, 2009.
+
+\bibitem{Arenz_2018}
+Oleg Arenz, Gerhard Neumann, and Mingjun Zhong.
+\newblock Efficient gradient-free variational inference using policy search.
+\newblock In {\em Proceedings of the 35th International Conference on Machine
+  Learning}, volume~80 of {\em Proceedings of Machine Learning Research}, pages
+  234--243, Stockholmsmässan, Stockholm Sweden, 10--15 Jul 2018. PMLR.
+
+\bibitem{Asher_2015}
+M.~J. Asher, B.~F.~W. Croke, A.~J. Jakeman, and L.~J.~M. Peeters.
+\newblock A review of surrogate models and their application to groundwater
+  modeling.
+\newblock {\em Water Resources Research}, 51(8):5957–5973, Aug 2015.
+
+\bibitem{Bassett_2018}
+Robert Bassett and Julio Deride.
+\newblock Maximum a posteriori estimators as a limit of bayes estimators.
+\newblock {\em Mathematical Programming}, 174(1-2):129–144, Jan 2018.
+
+\bibitem{Betancourt_2017}
+Michael {Betancourt}.
+\newblock {A Conceptual Introduction to Hamiltonian Monte Carlo}.
+\newblock {\em arXiv e-prints}, page arXiv:1701.02434, Jan 2017.
+
+\bibitem{Bilionis_2013}
+I~Bilionis and N~Zabaras.
+\newblock Solution of inverse problems with limited forward solver evaluations:
+  a bayesian perspective.
+\newblock {\em Inverse Problems}, 30(1):015004, dec 2013.
+
+\bibitem{Bingham_2018}
+Eli {Bingham}, Jonathan~P. {Chen}, Martin {Jankowiak}, Fritz {Obermeyer},
+  Neeraj {Pradhan}, Theofanis {Karaletsos}, Rohit {Singh}, Paul {Szerlip}, Paul
+  {Horsfall}, and Noah~D. {Goodman}.
+\newblock {Pyro: Deep Universal Probabilistic Programming}.
+\newblock {\em arXiv e-prints}, page arXiv:1810.09538, Oct 2018.
+
+\bibitem{Bishop_2007}
+Christopher~M. Bishop.
+\newblock {\em Pattern Recognition and Machine Learning (Information Science
+  and Statistics)}.
+\newblock Springer, 1 edition, 2007.
+
+\bibitem{Bishop_1997}
+Christopher~M. Bishop, Neil~D. Lawrence, Tommi Jaakkola, and Michael~I. Jordan.
+\newblock Approximating posterior distributions in belief networks using
+  mixtures.
+\newblock In M.~I. Jordan, M.~J. Kearns, and S.~A. Solla, editors, {\em
+  Advances in Neural Information Processing Systems 10}, pages 416--422. MIT
+  Press, 1998.
+
+\bibitem{Blei_2017}
+David~M. Blei, Alp Kucukelbir, and Jon~D. McAuliffe.
+\newblock Variational inference: A review for statisticians.
+\newblock {\em Journal of the American Statistical Association},
+  112(518):859–877, Feb 2017.
+
+\bibitem{Bliznyuk_2012}
+Nikolay Bliznyuk, David Ruppert, and Christine~A. Shoemaker.
+\newblock Local derivative-free approximation of computationally expensive
+  posterior densities.
+\newblock {\em Journal of Computational and Graphical Statistics},
+  21(2):476–495, Apr 2012.
+
+\bibitem{Booker_1999}
+A.~J. Booker, J.~E. Dennis, P.~D. Frank, D.~B. Serafini, V.~Torczon, and M.~W.
+  Trosset.
+\newblock A rigorous framework for optimization of expensive functions by
+  surrogates.
+\newblock {\em Structural optimization}, 17(1):1--13, Feb 1999.
+
+\bibitem{Boyd_2004}
+Stephen Boyd and Lieven Vandenberghe.
+\newblock Convex optimization.
+\newblock 2004.
+
+\bibitem{Briol_2015}
+Fran\c{c}ois-Xavier Briol, Chris~J. Oates, Mark Girolami, and Michael~A.
+  Osborne.
+\newblock Frank-wolfe bayesian quadrature: Probabilistic integration with
+  theoretical guarantees.
+\newblock In {\em Proceedings of the 28th International Conference on Neural
+  Information Processing Systems - Volume 1}, NIPS'15, pages 1162--1170,
+  Cambridge, MA, USA, 2015. MIT Press.
+
+\bibitem{Brochu_2010}
+Eric Brochu, Vlad~M. Cora, and Nando de~Freitas.
+\newblock A tutorial on bayesian optimization of expensive cost functions, with
+  application to active user modeling and hierarchical reinforcement learning.
+\newblock {\em CoRR}, abs/1012.2599, 2010.
+
+\bibitem{Brooks_2011}
+Steve Brooks, Andrew Gelman, Galin Jones, and Xiao-Li Meng.
+\newblock {\em Handbook of Markov Chain Monte Carlo}.
+\newblock CRC press, 2011.
+
+\bibitem{Bui_2016}
+Thang~D. {Bui}, Josiah {Yan}, and Richard~E. {Turner}.
+\newblock {A Unifying Framework for Gaussian Process Pseudo-Point
+  Approximations using Power Expectation Propagation}.
+\newblock {\em arXiv e-prints}, page arXiv:1605.07066, May 2016.
+
+\bibitem{Chai_2019}
+Henry~R. Chai and Roman Garnett.
+\newblock Improving quadrature for constrained integrands.
+\newblock In {\em Proceedings of Machine Learning Research}, volume~89 of {\em
+  Proceedings of Machine Learning Research}, pages 2751--2759. PMLR, 16--18 Apr
+  2019.
+
+\bibitem{Chatfield_2004}
+Chris Chatfield.
+\newblock {\em The analysis of time series: an introduction}.
+\newblock CRC Press, Florida, US, 6th edition, 2004.
+
+\bibitem{Conrad_2016}
+Patrick~R. Conrad, Youssef~M. Marzouk, Natesh~S. Pillai, and Aaron Smith.
+\newblock Accelerating asymptotically exact mcmc for computationally intensive
+  models via local approximations.
+\newblock {\em Journal of the American Statistical Association},
+  111(516):1591--1607, 2016.
+
+\bibitem{Cox_1963}
+Richard~T. Cox and E.~T. Jaynes.
+\newblock The algebra of probable inference.
+\newblock {\em American Journal of Physics}, 31(1):66–67, Jan 1963.
+
+\bibitem{Dudley_2002}
+R.~M. Dudley.
+\newblock Real analysis and probability.
+\newblock 2002.
+
+\bibitem{Eckart_1936}
+Carl Eckart and Gale Young.
+\newblock The approximation of one matrix by another of lower rank.
+\newblock {\em Psychometrika}, 1(3):211–218, Sep 1936.
+
+\bibitem{Epanechnikov_1969}
+V.~A. Epanechnikov.
+\newblock Non-parametric estimation of a multivariate probability density.
+\newblock {\em Theory of Probability and Its Applications}, 14(1):153–158,
+  Jan 1969.
+
+\bibitem{Abadi_2015}
+Mart\'{\i}n~Abadi et~al.
+\newblock {TensorFlow}: Large-scale machine learning on heterogeneous systems,
+  2015.
+\newblock Software available from tensorflow.org.
+
+\bibitem{Fearnhead_2012}
+Paul Fearnhead and Dennis Prangle.
+\newblock Constructing summary statistics for approximate bayesian computation:
+  semi-automatic approximate bayesian computation.
+\newblock {\em Journal of the Royal Statistical Society: Series B (Statistical
+  Methodology)}, 74(3):419–474, May 2012.
+
+\bibitem{Foreman_Mackey_2013}
+Daniel Foreman-Mackey, David~W. Hogg, Dustin Lang, and Jonathan Goodman.
+\newblock emcee: The mcmc hammer.
+\newblock {\em Publications of the Astronomical Society of the Pacific},
+  125(925):306–312, Mar 2013.
+
+\bibitem{Fowlkes_2004}
+C.~Fowlkes, S.~Belongie, Fan Chung, and J.~Malik.
+\newblock Spectral grouping using the nystrom method.
+\newblock {\em IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  26(2):214–225, Feb 2004.
+
+\bibitem{Freund_1997}
+Yoav Freund and Robert~E Schapire.
+\newblock A decision-theoretic generalization of on-line learning and an
+  application to boosting.
+\newblock {\em Journal of Computer and System Sciences}, 55(1):119 -- 139,
+  1997.
+
+\bibitem{Freund_1999}
+Yoav Freund and Robert~E. Schapire.
+\newblock A short introduction to boosting.
+\newblock In {\em In Proceedings of the Sixteenth International Joint
+  Conference on Artificial Intelligence}, pages 1401--1406. Morgan Kaufmann,
+  1999.
+
+\bibitem{Friedman_2000}
+Jerome Friedman, Trevor Hastie, and Robert Tibshirani.
+\newblock Additive logistic regression: a statistical view of boosting (with
+  discussion and a rejoinder by the authors).
+\newblock {\em Ann. Statist.}, 28(2):337--407, 04 2000.
+
+\bibitem{Friedman_2001}
+Jerome~H. Friedman.
+\newblock Greedy function approximation: A gradient boosting machine.
+\newblock {\em The Annals of Statistics}, 29(5):1189--1232, 2001.
+
+\bibitem{Gershman_2012}
+Samuel {Gershman}, Matt {Hoffman}, and David {Blei}.
+\newblock {Nonparametric variational inference}.
+\newblock {\em arXiv e-prints}, page arXiv:1206.4665, Jun 2012.
+
+\bibitem{Geyer_2011}
+C.~J. Geyer.
+\newblock Introduction to markov chain monte carlo.
+\newblock In G.~Jones A.~Gelman, S.~Brooks and X.~L. Meng, editors, {\em
+  Handbook of Markov Chain Monte Carlo: Methods and Applications}. CRC Press,
+  London, 2004.
+
+\bibitem{Ghahramani_2013}
+Zoubin Ghahramani.
+\newblock Bayesian non-parametrics and the probabilistic approach to modelling.
+\newblock {\em Philosophical Transactions of the Royal Society A: Mathematical,
+  Physical and Engineering Sciences}, 371(1984):20110553, Feb 2013.
+
+\bibitem{Ghahramani_2015}
+Zoubin Ghahramani.
+\newblock Probabilistic machine learning and artificial intelligence.
+\newblock {\em Nature}, 521(7553):452–459, May 2015.
+
+\bibitem{Ghahramani_2003}
+Zoubin Ghahramani and Carl~E. Rasmussen.
+\newblock Bayesian monte carlo.
+\newblock In S.~Becker, S.~Thrun, and K.~Obermayer, editors, {\em Advances in
+  Neural Information Processing Systems 15}, pages 505--512. MIT Press, 2003.
+
+\bibitem{Gittens_2011}
+Alex {Gittens}.
+\newblock {The spectral norm error of the naive Nystrom extension}.
+\newblock {\em arXiv e-prints}, page arXiv:1110.5305, Oct 2011.
+
+\bibitem{Goodfellow_2016}
+Ian Goodfellow, Yoshua Bengio, and Aaron Courville.
+\newblock {\em Deep Learning}.
+\newblock MIT Press, 2016.
+
+\bibitem{Gunter_2014}
+T.~Gunter, M.~Osborne, R.~Garnett, P.~Hennig, and S.~Roberts.
+\newblock Sampling for inference in probabilistic models with fast bayesian
+  quadrature.
+\newblock In {\em Advances in Neural Information Processing Systems 27}, pages
+  2789--2797. Curran Associates, Inc., 2014.
+
+\bibitem{Guo_2016}
+Fangjian {Guo}, Xiangyu {Wang}, Kai {Fan}, Tamara {Broderick}, and David~B.
+  {Dunson}.
+\newblock {Boosting Variational Inference}.
+\newblock {\em arXiv e-prints}, page arXiv:1611.05559, Nov 2016.
+
+\bibitem{Hennig_2012}
+P.~Hennig and M.~Kiefel.
+\newblock Quasi-newton methods -- a new direction.
+\newblock In {\em Int. Conf. on Machine Learning (ICML)}, volume~29, 2012.
+
+\bibitem{Hensman_2012}
+James Hensman, Magnus Rattray, and Neil~D. Lawrence.
+\newblock Fast variational inference in the conjugate exponential family.
+\newblock In {\em Proceedings of the 25th International Conference on Neural
+  Information Processing Systems - Volume 2}, NIPS'12, pages 2888--2896, USA,
+  2012. Curran Associates Inc.
+
+\bibitem{Hernandes-Lobato_2015}
+Jos{\'e}~Miguel {Hern{\'a}ndez-Lobato}, Yingzhen {Li}, Mark {Rowland }, Daniel
+  {Hern{\'a}ndez-Lobato}, Thang {Bui}, and Richard~E. {Turner}.
+\newblock {Black-box $\alpha$-divergence Minimization}.
+\newblock {\em arXiv e-prints}, page arXiv:1511.03243, Nov 2015.
+
+\bibitem{Hjort_2010}
+N.~Hjort, C.~Holmes, P.~Mueller, and S.~Walker.
+\newblock {\em Bayesian Nonparametrics: Principles and Practice}.
+\newblock Cambridge University Press, Cambridge, UK, 2010.
+
+\bibitem{Hoffman_2013}
+Matthew~D. Hoffman, David~M. Blei, Chong Wang, and John Paisley.
+\newblock Stochastic variational inference.
+\newblock {\em Journal of Machine Learning Research}, 14:1303--1347, 2013.
+
+\bibitem{hogben14}
+Leslie Hogben.
+\newblock {\em Handbook of Linear Algebra}.
+\newblock 2nd edition, 2014.
+
+\bibitem{Huber_2008}
+Marco~F. Huber, Tim Bailey, Hugh Durrant-Whyte, and Uwe~D. Hanebeck.
+\newblock On entropy approximation for gaussian mixture random vectors.
+\newblock {\em 2008 IEEE International Conference on Multisensor Fusion and
+  Integration for Intelligent Systems}, Aug 2008.
+
+\bibitem{Jaakkola_1998}
+Tommi~S. Jaakkola and Michael~I. Jordan.
+\newblock {\em Improving the Mean Field Approximation Via the Use of Mixture
+  Distributions}, pages 163--173.
+\newblock Springer Netherlands, Dordrecht, 1998.
+
+\bibitem{Jankowiak_2019}
+Martin Jankowiak and Theofanis Karaletsos.
+\newblock Pathwise derivatives for multivariate distributions.
+\newblock In {\em Proceedings of Machine Learning Research}, volume~89 of {\em
+  Proceedings of Machine Learning Research}, pages 333--342. PMLR, 16--18 Apr
+  2019.
+
+\bibitem{jaynes03}
+E.~T. Jaynes.
+\newblock {\em Probability theory: The logic of science}.
+\newblock Cambridge University Press, Cambridge, 2003.
+
+\bibitem{Jones_2001}
+Donald~R. Jones.
+\newblock A taxonomy of global optimization methods based on response surfaces.
+\newblock {\em Journal of Global Optimization}, 21(4):345--383, Dec 2001.
+
+\bibitem{Kanagawa_2019}
+Motonobu {Kanagawa} and Philipp {Hennig}.
+\newblock {Convergence Guarantees for Adaptive Bayesian Quadrature Methods}.
+\newblock {\em arXiv e-prints}, page arXiv:1905.10271, May 2019.
+
+\bibitem{Kanagawa_2018}
+Motonobu {Kanagawa}, Philipp {Hennig}, Dino {Sejdinovic}, and Bharath~K
+  {Sriperumbudur}.
+\newblock {Gaussian Processes and Kernel Methods: A Review on Connections and
+  Equivalences}.
+\newblock {\em arXiv e-prints}, page arXiv:1807.02582, Jul 2018.
+
+\bibitem{Kandasamy_2015}
+Kirthevasan Kandasamy, Jeff Schneider, and Barnabás Póczos.
+\newblock Bayesian active learning for posterior estimation.
+\newblock In {\em Proceedings of the 24th International Conference on
+  Artificial Intelligence}, IJCAI'15, pages 3605--3611. AAAI Press, 2015.
+
+\bibitem{Kingma_2014}
+Diederik~P. {Kingma} and Jimmy {Ba}.
+\newblock {Adam: A Method for Stochastic Optimization}.
+\newblock {\em arXiv e-prints}, page arXiv:1412.6980, Dec 2014.
+
+\bibitem{Kingma_2013}
+Diederik~P {Kingma} and Max {Welling}.
+\newblock {Auto-Encoding Variational Bayes}.
+\newblock {\em arXiv e-prints}, page arXiv:1312.6114, Dec 2013.
+
+\bibitem{Yingzhen_2016}
+Yingzhen {Li} and Richard~E. {Turner}.
+\newblock {R\textbackslash'enyi Divergence Variational Inference}.
+\newblock {\em arXiv e-prints}, page arXiv:1602.02311, Feb 2016.
+
+\bibitem{Haitao_2018}
+Haitao {Liu}, Yew-Soon {Ong}, Xiaobo {Shen}, and Jianfei {Cai}.
+\newblock {When Gaussian Process Meets Big Data: A Review of Scalable GPs}.
+\newblock {\em arXiv e-prints}, page arXiv:1807.01065, Jul 2018.
+
+\bibitem{Liu_1994}
+Qing Liu and Donald~A. Pierce.
+\newblock A note on gauss-hermite quadrature.
+\newblock {\em Biometrika}, 81(3):624--629, 1994.
+
+\bibitem{Locatelo_2018}
+Francesco Locatello, Gideon Dresdner, Rajiv Khanna, Isabel Valera, and Gunnar
+  Raetsch.
+\newblock Boosting black box variational inference.
+\newblock In S.~Bengio, H.~Wallach, H.~Larochelle, K.~Grauman, N.~Cesa-Bianchi,
+  and R.~Garnett, editors, {\em Advances in Neural Information Processing
+  Systems 31}, pages 3401--3411. Curran Associates, Inc., 2018.
+
+\bibitem{MacKay2003}
+David J.~C. MacKay.
+\newblock {\em Information Theory, Inference, and Learning Algorithms}.
+\newblock Copyright Cambridge University Press, 2003.
+
+\bibitem{MacKay_1991}
+David~J.C. MacKay.
+\newblock Bayesian interpolation.
+\newblock {\em NEURAL COMPUTATION}, 4:415--447, 1991.
+
+\bibitem{Marzouk_2007}
+Youssef~M. Marzouk, Habib~N. Najm, and Larry~A. Rahn.
+\newblock Stochastic spectral methods for efficient bayesian solution of
+  inverse problems.
+\newblock {\em Journal of Computational Physics}, 224(2):560–586, Jun 2007.
+
+\bibitem{Mermin_2004}
+N.~David Mermin.
+\newblock Could feynman have said this?
+\newblock {\em Physics Today}, 57(5):10–11, May 2004.
+
+\bibitem{Miller_2016}
+Andrew~C. {Miller}, Nicholas {Foti}, and Ryan~P. {Adams}.
+\newblock {Variational Boosting: Iteratively Refining Posterior
+  Approximations}.
+\newblock {\em arXiv e-prints}, page arXiv:1611.06585, Nov 2016.
+
+\bibitem{Mohammed_2017}
+Rekar~O. Mohammed and Gavin~C. Cawley.
+\newblock Over-fitting in model selection with gaussian process regression.
+\newblock In {\em Machine Learning and Data Mining in Pattern Recognition},
+  pages 192--205, Cham, 2017. Springer International Publishing.
+
+\bibitem{Murphy_2012}
+K.~Murphy.
+\newblock {\em Machine Learning: a Probabilistic Perspective}.
+\newblock MIT Press, 2012.
+
+\bibitem{Murray_2016}
+Iain {Murray}.
+\newblock {Differentiation of the Cholesky decomposition}.
+\newblock {\em arXiv e-prints}, page arXiv:1602.07527, Feb 2016.
+
+\bibitem{Neal_1997}
+Radford~M. {Neal}.
+\newblock {Monte Carlo Implementation of Gaussian Process Models for Bayesian
+  Regression and Classification}.
+\newblock {\em arXiv e-prints}, page physics/9701026, Jan 1997.
+
+\bibitem{Osborne_2012}
+Michael Osborne, Roman Garnett, Zoubin Ghahramani, David~K Duvenaud, Stephen~J
+  Roberts, and Carl~E. Rasmussen.
+\newblock Active learning of model evidence using bayesian quadrature.
+\newblock In F.~Pereira, C.~J.~C. Burges, L.~Bottou, and K.~Q. Weinberger,
+  editors, {\em Advances in Neural Information Processing Systems 25}, pages
+  46--54. Curran Associates, Inc., 2012.
+
+\bibitem{Osborne_2007}
+Michael Osborne and Stephen Roberts.
+\newblock Gaussian processes for prediction.
+\newblock 01 2007.
+
+\bibitem{O_Hagan_1991}
+A.~O’Hagan.
+\newblock Bayes–hermite quadrature.
+\newblock {\em Journal of Statistical Planning and Inference}, 29(3):245–260,
+  Nov 1991.
+
+\bibitem{OHagan_1992}
+Anthony O’Hagan.
+\newblock Some bayesian numerical analysis.
+\newblock {\em Bayesian Statistics}, 4(345--363):4--2, 1992.
+
+\bibitem{Paszke_2017}
+Adam Paszke, Sam Gross, Soumith Chintala, Gregory Chanan, Edward Yang, Zachary
+  DeVito, Zeming Lin, Alban Desmaison, Luca Antiga, and Adam Lerer.
+\newblock Automatic differentiation in pytorch.
+\newblock In {\em NIPS Autodiff Workshop}, 2017.
+
+\bibitem{Petelin_2014}
+Dejan Petelin, Matej Gasperin, and Václav Smídl.
+\newblock Adaptive importance sampling for bayesian inference in gaussian
+  process models.
+\newblock {\em IFAC Proceedings Volumes}, 47(3):5011–5016, 2014.
+
+\bibitem{Petersen_2012}
+K.~B. Petersen and M.~S. Pedersen.
+\newblock The matrix cookbook, nov 2012.
+\newblock Version 20121115.
+
+\bibitem{Pinheiro_1996}
+José~C. Pinheiro and Douglas~M. Bates.
+\newblock Unconstrained parametrizations for variance-covariance matrices.
+\newblock {\em Statistics and Computing}, 6:289--296, 1996.
+
+\bibitem{Pritchard_1999}
+J.~K. Pritchard, M.~T. Seielstad, A.~Perez-Lezaun, and M.~W. Feldman.
+\newblock Population growth of human y chromosomes: a study of y chromosome
+  microsatellites.
+\newblock {\em Molecular Biology and Evolution}, 16(12):1791–1798, Dec 1999.
+
+\bibitem{Qian_1999}
+Ning Qian.
+\newblock On the momentum term in gradient descent learning algorithms.
+\newblock {\em Neural Networks}, 12(1):145–151, Jan 1999.
+
+\bibitem{Candela_2005}
+J.~Quinonero~Candela and CE. Rasmussen.
+\newblock A unifying view of sparse approximate gaussian process regression.
+\newblock {\em Journal of Machine Learning Research}, 6:1935--1959, December
+  2005.
+
+\bibitem{Ranganath_2014}
+Rajesh Ranganath, Sean Gerrish, and David Blei.
+\newblock {Black Box Variational Inference}.
+\newblock In {\em Proceedings of the Seventeenth International Conference on
+  Artificial Intelligence and Statistics}, volume~33 of {\em Proceedings of
+  Machine Learning Research}, pages 814--822, Reykjavik, Iceland, 22--25 Apr
+  2014. PMLR.
+
+\bibitem{Rasmussen06}
+Carl~Edward Rasmussen.
+\newblock Gaussian processes for machine learning.
+\newblock MIT Press, 2006.
+
+\bibitem{Rasmussen_2001}
+Carl~Edward Rasmussen and Zoubin Ghahramani.
+\newblock Occam's razor.
+\newblock In T.~K. Leen, T.~G. Dietterich, and V.~Tresp, editors, {\em Advances
+  in Neural Information Processing Systems 13}, pages 294--300. MIT Press,
+  2001.
+
+\bibitem{Rasmussen_2003}
+CE. Rasmussen.
+\newblock Gaussian processes to speed up hybrid monte carlo for expensive
+  bayesian integrals.
+\newblock pages 651--659. Max-Planck-Gesellschaft, 2003.
+
+\bibitem{Robbins_1951}
+H.~Robbins and S.~Monro.
+\newblock A stochastic approximation method.
+\newblock {\em Annals of Mathematical Statistics}, 22:400--407, 1951.
+
+\bibitem{Robert_2001}
+Christian~P. Robert.
+\newblock {\em The Bayesian choice: from decision-theoretic foundations to
+  computational implementation}.
+\newblock Springer-Verlag Inc, Berlin; New York, 2001.
+
+\bibitem{Robert_2005}
+Christian~P. Robert and George Casella.
+\newblock {\em Monte Carlo Statistical Methods (Springer Texts in Statistics)}.
+\newblock Springer-Verlag, Berlin, Heidelberg, 2005.
+
+\bibitem{Ruder_2016}
+Sebastian {Ruder}.
+\newblock {An overview of gradient descent optimization algorithms}.
+\newblock {\em arXiv e-prints}, page arXiv:1609.04747, Sep 2016.
+
+\bibitem{Ruiz_2016}
+Francisco J.~R. {Ruiz}, Michalis~K. {Titsias}, and David~M. {Blei}.
+\newblock {Overdispersed Black-Box Variational Inference}.
+\newblock {\em arXiv e-prints}, page arXiv:1603.01140, Mar 2016.
+
+\bibitem{Salimans_2012}
+Tim Salimans and David Knowles.
+\newblock Fixed-form variational posterior approximation through stochastic
+  linear regression.
+\newblock {\em Bayesian Analysis}, 8, 06 2012.
+
+\bibitem{Salvatier_2016}
+John Salvatier, Thomas~V. Wiecki, and Christopher Fonnesbeck.
+\newblock Probabilistic programming in python using {PyMC}3.
+\newblock {\em {PeerJ} Computer Science}, 2:e55, apr 2016.
+
+\bibitem{Seeger_2003}
+Matthias Seeger, Christopher K.~I. Williams, and Neil~D. Lawrence.
+\newblock Fast forward selection to speed up sparse gaussian process
+  regression.
+\newblock In {\em IN WORKSHOP ON AI AND STATISTICS 9}, 2003.
+
+\bibitem{Shahriari_2016}
+Bobak Shahriari, Kevin Swersky, Ziyu Wang, Ryan~P. Adams, and Nando de~Freitas.
+\newblock Taking the human out of the loop: A review of bayesian optimization.
+\newblock {\em Proceedings of the IEEE}, 104(1):148–175, Jan 2016.
+
+\bibitem{Shawe_Taylor_2004}
+John Shawe-Taylor and Nello Cristianini.
+\newblock Kernel methods for pattern analysis.
+\newblock 2004.
+
+\bibitem{Sherlock_2015}
+Chris Sherlock, Alexandre~H. Thiery, Gareth~O. Roberts, and Jeffrey~S.
+  Rosenthal.
+\newblock On the efficiency of pseudo-marginal random walk metropolis
+  algorithms.
+\newblock {\em Ann. Statist.}, 43(1):238--275, 02 2015.
+
+\bibitem{Silverman_1985}
+B.~W. Silverman.
+\newblock Some aspects of the spline smoothing approach to non-parametric
+  regression curve fitting.
+\newblock {\em Journal of the Royal Statistical Society: Series B
+  (Methodological)}, 47(1):1–21, Sep 1985.
+
+\bibitem{Smith_1995}
+S.~P. Smith.
+\newblock Differentiation of the cholesky algorithm.
+\newblock {\em Journal of Computational and Graphical Statistics},
+  4(2):134--147, 1995.
+
+\bibitem{Smola_2001}
+Alex~J. Smola and Peter Bartlett.
+\newblock Sparse greedy gaussian process regression.
+\newblock In {\em Advances in Neural Information Processing Systems 13}, pages
+  619--625. MIT Press, 2001.
+
+\bibitem{Snelson_2006}
+Edward Snelson and Zoubin Ghahramani.
+\newblock Sparse gaussian processes using pseudo-inputs.
+\newblock In {\em Advances in Neural Information Processing Systems 18}, pages
+  1257--1264. MIT press, 2006.
+
+\bibitem{Snoek_2012}
+Jasper Snoek, Hugo Larochelle, and Ryan~P. Adams.
+\newblock Practical bayesian optimization of machine learning algorithms.
+\newblock In {\em Proceedings of the 25th International Conference on Neural
+  Information Processing Systems - Volume 2}, NIPS'12, pages 2951--2959, USA,
+  2012. Curran Associates Inc.
+
+\bibitem{Stein_1999}
+Michael~L. Stein.
+\newblock Interpolation of spatial data.
+\newblock {\em Springer Series in Statistics}, 1999.
+
+\bibitem{Stuart_2010}
+A.~M. Stuart.
+\newblock Inverse problems: A bayesian perspective.
+\newblock {\em Acta Numerica}, 19:451–559, May 2010.
+
+\bibitem{Tarantola_2004}
+Albert Tarantola.
+\newblock {\em Inverse Problem Theory and Methods for Model Parameter
+  Estimation}.
+\newblock Society for Industrial and Applied Mathematics, Philadelphia, PA,
+  USA, 2004.
+
+\bibitem{Theano_2016}
+{Theano Development Team}.
+\newblock {Theano: A {Python} framework for fast computation of mathematical
+  expressions}.
+\newblock {\em arXiv e-prints}, abs/1605.02688, May 2016.
+
+\bibitem{Titsias_2009}
+Michalis~K. Titsias.
+\newblock Variational learning of inducing variables in sparse gaussian
+  processes.
+\newblock In {\em In Artificial Intelligence and Statistics 12}, pages
+  567--574, 2009.
+
+\bibitem{Titsias_2015}
+Michalis Titsias RC~AUEB and Miguel L\'{a}zaro-Gredilla.
+\newblock Local expectation gradients for black box variational inference.
+\newblock In {\em Advances in Neural Information Processing Systems 28}, pages
+  2638--2646. Curran Associates, Inc., 2015.
+
+\bibitem{Tran_2016}
+Dustin {Tran}, Alp {Kucukelbir}, Adji~B. {Dieng}, Maja {Rudolph}, Dawen
+  {Liang}, and David~M. {Blei}.
+\newblock {Edward: A library for probabilistic modeling, inference, and
+  criticism}.
+\newblock {\em arXiv e-prints}, page arXiv:1610.09787, Oct 2016.
+
+\bibitem{Wang_2018}
+Dilin Wang, Hao Liu, and Qiang Liu.
+\newblock Variational inference with tail-adaptive f-divergence.
+\newblock In {\em Advances in Neural Information Processing Systems 31}, pages
+  5737--5747. Curran Associates, Inc., 2018.
+
+\bibitem{Wang_2018_2}
+Hongqiao Wang and Jinglai Li.
+\newblock Adaptive gaussian process approximation for bayesian inference with
+  expensive likelihood functions.
+\newblock {\em Neural Computation}, 30(11):3072–3094, Nov 2018.
+
+\bibitem{Wang_2009}
+Jiaping Wang, Yue Dong, Xin Tong, Zhouchen Lin, and Baining Guo.
+\newblock Kernel nyström method for light transport.
+\newblock {\em ACM Transactions on Graphics}, 28(3):1, Jul 2009.
+
+\bibitem{Williams01usingthe}
+Christopher Williams and Matthias Seeger.
+\newblock Using the nyström method to speed up kernel machines.
+\newblock In {\em Advances in Neural Information Processing Systems 13}, pages
+  682--688. MIT Press, 2001.
+
+\bibitem{wilson2013gaussian}
+Andrew Wilson and Ryan Adams.
+\newblock Gaussian process kernels for pattern discovery and extrapolation.
+\newblock In {\em International Conference on Machine Learning}, pages
+  1067--1075, 2013.
+
+\bibitem{Wingate_2013}
+David {Wingate} and Theophane {Weber}.
+\newblock {Automated Variational Inference in Probabilistic Programming}.
+\newblock {\em arXiv e-prints}, page arXiv:1301.1299, Jan 2013.
+
+\bibitem{Zhang_2019}
+Cheng Zhang, Judith Butepage, Hedvig Kjellstrom, and Stephan Mandt.
+\newblock Advances in variational inference.
+\newblock {\em IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  41(8):2008–2026, Aug 2019.
+
+\bibitem{Tong_Zhang_2003}
+Tong Zhang.
+\newblock Sequential greedy approximation for certain convex optimization
+  problems.
+\newblock {\em IEEE Transactions on Information Theory}, 49(3):682–691, Mar
+  2003.
+
+\end{thebibliography}

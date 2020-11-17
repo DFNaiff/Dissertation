@@ -1,0 +1,74 @@
+\babel@toc {english}{}
+\babel@toc {brazilian}{}
+\babel@toc {english}{}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Gaussian process regression of $f(x) = \qopname \relax o{sin}(\pi x)$}}{23}{figure.caption.4}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {GP prior}}}{23}{subfigure.1.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {GP posterior}}}{23}{subfigure.1.2}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Illustration of Bayesian Monte Carlo integration}}{35}{figure.caption.5}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Difference of behavior when minimizing $D_{KL}(q||g)$ and $D_{KL}(g||q)$}}{50}{figure.caption.6}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$D_{KL}(q||g)$ }}}{50}{subfigure.1.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$D_{KL}(g||q)$}}}{50}{subfigure.1.2}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Usage of the BVBMC Python package.}}{78}{figure.caption.7}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces True density and estimated density found by running code in Figure \ref {bvbmcpackexample}}}{79}{figure.caption.8}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {True density}}}{79}{subfigure.2.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Estimated density}}}{79}{subfigure.2.2}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Target distribution.\relax }}{82}{figure.caption.9}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Accuracy analysis for different kernels.}}{84}{figure.caption.10}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$k_{\text {PMat},1/2}$, moments.}}}{84}{subfigure.2.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$k_{\text {PMat},1/2}$, final result.}}}{84}{subfigure.2.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {$k_{\text {PMat},3/2}$, moments.}}}{84}{subfigure.2.3}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {$k_{\text {PMat},3/2}$, final result.}}}{84}{subfigure.2.4}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {$k_{\text {PMat},5/2}$, moments.}}}{84}{subfigure.2.5}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {$k_{\text {PMat},5/2}$, final result.}}}{84}{subfigure.2.6}
+\contentsline {subfigure}{\numberline {(g)}{\ignorespaces {$k_{\text {SQE}}$, moments.}}}{84}{subfigure.2.7}
+\contentsline {subfigure}{\numberline {(h)}{\ignorespaces {$k_{\text {SQE}}$, final result.}}}{84}{subfigure.2.8}
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Accuracy analysis for different training routines.}}{86}{figure.caption.11}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Routine A, moments}}}{86}{subfigure.3.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Routine A, final result.}}}{86}{subfigure.3.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Routine A, running time.}}}{86}{subfigure.3.3}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Routine B,moments.}}}{86}{subfigure.3.4}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {Routine B, final result.}}}{86}{subfigure.3.5}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {Routine B, running time.}}}{86}{subfigure.3.6}
+\contentsline {subfigure}{\numberline {(g)}{\ignorespaces {Routine C, moments.}}}{86}{subfigure.3.7}
+\contentsline {subfigure}{\numberline {(h)}{\ignorespaces {Routine C, final result.}}}{86}{subfigure.3.8}
+\contentsline {subfigure}{\numberline {(i)}{\ignorespaces {Routine C, running time.}}}{86}{subfigure.3.9}
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Accuracy analysis for different acquisition function.}}{87}{figure.caption.12}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {US, moments.}}}{87}{subfigure.4.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {US, final result.}}}{87}{subfigure.4.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {US, sampling.}}}{87}{subfigure.4.3}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {PROP, moments.}}}{87}{subfigure.4.4}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {PROP, final result.}}}{87}{subfigure.4.5}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {PROP, sampling.}}}{87}{subfigure.4.6}
+\contentsline {subfigure}{\numberline {(g)}{\ignorespaces {MMLT, moments.}}}{87}{subfigure.4.7}
+\contentsline {subfigure}{\numberline {(h)}{\ignorespaces {MMLT, final result.}}}{87}{subfigure.4.8}
+\contentsline {subfigure}{\numberline {(i)}{\ignorespaces {MMLT, sampling.}}}{87}{subfigure.4.9}
+\contentsline {subfigure}{\numberline {(j)}{\ignorespaces {MMLT$_P$, moments.}}}{87}{subfigure.4.10}
+\contentsline {subfigure}{\numberline {(k)}{\ignorespaces {MMLT$_P$, final result.}}}{87}{subfigure.4.11}
+\contentsline {subfigure}{\numberline {(l)}{\ignorespaces {MMLT$_P$, sampling.}}}{87}{subfigure.4.12}
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Accuracy analysis for different N-d examples.}}{90}{figure.caption.14}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Lumpy, means accuracy.}}}{90}{subfigure.5.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Lumpy, covariances accuracy.}}}{90}{subfigure.5.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Cigar, means accuracy.}}}{90}{subfigure.5.3}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Cigar, covariances accuracy.}}}{90}{subfigure.5.4}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {Student-t, means accuracy.}}}{90}{subfigure.5.5}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {Student-t, covariances accuracy.}}}{90}{subfigure.5.6}
+\contentsline {figure}{\numberline {7.6}{\ignorespaces KDE plots of estimated marginals with BVBMC. On diagonal.}}{95}{figure.caption.16}
+\contentsline {figure}{\numberline {7.7}{\ignorespaces KDE plots of estimated marginals with EMCEE. On diagonal.}}{96}{figure.caption.17}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }

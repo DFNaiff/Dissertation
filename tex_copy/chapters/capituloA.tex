@@ -1,0 +1,305 @@
+\chapter{Bayesian inference and learning}
+
+\section{Learning described as Bayesian inference}
+
+The central problem of learning from data can be verbalized as: given that some agent have access to data $\mathcal{D}$, what knowledge can the learner extract from it? One way to approach this problem is by assuming that learning does not take place in a vacuum, but in a world that the learner has uncertain knowledge about, translated into beliefs. The fact that those beliefs are uncertain is important, given that if the learner knew exactly everything he should know about the world, access to data $\mathcal{D}$ could not teach him nothing more.
+
+Given this general framework of "informed uncertainty", one natural way to describe it, mathematically, is by using probability theory for describing the problem. More specifically, it is used the \textit{Bayesian} viewpoint of probability, where degrees of uncertainty about quantities are mapped into probabilities about those \cite{MacKay2003,jaynes03}.
+
+In this interpretation, probability theory does not just deal with random events, but with anything that an agent is uncertain about. So, given some proposition $A$, and given that the learner knows $I$ about the world, $P(A|I)$ represents what he knows about $A$. Thus $A|I$ becomes a random variable, \textit{even if $A$ is not a random event}. Cox's theorem \cite{jaynes03},\cite{Cox_1963} says that, under some certain common sense assumptions about how the learner should ideally reason about beliefs, the rules of probability theory holds, as an extension to logic.
+
+In a simplification of this setting, when learning from the data $\mathcal{D}$, and previous information $I$, the learner must have some set of hypothesis (assuming finite for now) $\mathcal{H} = \{H_1,\ldots,H_t\}$, such that the learner assumes one and only one of then is true, and with each of them associated with a probability $P(H_k)$ such that
+\begin{displaymath} 
+\sum_{H_k \in \mathcal{H}} P(H_k|I) = 1.
+\end{displaymath}
+Furthermore, each hypothesis $H_k$ should say something about how likely it is for the data to be generated, given $H_k$ is true, and this information is encoded in $P(\mathcal{D}|H_k,I)$. In this case, Bayes' theorem says that it is possible to obtain the updated probabilities (thus degree of beliefs) $P(H_k|\mathcal{D},I)$ by Bayes' rule:
+\begin{equation}\label{bayes_theorem_1}
+ P(H_k|\mathcal{D},I) = \frac{P(\mathcal{D}|H_k,I)}{P(\mathcal{D}|I)}P(H_k|I),
+\end{equation}
+with $p(\mathcal{D}|I)$ being available by marginalization 
+\begin{equation}\label{marginalization_1}
+ P(\mathcal{D}|I) = \sum_{H_k \in \mathcal{H}} P(\mathcal{D}|H_k,I) P(H_k|I).
+\end{equation}
+
+In practice, usually hypothesis does not comes in discrete chunks, but one assumes a \textit{model} $M$. The model is usually endowed with free parameters $\theta \in \Theta \subset \mathbb{R}^D$, so that, assuming those to be continuous\footnote{This is not necessary at all, but it simplifies the notation}, the hypotheses are encoded by those parameter through a probability density function $p(\theta|M)$. Then, given the data $\mathcal{D}$, one seeks the posterior density function $p(\theta|\mathcal{D},M)$. In this case, we also have a version of Bayes' theorem for the densities
+\begin{equation}\label{bayes_theorem_2}
+ p(\theta | \mathcal{D},M) = \frac{p(\mathcal{D} | \theta,M)}{p(\mathcal{D}|M)} p(\theta | M),
+\end{equation}
+with 
+\begin{equation}\label{marginalization_2}
+p(\mathcal{D}|M) = \int_\Theta p(\mathcal{D}|\theta',M) p(\theta'|M) d \theta'.
+\end{equation}
+
+In the Bayesian framework, the problem of learning is reduced to one of inference about $\theta$, in a manner that if a specific parameter $\theta$ is sufficient to make a prediction $Q|\theta,M$, with density $p(Q|\theta,M)$, then the learner has access to $Q|\mathcal{D},M$ by marginalization
+\begin{equation}\label{marginalizationpred}
+p(Q|\mathcal{D},M) = \int_{\Theta} p(Q|\theta,M) p(\theta|\mathcal{D},M) d\theta.
+\end{equation}
+Thus, there is no fundamental difference between learning and inference from a Bayesian point of view.
+
+\section{Decision theory}\label{decision_theory_section}
+Following the Bayesian procedure, an agent can learn something about the world. However, ultimately what one wants to do with beliefs about the world is to convert those into actions. This can be formalized in \textit{Bayesian decision theory} \cite{Robert_2001}, where the components required for belief updating are combined with a \textit{loss function} $L : \Theta \times \mathcal{A} \to \mathbb{R}^+$, 
+with $L(\theta,a)$ being the cost of taking action $a$ when the state of the world is $\theta$ \footnote{This language refers back to the continuously parameterized model setting described above, and this will be assumed through the text. However, one can refer also to a more general setting, \textit{mutatis mutandis}}. Then, the action that minimizes the expected loss, given the posterior distribution $p(\theta|\mathcal{D},M)$, 
+\begin{equation}\label{generalloss}
+ a^* = \argmin_{a \in \mathcal{A}} \int_\Theta L(\theta,a) p(\theta|\mathcal{D},M) d \theta,
+\end{equation}
+is the Bayes-optimal decision for the agent to make \cite{Robert_2001}.
+
+From this point of view, parameter estimation is simply when the action taken is choosing a parameter, that is, $\mathcal{A} = \Theta$. In this setting, we have that, for some loss functions $L(\theta,\tilde{\theta})$, one can find the desired \textit{Bayes estimator},
+\begin{equation}
+\hat{\theta} = \argmin_{\tilde{\theta}} \int L(\theta,\tilde{\theta}) p(\theta|\mathcal{D},M) d \theta,
+\end{equation}
+by calculating the minimum analytically:
+\begin{itemize}
+	\item The $l_2$ (quadratic) loss $L(\theta,\tilde{\theta}) = ||\theta - \tilde{\theta}||_2^2$, for which $\hat{\theta} = \Ev[\theta|\mathcal{D},M]$
+	\item The $l_1$ (absolute) loss $L(\theta,\tilde{\theta}) = ||\theta - \tilde{\theta}||_1$, for which, at each coordinate $i$, $\hat{\theta}_i = \text{median}(\theta_i|\mathcal{D},M)$.
+\end{itemize}
+
+However, loss functions can be much more general, allowing, for example, to encode asymmetry in the gravity of mistakes. For instance, if $\theta$ is the maximum load of some structural component, underestimating it may result in a bigger waste of resources, while overestimating it may result in collapse.
+
+One way of choosing $\hat{\theta}$ that does not exactly enter the framework above, at least for continuous parameters, are either by the \textit{maximum a posteriori} MAP of the probability density function
+\begin{equation}\label{map_definition}
+ \hat{\theta}_{\text{MAP}} = \argmax_\theta p(\theta | \mathcal{D},M) = 
+       \argmax_\theta p(\mathcal{D} | \theta,M) p(\theta | M).
+\end{equation}
+The MAP estimation can be regarded however as a limit of minimizers of loss functions of the form
+\begin{equation}
+L_c(\theta,\tilde{\theta}) = 
+\begin{cases}
+0, & \text{if } ||\theta - \tilde{\theta}|| < c \\
+1, & \text{otherwise},
+\end{cases}
+\end{equation}
+so that \footnote{Provided some conditions. See \cite{Bassett_2018} for a counterexample of the general result.}
+\begin{equation}
+\hat{\theta}_{\text{MAP}} = \lim_{c \to 0} \argmin_{\tilde{\theta}} \int L_c(\theta,\tilde{\theta}) p(\theta|\mathcal{D},M) d \theta
+\end{equation}
+Related to the MAP estimator is the \textit{maximum likelihood estimate} (MLE), which can be seem as a modification of the MAP that doesn't take in account prior belief 
+\begin{equation}\label{mle_definition}
+\hat{\theta}_{\text{MLE}} = \argmax_\theta  p(\mathcal{D} | \theta, M).
+\end{equation}
+
+The MAP (and MLE) estimation suffers from some drawbacks for continuous distributions:
+\begin{itemize}
+	\item The MAP estimation does not take in account any true loss function, just limits of loss functions. Specially in applications that has an intrinsic asymmetric loss, this may result in grave mistakes.
+	\item The MAP estimation is in general an untypical point for the distribution, in the sense that the probability of the parameter to be near the MAP is low. In particular, in high dimensions that MAP will be very untypical (see \cite{Betancourt_2017}).
+	\item The MAP estimation is not invariant under reparameterizations. To illustrate, assume that $\theta$ is a one-dimensional parameter representing some phenomena $F$, and let $\phi = g^{-1}(\theta)$, where $g$ is diffeomorphic \footnote{In order to exclude some special conditions, assume both $\theta$ and $\phi$ are supported in $\mathbb{R}$}. Clearly, $\phi$ is also a valid parameterization of $F$. Assuming $g'(\phi) > 0$ for simplicity, let $f_\theta(\theta) := p(\theta|\mathcal{D},M)$. Then, we have, letting $f_\phi(\phi) := p(\phi | \mathcal{D},M)$, that $f_\phi(\phi) = f_\theta(g(\phi))g'(\phi)$. This implies that:
+	\begin{equation}
+	 f'(\phi) = g''(\phi) f_\theta(g(\phi)) + (g'(\phi))^2 f'_\theta(g(\phi)).
+	\end{equation}
+	Now, being $\hat{\theta}_\text{MAP}$ the MAP estimator for $\theta$, we have $f'_\theta(\hat{\theta}_\text{MAP}) = 0$.
+	However, letting $\hat{\phi} := g^{-1}(\hat{\theta}_\text{MAP})$, we have that $f'(\hat{\phi}) = g''(\hat{\phi}) f_\theta(g(\hat{\phi}))$, which does not equal to $0$ unless $g''(\hat{\phi}) = 0$. Hence, $\hat{\phi}$ cannot be the MAP estimator for $\phi$. But, since $\theta$ and $\phi$ are both valid parameterizations for phenomena $F$, this lack of invariance implies that the MAP estimation has no meaning in estimating $F$.
+\end{itemize}
+Still, the MAP estimator is relatively straightforward to calculate, since it requires the optimization of $p(\mathcal{D}|\theta) p(\theta)$, which is in general a simpler problem than integration. Thus, it is widely used.
+
+\section{Model selection}\label{modelselectionsection}
+In the previous discussion, the model $M$ was assumed to be fixed, with only its parameters being unknown. In practice, we have a set of models $\mathcal{M}$ from which we choose $M$. This raises the question on how to make this choice of $M$.
+
+The standard Bayesian solution for the problem would be placing a prior distribution $P(M)$ for the models, and then computing the posterior distribution for them, given the data, by Bayes' rule
+\begin{equation}
+ P(M|\mathcal{D}) = \frac{P(\mathcal{D}|M) P(M)}{\sum_{M' \in \mathcal{M}} P(\mathcal{D}|M') P(M')},
+\end{equation}
+with the model likelihood, in this setting being called \textit{marginal likelihood} or \textit{evidence}, given by
+\begin{equation}\label{marginalization_3}
+p(\mathcal{D} | M) = \int_{\Theta_M} p(\mathcal{D} | \theta_M, M) p(\theta_M | M) d\theta_M,
+\end{equation}
+emphasizing that the parameter space $\Theta_M$ depends on the model.  
+Then, one can choose $M$ by MAP estimation 
+\begin{equation}
+ \hat{M} = \argmax_{M \in \mathcal{M}} p(\mathcal{D} |M) p(M),
+\end{equation}
+or, in prediction settings, carrying the full posterior model distribution for doing model averaging. Still, choosing a prior for models may not be a trivial task, as discussed in \cite{Robert_2001}. To circumvent this, one can instead forget about the prior (or assume an uniform prior), and choose the model with maximum likelihood
+\begin{equation}\label{modelselectionobjective}
+\hat{M} = \argmax_{M \in \mathcal{M}} p(\mathcal{D} | M) = \argmax_{M \in \mathcal{M}} \int p(\mathcal{D} | \theta_M, M) p(\theta_M | M) d\theta_M.
+\end{equation}
+
+The choice of models by maximization of evidence results in the \textit{Bayesian Occam's razor} \cite{MacKay2003,MacKay_1991,Rasmussen_2001}, named after the Occam's razor principle that says, given a choice between models, we should select the simplest models that still explains the data. We say that some model is simpler or more complex than another if it can explain few or more data. To see how Occam's razor works in Bayesian setting, it suffices to realize that, between all possible datasets, probabilities must sum to one. For illustration, assume that $\mathcal{D}$ comes from a finite set of possible datasets. Then, we need
+\begin{equation}
+ \sum_{\mathcal{D}'} p(\mathcal{D}'|M) = 1.
+\end{equation}
+Now, compare three models, $M_1$, $M_2$ and $M_3$. $M_1$ can explain only very few datasets well, so few that it cannot explain $\mathcal{D}$. $M_2$ can explain more datasets, including $\mathcal{D}$, but not so much as $M_3$ explains, which is a vast number of datasets. We have then that $p(\mathcal{D}|M_1)$ must be very low, given that $M_1$ does not explain $\mathcal{D}$. The two other models, that explains the data, have higher values of $p(\mathcal{D}|M_2)$ and $p(\mathcal{D}|M_3)$. But, since $p(\mathcal{D}|M_3)$ "shares" probability mass with more datasets than $p(\mathcal{D}|M_2)$, by conservation of probability mass, we find that $p(\mathcal{D}|M_2)$ is higher. 
+Hence we have the order
+\begin{equation}
+ p(\mathcal{D}|M_2) > p(\mathcal{D}|M_3) > p(\mathcal{D}|M_1).
+\end{equation}
+Hence, we find that $M_2$ is simple enough to be desirable, but not so simple as to not be able to explain $\mathcal{D}$, thus obeying the Occam's razor principle.
+
+The model set $\mathcal{M}$ itself does not need to be discrete or enumerable. If $\mathcal{M}$ can be parametrized by a set $\Lambda$, then one can change $\mathcal{M}$ for $\Lambda$, and find the maximum of evidence by:
+\begin{equation}
+ \lambda_{ML-II} = \argmax_{\lambda \in \Lambda} p(\mathcal{D}|M(\lambda)).
+\end{equation}
+This estimator is called \textit{type II maximum likelihood} estimator. By setting an prior over $\Lambda$, we would have instead a \textit{type II maximum a posteriori} estimator 
+\begin{equation}
+ \lambda_{MAP-II} = \argmax_{\lambda \in \Lambda} p(\mathcal{D}|M(\lambda)) p(M(\lambda)).
+\end{equation}
+
+
+\section{Approximate inference}
+Computationally, Bayesian inference suffers from two major issues: 
+\begin{itemize}
+\item Because in the posterior density \eqref{bayes_theorem_2}, the normalizing term $p(\mathcal{D})$ \footnote{From now on we omit the dependence on the model $M$.} is to be determined by the integral \eqref{marginalization_2}, a closed-form solution of the posterior density is often unavailable, even though the unnormalized density $Z p(\theta|\mathcal{D}) = p(\mathcal{D}|\theta)p(\theta) = p(\theta,\mathcal{D})$ usually is. 
+
+\item A more grave problem is that, even with the normalized posterior density at hand, for an arbitrary function $f(\theta)$, the expectation $\int f(\theta) p(\theta|\mathcal{D}) d\theta$ is not trivial to calculate. And, as seen in Section \ref{decision_theory_section}, what one wants in the end with posterior distribution is to calculate expectations. Thus, computational methods for dealing with those problems are needed. 
+\end{itemize}
+
+In this section, Monte Carlo methods are quickly reviewed, along with Laplace's approximation. Discussion on variational inference, another important approximate method, is postponed to Chapter 3, since it is a main subject of this work.
+
+\subsection{Monte Carlo integration methods}
+
+Consider back the expectation 
+\begin{equation}\label{ev_example}
+\mu := \Ev_{\theta \sim p(\theta|\mathcal{D})}[f(\theta)] = \int f(\theta) p(\theta|\mathcal{D}) d\theta.
+\end{equation}
+Assuming this expectation exists, if one can sample $\theta_1,\ldots,\theta_N$ from $\theta|\mathcal{D}$, independently, then the estimator 
+\begin{equation}
+ \hat{\mu} := \frac{1}{N} \sum_{i=1}^N f(\theta_i),
+\end{equation}
+is such that, as $N \to \infty$, $\hat{\mu} \to \mu$ almost surely, by the law of large numbers. Moreover, if the variance of $f(\theta)$ is finite, then the convergence rate is $
+\mathcal{O}\left(\sqrt{\frac{\Var(f(\theta))}{N}}\right)$,
+by the central limit theorem. Hence, the challenge of Monte Carlo methods is how to get, from an unnormalized posterior distribution $p(\theta,\mathcal{D})$, independent or "independent enough" samples from this distribution.
+
+\subsubsection{Importance sampling}
+The importance sampling algorithm \cite{Robert_2005} is a relatively simple algorithm for sampling from unnormalized posteriors. Let $q(\theta)$ be some proposal distribution, such that one can sample easily from $q(\theta)$, having samples $\theta_1,\ldots,\theta_N \sim q(\theta)$. Finally, assume an unnormalized density $\bar{q}(\theta) = Z_q q(\theta)$ is known. Then, rewrite \eqref{ev_example} as 
+\begin{equation}\label{is_rewrite}
+\hat{\mu} = \int f(\theta) p(\theta|\mathcal{D}) d\theta = 
+\frac{Z_q}{Z} \int f(\theta) \frac{p(\theta,\mathcal{D})}{\bar{q}(\theta)} q(\theta) d\theta,
+\end{equation}
+which can be estimated as
+\begin{equation}\label{is_derivation_1}
+ \frac{Z_q}{Z} \int f(\theta) \frac{p(\theta,\mathcal{D})}{\bar{q}(\theta)} q(\theta) d\theta \approx \frac{1}{Z/Z_q} \frac{1}{N} \sum_{i=1}^N \tilde{w}_i f(\theta_i), \quad \tilde{w}_i := \frac{p(\theta_i,\mathcal{D})}{\bar{q}(\theta_i)}.
+\end{equation}
+The ratio $Z/Z_q$ can himself be estimated, using the same samples, as
+\begin{equation}\label{is_derivation_2}
+\frac{Z}{Z_q} = \frac{1}{Z_q} \int p(\theta,\mathcal{D}) d \theta = \int \frac{p(\theta,\mathcal{D})}{\bar{q}(\theta)} q(\theta) d\theta \approx \frac{1}{N} \sum_{i=1}^N \tilde{w}_i.
+\end{equation}
+Then, joining \eqref{is_derivation_1} and \eqref{is_derivation_2}, we have an estimate for \eqref{ev_example} 
+\begin{equation}
+ \hat{\mu} = \int f(\theta) p(\theta|\mathcal{D}) d\theta \approx \sum_{i=1}^N w_i f(\theta_i), \quad w_i = \frac{\tilde{w}_i}{\sum_{j=1}^N \tilde{w}_j}, \, \forall i.
+\end{equation}
+
+\subsubsection{Markov Chain Monte Carlo}
+Markov Chain Monte Carlo (MCMC) methods uses Markov chains to sample from the desired distribution \cite{Robert_2005,Brooks_2011}. MCMC is arguably the most popular method in Bayesian statistics, due to their ability to sample efficiently from relatively high dimensional distributions, with only unnormalized density available. As such, the number of MCMC methods is enormous. Here a basic method, Metropolis-Hastings, is reviewed in passing.
+
+Markov chains are sequences of random variables $X_0,X_1,\ldots$, with the property that the conditional distribution $X_i|X_0,\ldots,X_{i-1}$ is the same as $X_i|X_{i-1}$. Thus, a Markov chain is completely defined by the distribution of the initial random variable $X_0$, and the \textit{transition probability distribution},  $p(x_{i+1}|x_i)$. If $p(x_{i+1}|x_i)$ is independent of $i$, is called a \textit{stationary transition}, and those kinds of chains are of most interest in MCMC methods.
+
+Markov chains becomes interesting when their transitions have some unique distribution $\pi(x)$, called a \textit{stationary distribution}, such that 
+\begin{equation}
+ \pi(x') = \int p(x'|x) \pi(x) dx,
+\end{equation}
+that is, when the initial random variable $X_0$ of a Markov chain is distributed according to $\pi(x)$, under the transition $p(x'|x)$, every $X_i$ is distributed according to $pi(x)$. One of the conditions that suffices (although is not necessary)for $\pi(x)$ being a stationary distribution is that it satisfies the \textit{detailed balance condition}
+\begin{equation}
+ p(x'|x)\pi(x) = p(x|x')\pi(x').
+\end{equation}
+With the stationary distribution, under some technical conditions (see \cite{Robert_2005}), we have for a Markov chain with transition probability $p(x'|x)$, such that $X_0 = x_0$ and $x_i$ is sampled from $p(x_i|x_{i-1})$, for $i \geq 1$, that, as $N \to \infty$,
+\begin{equation}
+ \frac{1}{N} \sum_{i=1}^N f(x) \to \Ev_{X \sim \pi}[f(X)].
+\end{equation}
+
+Moreover, the convergence follows a version of the central limit theorem. Assume first that $X_0 \sim \pi$. Then, we have that the central limit theorem holds, with \eqref{cltconvergence} being substituted for
+\begin{equation}\label{cltmc}
+ \mathcal{O}\left(\sqrt{\frac{\Var(f(X_1)) + 2 \sum_{k=1}^\infty \Cov(f(X_1),f(X_{1+k}))}{N}}\right),
+\end{equation}
+when $i$ large enough \cite{Geyer_2011}. More generally (and realistically), any Markov chain (modulo a technical conditions) for which the transition $p(x'|x)$ has stationary distribution $\pi(x)$ follows the central limit theorem, with asymptotic rate of convergence being the same as when $X_0 \sim \pi$. \footnote{This results in the important notion of \textit{effective sample size} (ESS), where \eqref{cltmc} is substituted for $\mathcal{O}\left(\sqrt{\frac{\Var(f(X))}{N_{\text{eff}}}}\right)$, with $N_\text{eff} = N/\left(1+2\sum_{k=1}^\infty \text{corr}(f(X_i),f(X_{i+k})\right)$, when $i$ is large enough.}
+		
+These results gives rise to the following procedure: construct a randomized algorithm such that, starting with some $\theta_i \in \Theta$, $\theta_{i+1} \in \Theta$ is generated such that $p(\theta_{i+1}|\theta_i)$ has stationary distribution $p(\theta|\mathcal{D})$.
+
+The Metropolis-Hastings algorithm is one manner of doing this for a general distribution. Given a (possibly unnormalized) conditional distribution $g(\theta'|\theta)$ (a \textit{proposal distribution}), and $\theta_t$, $t \geq 0$, one samples a proposal 
+$\tilde{\theta}_{t+1}$ from $g(\theta'|\theta_t)$, and then, letting
+\begin{equation}
+ \alpha(\tilde{\theta}_{t+1},\theta_t) = 
+  \min \left(1, \frac{p(\tilde{\theta}_{t+1}|\mathcal{D}) g(\theta_t|\tilde{\theta}_{t+1})}{p(\theta_t|\mathcal{D}) g(\tilde{\theta}_{t+1}|\theta_t)}\right),
+\end{equation}
+be the \textit{acceptance probability}, then let $\theta_{t+1} = \tilde{\theta}_{t+1}$ with probability $\alpha(\tilde{\theta}_{t+1},\theta_t)$, else let $\theta_{t+1} = \theta_t$. One key observation is that the ratio $p(\tilde{\theta}_{t+1}|\mathcal{D})/p(\theta_t|\mathcal{D})$ is independent of the normalization constant, thus it can be substituted for $p(\mathcal{D}|\tilde{\theta}_{t+1})p(\tilde{\theta}_{t+1})/p(\mathcal{D}|\theta_t)p(\theta_t)$, avoiding the need for the normalized posterior.
+
+For continuous distributions, one standard proposal distribution is $g(\theta'|\theta) = \mathcal{N}(\theta'|\theta,\epsilon^2 I)$, with $\epsilon$ being the step size, resulting in the \textit{Random Walk Metropolis} algorithm. In particular, with this proposal distribution $g(\theta'|\theta) = g(\theta'|\theta)$, simplifying the acceptance probability to 
+\begin{equation}
+\alpha(\tilde{\theta}_{t+1},\theta_t) = 
+\min \left(1, \frac{p(\tilde{\theta}_{t+1}|\mathcal{D})}{p(\theta_t|\mathcal{D})}\right),
+\end{equation}
+
+\subsection{Laplace's approximation}
+Laplace's approximation \cite{Bishop_2007} is arguably the simplest technique from a class of methods that tries to approximate the density $p(\theta|\mathcal{D})$ by some other density $q(\theta)$, using $p(\theta,\mathcal{D})$, and work with the approximation. Another technique that belongs to this class of methods is variational inference, the subject of Chapter 5.
+
+Consider $\Theta = \mathbb{R}^D$, $p(\theta|\mathcal{D})$ to be smooth, and $\theta^* = \hat{\theta}_{\text{MAP}}$ be the MAP of $p(\theta|\mathcal{D}) = p(\theta,\mathcal{D})/Z$. Then, doing a second order Taylor approximation on $l(\theta) = \log p(\theta,\mathcal{D}) = \log p(\theta|\mathcal{D}) + \log p(\mathcal{D})$, around $\theta^*$, and noticing $\nabla_\theta l(\theta^*) = 0$, 
+\begin{equation}
+ l(\theta) \approx l(\theta^*) + \frac{1}{2} (\theta - \theta^*)^T H_{\theta^*}(l) (\theta - \theta^*),
+\end{equation}
+where $H_{\theta^*}(l)$ is the Hessian matrix of $l(\theta)$ on $\theta^*$ \footnote{The negative of the Hessian matrix $-H_{\theta}(l)$ is the same as Fisher information matrix $I(\theta)$.}. Then, letting $\Sigma = -H_{\theta^*}^{-1}(l)$ and $\mu = \theta^*$, taking the exponential on both sides 
+\begin{equation}
+p(\theta,\mathcal{D}) \approx \exp(l(\theta^*)) \exp \left(-\frac{1}{2}(\theta - \mu)^T \Sigma^{-1} (\theta - \mu) \right).
+\end{equation}
+The second side is just the unnormalized density of $\mathcal{N}(\theta|\mu,\Sigma)$. Hence, normalizing back, we arrive at the Laplace's approximation for $p(\theta|\mathcal{D})$
+\begin{equation}
+p(\theta|\mathcal{D}) \approx \mathcal{N}\big(\theta;\theta^*,-H_{\theta^*}^{-1} (l)\big).
+\end{equation}
+
+The Laplace' approximation needs optimization of $l(\theta)$ and access to second derivatives, which for many cases may be cheaply available. However, since the approximation is only local, it may diverge sharply from the actual posterior. Moreover, in higher dimensions, calculating and inverting the Hessian matrix may be too costly.
+
+\subsubsection{Remark on approximation}
+It is important to consider a possible advantage of using an approximate density $q(\theta)$ over sampling from $p(\theta|\mathcal{D})$. Assume $q(\theta)$ simple enough so that there is no need for advanced sampling techniques for Markov Chain Monte Carlo. Then, consider the general loss minimization problem \eqref{generalloss}, and substitute $p(\theta|\mathcal{D})$ for $q(\theta)$, yielding the minimization objective for $a \in \mathcal{A}$.
+\begin{equation}
+ F_q(a) = \int_{\Theta} L(\theta,a) q(\theta) d\theta.
+\end{equation}
+If $\mathcal{A}$ is a subset of $\mathbb{R}^k$, then one can sample $N$ samples from $q(\theta)$ and get a stochastic estimation of $\nabla F_q(a)$
+\begin{equation}
+ \nabla F_q(a) \approx \frac{1}{N}\sum_{\theta_i \sim q(\theta)} \nabla_a L(\theta_i,a),
+\end{equation}
+allowing the application of stochastic gradient descent, and related techniques, for minimizing $F_q(a)$. However, sampling from $q(\theta)$ is easy, so the bottleneck mostly belongs in the evaluation of $\nabla_a L(\theta,a)$. If samples from $p(\theta|\mathcal{D})$ were made from some more advanced sampling technique instead, the bottleneck would be in the sampling algorithm performance, which may be not quite as fast. Since $q(\theta)$ must be discovered only once, then approximation may be more feasible.
+
+The drawback is that of course $q(\theta)$ must be a good approximation of $p(\theta|\mathcal{D})$ to begin with, which may not be easy to ensure (as discussed, this is one drawback from Laplace's approximation).
+
+\section{Expensive and intractable likelihoods}
+In general, Monte Carlo techniques assumes that $p(\theta,\mathcal{D}) = p(\mathcal{D}|\theta) p(\theta)$ can be evaluated cheaply. Since usually the prior $p(\theta)$ is chosen in a manner that it is very simple, whether $p(\theta,\mathcal{D})$ is hard to evaluate depends on $p(\mathcal{D}|\theta)$. In many cases, likelihood evaluation is in fact cheap, but in some cases it may be expensive or intractable, requiring specific techniques for approximate inference.
+
+\subsection{Pseudo-marginals}\label{pseudomarginalsection}
+One case of intractable likelihood is when the likelihood model depends on some unobserved variable, that must be marginalize. To illustrate, consider that $\mathcal{D} = y_1$ is a noisy observation of a phenomena $z_1$, whose dependence on a parameter $\theta$ is modeled as $p(z_1|\theta)$. The noise model $p(y_1|z_1)$ is also available. Then, the likelihood $p(y_1|\theta)$ comes from marginalization 
+\begin{displaymath}
+p(y_1|\theta) = \int p(y_1|z_1) p(z_1|\theta) d\theta.
+\end{displaymath}
+
+As a general case, consider a likelihood dependent on a latent variable
+\begin{equation}\label{ilikemargin}
+ p(\mathcal{D}|\theta) = \int p(\mathcal{D}|\omega,\theta) p(\omega|\theta) d\omega.
+\end{equation}
+Assume the integral in \eqref{ilikemargin} is not available analytically, hence so is not $p(\mathcal{D}|\theta)$. Usually what is available are Monte Carlo estimates of $p(\mathcal{D}|\theta)$, say by i.i.d. samples of $w|\theta$,
+\begin{equation}
+ \hat{p}(\mathcal{D}|\theta) = \frac{1}{N} \sum_{\omega_i \sim p(\omega|\theta)} p(\mathcal{D}|\omega_i,\theta),
+\end{equation}
+or by importance sampling. In this case, \cite{Andrieu_2009} shows that when using an unbiased and positive estimate $\hat{p}(\mathcal{D}|\theta)$ at each step of the Metropolis-Hastings algorithm, resulting in an unbiased estimate of the unnormalized posterior $\hat{p}(\mathcal{D}|\theta)p(\theta)$, the resulting stationary distribution is $p(\mathcal{D}|\theta)$. The result does not give an answer on whether Metropolis-Hastings using $\hat{p}(\mathcal{D}|\theta)$ is efficient, and how to make so. This itself is a current topic of research (some examples can be found in \cite{Andrieu_2010,Sherlock_2015}).
+
+\subsection{Approximate Bayesian computation}
+Now consider a model that $p(\mathcal{D}|\theta)$ is not readily available, but for each fixed $\theta \in \Theta$, one can sample the \textit{random variable} $\mathcal{D}|\theta$ with ease. For clarity, we will refer to this random variable as $\mathcal{D}'|\theta$, while keeping $\mathcal{D}$ denoting the fixed data.
+
+As an example, consider the data $\mathcal{D}$ consists of observation point $x_N$ of a long Markov chain, with known transition probability distribution $p(x_{i+1}|x_i)$, and one wants to infer the point $x_0$ where the chain was initiated. The likelihood $p(x_N|x_0)$ is given by
+\begin{equation}
+ p(x_N|x_0) = \int \ldots \int p(x_N|x_{N-1}) \ldots p(x_1|x_0) dx_1 \ldots dx_{N-1},
+\end{equation}
+which is hard to even compute some pseudo-marginal. However, given some $x_0$, sampling $x_N$ is just a question of simulating the chain for $N$ steps, with transition $p(x_{i+1}|x_i)$. Some other examples of models whose likelihood is hard to evaluate, but sampling is easy, are found in evolutionary genetics \cite{Pritchard_1999,Beaumont_2003}.
+
+In approximate Bayesian computation (ABC) \cite{Fearnhead_2012,Beaumont_2003}, one wishes to construct an artificial likelihood $p_{\text{ABC}}(\mathcal{D}|\theta)$, in such a way that for each $\theta$, when the simulated data $\mathcal{D}'|\theta$ is "similar" to $\mathcal{D}$, $p_{\text{ABC}}(\mathcal{D}|\theta)$ is higher than when $\mathcal{D}'|\theta$ is not. For doing this, one takes:
+\begin{itemize}
+	\item a function $S$ that takes a (simulated or real) dataset $\mathcal{D}$ and return some $d$-dimensional statistics of it.
+	For example, if $\mathcal{D} = \{y_1,\ldots,y_N\}$, the statistics may be the first $d$ empirical moments of $\mathcal{D}$, or simply $\mathcal{D}$, making $S$ the identity function (in this case $d=N$).
+	\item A function $k:\mathbb{R}^d \to \mathbb{R}$, integrating to one, such that $k$ achieves its maximum at $0$. For instance, $k(x) = \mathcal{N}(x;0,h^2 I)$ can be used.
+\end{itemize}
+With those, one defines the ABC approximation for the likelihood
+\begin{equation}\label{abclikelihood}
+ p_{\text{ABC}}(\mathcal{D}|\theta) = \int \frac{1}{h}k\left(\frac{S(\mathcal{D}) - S(\mathcal{D}')}{h}\right) p(\mathcal{D}'|\theta) d\mathcal{D}'.
+\end{equation}
+To see why this is an approximation of the true likelihood $p(\mathcal{D}|\theta)$, assume that $S(\mathcal{D}) = S(\mathcal{D}')$ if and only if $\mathcal{D} = \mathcal{D}'$, and consider $k(x) = \mathcal{N}(x;0,h^2 I)$. Then, as $h \to 0$, $h^{-1}k((S(\mathcal{D}) - S(\mathcal{D}'))/h)$ goes to the Dirac delta function $\delta(\mathcal{D} - \mathcal{D}')$. But, we have that 
+\begin{equation}
+\int \delta(\mathcal{D} - \mathcal{D}') p(\mathcal{D}'|\theta) d \mathcal{D}' = p(\mathcal{D}|\theta)
+\end{equation},
+so $p_{\text{ABC}}(\mathcal{D}|\theta)$ goes to $p(\mathcal{D}|\theta)$ when $h$ goes to $0$.
+
+With the approximate likelihood \eqref{abclikelihood}, one has the corresponding approximate ABC posterior
+\begin{equation}
+ p_{\text{ABC}}(\theta|\mathcal{D}) \propto p_{\text{ABC}}(\mathcal{D}|\theta) p(\theta).
+\end{equation}
+Notice the ABC likelihood still is not analytically available. However, since samples from $p(\mathcal{D}'|\theta)$ are available, one can use the pseudo-marginal technique presented in previous section to sample from the approximate ABC posterior. The question on how to choose appropriate summary statistics is addressed for example in \cite{Fearnhead_2012}.
+
+\subsection{Expensive likelihoods}
+In some cases, the likelihood $p(\mathcal{D}|\theta)$ is expensive to evaluate but not intractable, such that one can have tens or hundreds of evaluations in limited time, but not much more. Moreover, unlike the previously presented case, sampling from the model is just as expensive, if not more, than evaluating $p(\mathcal{D}|\theta)$. Such likelihoods arise, for example, in Bayesian inverse problems \cite{Tarantola_2004}, where the mapping from parameters to observations is done by expensive simulations.
+
+An approach is, given a limited number of likelihood evaluations $\Omega_N = \{(\theta_i,p(\mathcal{D}|\theta_i)\}$, construct an approximate model $\hat{p}_N(\theta|\mathcal{D})$ of $p(\theta|\mathcal{D})$, and inference is performed with the approximation, usually with MCMC. This model should, given new evaluations of the likelihood $\Omega_{N'}$, be able to incorporate those in an online manner.
+
+Gaussian processes, presented in next chapter, are particularly suitable for this task, and are used in \cite{Rasmussen_2003,Wang_2018_2,Bilionis_2013,Kandasamy_2015,Conrad_2016}, using Monte Carlo methods on the approximation. Other approximations include GRIMA \cite{Bliznyuk_2012} and polynomial approximations \cite{Marzouk_2007}. The work presented here falls in the contest of expensive likelihoods methods, using Gaussian processes for approximation, and variational inference for approximate inference, as in \cite{Acerbi_2018}.

@@ -1,0 +1,55 @@
+This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: main.aux
+The style file: plain.bst
+Database file #1: post-text/referencias.bib
+Warning--empty journal in Boyd_2004
+Warning--empty journal in Dudley_2002
+Warning--empty publisher in hogben14
+Warning--can't use both author and editor fields in Jaakkola_1998
+Warning--empty journal in Osborne_2007
+Warning--empty booktitle in Rasmussen06
+Warning--empty booktitle in Rasmussen_2003
+Warning--empty journal in Shawe_Taylor_2004
+You've used 120 entries,
+            2118 wiz_defined-function locations,
+            1301 strings with 24751 characters,
+and the built_in function-call counts, 48852 in all, are:
+= -- 5089
+> -- 1923
+< -- 52
++ -- 765
+- -- 629
+* -- 3017
+:= -- 7259
+add.period$ -- 384
+call.type$ -- 120
+change.case$ -- 650
+chr.to.int$ -- 0
+cite$ -- 128
+duplicate$ -- 2334
+empty$ -- 3688
+format.name$ -- 629
+if$ -- 10957
+int.to.chr$ -- 0
+int.to.str$ -- 120
+missing$ -- 132
+newline$ -- 603
+num.names$ -- 254
+pop$ -- 720
+preamble$ -- 1
+purify$ -- 541
+quote$ -- 0
+skip$ -- 2136
+stack$ -- 0
+substring$ -- 3292
+swap$ -- 1054
+text.length$ -- 52
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 452
+warning$ -- 8
+while$ -- 400
+width$ -- 123
+write$ -- 1340
+(There were 8 warnings)

@@ -1,0 +1,45 @@
+\chapter{Future challenges and conclusion}
+Here, we present some possible directions to extend the presented method to other applications.
+
+\section{Reparameterization trick with Gaussian Processes}
+The Bayesian Monte Carlo approach for approximating the integral terms
+\begin{displaymath}
+ \int \Ev[\log(\gu_\mathcal{D}(\theta))] q_i(\theta)
+\end{displaymath}
+suffers from the fact that the GP kernel and the distribution $q_i$ are limited, since
+\begin{displaymath}
+ \int k(\theta,\theta_i) q_i(\theta) d\theta
+\end{displaymath}
+must be tractable. One manner to circumvent this is by abandoning the BMC approach to integration, and insteading using the reparameterization trick presented in Section \ref{reparameterizationsection}, turning the BVBMC approach closer in spirit to the one in \ref{gradboostsection}.
+
+One disadvantage is that evaluations of Gaussian Process, although cheap, are not extremely cheap, specially for large datasets, so reparameterization may be considerably slower.
+
+\section{Extending BVBMC to pseudo-marginal likelihoods}
+Consider that, as in Section \ref{pseudomarginalsection}, that $\gu(\theta) = Z p(\theta|\mathcal{D}) = p(\mathcal{D}|\theta) p(\theta)$ is truly unavailable, and even the pseudo-marginals $\hat{\gu}(\theta) = Z \hat{p}(\theta|\mathcal{D})$ are expensive to calculate.
+
+Gaussian processes accommodates, for evaluation points $\{\theta_i\}_{i=1}^N$, the noisy estimates $\{\hat{\gu}(\theta_i)\}_{i=1}^N$ of $\{\gu(\theta_i)\}_{i=1}^N$. If one were doing GP regression on $\gu(\theta)$, one could assume that $p(\hat{\gu}|\gu)$ is roughly Gaussian, due to the central limit theorem, and use \eqref{meancovGPR} as surrogate model.
+
+However, in BVBMC (and VBMC), one uses the GP surrogate model on $\log \gu(\theta)$. This implies that, letting $\epsilon = \hat{\gu}(\theta) - \gu(\theta)$ be the noise random variable, one have the model for $\log \bar{\gu}(\theta)$
+\begin{equation}
+ \log \bar{\gu}(\theta) = \log \left(e^{\log \gu(\theta)} + \epsilon \right),
+\end{equation}
+which is a complicated noise model, to be treated as in \eqref{generalnoise}. Furthermore, one cannot even assume this noise term to be controlled, since, by doing a rough Taylor expansion:
+\begin{equation}
+\log \bar{\gu}(\theta) = \log \gu(\theta) + e^{-\log \gu(\theta)} \epsilon
+\end{equation}
+which results in a very large noise for low values of $-\log \gu(\theta)$. One future work could be on how to address this problem.
+
+\section{Scaling BVBMC to a larger number of evaluations}
+Given the scaling problems of GP discussed in Section \ref{scalinggpsession}, for unnormalized posteriors $\gu(\theta)$ that can be evaluated in tens of thousands, but that evaluations in hundred of thousands or millions is hard, naive use of BVBMC runs into problems.
+
+A possibility is two use sparse Gaussian Processes, that are briefly reviewed in the Appendix \ref{sparsegpchapter}. However, their integration with BVBMC ran into problems, so further research would be needed.
+
+Of course, one could drop the use of GPs and use other surrogate function methods as done in \cite{Bliznyuk_2012,Marzouk_2007}. However, it should be noted that local approximation methods may not work with variational inference, because of its global approximation nature.
+
+\section{Conclusion}
+The method presented in this work, although still immature, has shown promise for use in Bayesian inference, where the likelihood function is expensive of evaluate, that are common in inverse problems.
+
+The associated package in \url{https://github.com/DFNaiff/BVBMC}, built on top of PyTorch, is intended to be easy to use, so a practitioner can quickly employ it in their own problems, if they wish so.
+
+
+ 

@@ -1,0 +1,550 @@
+%Obs.: No sistema operacional Windows, ao modificar este arquivo usando WinEdt, pode gerar erro do tipo:
+
+%Error: Unicode char \u8: not set up for use with LaTeX.
+
+%Se esse erro acontecer no WinEdt, modifique o Apêndice no Texmaker, rode nele e depois no WinEdt.
+
+
+% Se não tiver Apêndice, deixar este arquivo em branco.
+
+\chapter{SPARSE GAUSSIAN PROCESSES}\label{sparsegpchapter}
+
+Given the scaling problem of GP methods, many sparsifications proposals were proposed, and the subject is a very fruitful area of research. We present below some of those approaches, although there are many other (for a recent review, see \cite{Haitao_2018}). In the following, $\sigma_n > 0$, for reasons that will be clear.
+
+\section{Nystrom extension}
+One approach is to simply approximate the matrix $K_\delta(\mathbf{x},\mathbf{x}) = K(\mathbf{x},\mathbf{x}) + \delta_n I$ in an manner that the matrix inversion (or Cholesky decomposition) becomes cheaper. One approach is to find an low-rank approximation of $K(\mathbf{x},\mathbf{x}) = U W U^T$, where $U$ is $n \times m$ and $W$ $m \times m$, and $m \ll n$. Then, one can find both the inverse and Cholesky decomposition of $V W V^T + \delta_n I$ with $\mathcal{O}(m^3)$ computational cost (\ref{matrixinversionlemma}).
+
+The optimal $m$-rank approximation of $K(\mathbf{x},\mathbf{x})$, in both spectral norm and Frobenius norm is given by
+\begin{displaymath}
+\tilde{K} := \sum_{i=1}^l \lambda_i \mathbf{v}_i \mathbf{v}_i^T = V_l \Lambda_l V_l^T,
+\end{displaymath} 
+where $\lambda_1 \geq \ldots \geq \lambda_m \geq \lambda_{m+1} \geq \ldots \geq \lambda_n$ are the eigenvalues of $K(\x,\x)$, and $\mathbf{v}_1,\ldots \mathbf{v}_n$ are the corresponding eigenvalues (\cite{Eckart_1936}, coupled with the fact that for positive-semidefinite matrices the eigenvalue an singular value decomposition are the same). Then, $||K(\x,\x) - \tilde{K}||_2 = \lambda_{m+1}$. Unfortunately, this optimal low-rank approximation itself requires calculating the spectral decomposition of $K(\x,\x)$, which by itself has $\mathcal{O}(N^3)$ cost. So one has instead to find some cheap method to calculate a reasonable low-rank approximation of $m$.
+
+The technique of Nystrom extensions was first introduced in \cite{Williams01usingthe}, and has found applications in kernel methods, as seen in \cite{Fowlkes_2004}, \cite{Wang_2009}. A $m$-rank Nystrom extension of a matrix $A$ $n \times n$ is formed by selecting $m$ (ordered) sub-indices from $\{1,\ldots,n\}$ (call it $I$), and then by letting $C$ be the $n \times m$ matrix formed by selecting the corresponding columns of $A$ and $W$ be the $m \times m$ matrix formed by selecting the intersection between the corresponding columns and corresponding rows of $A$, that is, 
+\begin{displaymath}
+C_{i,j} = A_{i,I_j}, \quad W_{i,j} = A_{I_i,I_j}.
+\end{displaymath}
+Then the corresponding Nystrom extension $\tilde{A}$ of $A$ is given by $A = C W^\dagger C^T$, where $W^\dagger$ is the pseudo-inverse of $W$. The simplest Nystrom extension technique is the naive Nystrom extension, where the $m$ sub-indices randomly without replacement from $\{1,\ldots,m\}$. With high probability, the optimal rank $k$ approximation of $A$ can be obtained by choosing $m = \mathcal{O}(k \log k)$ \cite{Gittens_2011}. In particular, if the spectrum of $A$ decays quickly, the naive Nystrom extension will result in a good low-rank approximation. This is usually the case for the kernel matrix $K(\x,\x)$, thus making this technique an attractive choice  at first. However, when applied to GP regression, one problem is that the predicive variance is not guaranteed to be positive, thus making the use of the Nystrom extension problematic \cite{Candela_2005}. Still, many sparsification techniques such as the ones shown below, end up using a version of it, with some correction ensuring that the posterior prediction is a valid distribution.
+
+
+\section{Prior approximations}
+The idea of prior approximations for sparsification of Gaussian Process is an unified view given by \cite{Candela_2005} that includes previous approaches offered in \cite{Smola_2001,Seeger_2003,Snelson_2006} To understand it, first note that one can over (dropping $M$ for convenience) an alternative derivation of the distribution for $p(\mathbf{f}^*|\mathbf{y})$ given in section 2.1, by expanding: 
+\begin{equation} \label{GPRalternative}
+p(\mathbf{f}^*|\mathbf{y}) = \int p(\mathbf{f},\mathbf{f}^*|\mathbf{y}) d \mathbf{f} 
+= \frac{1}{p(\mathbf{y})} \int p(\mathbf{y}|\mathbf{f}) p(\mathbf{f},\mathbf{f}^*) d \mathbf{f}.
+\end{equation} 
+With the prior $p(\mathbf{f},\mathbf{f}^*)$ given by \eqref{jointGP}, assuming $m = 0$ for simplicity. Then, as shown in \ref{alternativegpsection}, one arrives at the exact same equation in \eqref{meancovGPR}. Then, since the matrix $K_{f,f}$ comes from $p(\mathbf{f},\mathbf{f})$, one approach to reduce the costs of its inverse is to approximate it.
+
+To construct those approximations, first consider some new fictitious evaluation points, called \textit{inducing points} $\mathbf{x}_u = (x_{u,1},\ldots,x_{u,m})$, that may or may not include the training points, and the corresponding evaluations $\mathbf{u} = (f(x_{u,1}),...,f(x_{u,m}))^T$. Now, given the inducing points, one can write 
+\begin{equation}
+p(\mathbf{f},\mathbf{f}^*) = \int p(\mathbf{f},\mathbf{f}^*|\mathbf{u}) p(\mathbf{u}) d \mathbf{u},
+\end{equation}
+where $p(\mathbf{u}) = \mathcal{N}(\mathbf{u}|\mathbf{0},K_{u,u})$. Now, it is made the assumption that $\mathbf{f}$ and $\mathbf{f}^*$ are independent given $\mathbf{u}$, thus $p(\mathbf{f},\mathbf{f}^*|\mathbf{u}) \approx p(\mathbf{f}|\mathbf{u})p(\mathbf{f^*}|\mathbf{u})$. Without using further approximations for $p(\mathbf{f}|\mathbf{u})$ and $p(\mathbf{f^*}|\mathbf{u})$:
+\begin{equation}
+\begin{split}
+& p(\mathbf{f}|\mathbf{u}) = \mathcal{N}(\mathbf{f}|K_{f,u} K_{u,u}^{-1} \mathbf{u}, K_{f,f} - K_{f,u} K_{u,u}^{-1} K_{u,f}) \\
+& p(\mathbf{f}^{*}|\mathbf{u}) = \mathcal{N}(\mathbf{f}^{*}|K_{*,u} K_{u,u}^{-1} \mathbf{u}, K_{*,*} - K_{*,u} K_{u,u}^{-1} K_{u,*}).
+\end{split}
+\end{equation}
+Using the notation $Q_{a,b} := K_{a,u} K_{u,u}^{-1} K_{u,b}$ and $K_{(f,*),u} := K((\mathbf{x},\mathbf{x}^*),\mathbf{u})$:
+\begin{equation}
+\left[ \begin{array}{c} 
+\mathbf{f} \\
+
+\mathbf{f^*} \end{array} \right] | \mathbf{u} \sim \mathcal{N} 
+\left( \left[ \begin{array}{c}
+K_{(f,*),u} (K_{u,u}+\sigma^2 I)^{-1} \mathbf{u} \end{array} \right] , 
+\left[ \begin{array}{c c} 
+K_{f,f} - Q_{f,f} & 0 \\
+0 & K_{*,*} - Q_{*,*} \end{array} \right]
+\right).
+\end{equation}
+
+By using the equation \ref{margingaussian}, we then find:
+\begin{equation}\label{exactapproxinducing}
+\begin{split}
+\left[ 
+\begin{array}{c} 
+\mathbf{f} \\
+\mathbf{f^*} 
+\end{array}\right] \sim & \mathcal{N} 
+\left( 0 , 
+\left[ 
+\begin{array}{c c} 
+K_{f,f} - Q_{f,f} & 0 \\
+0 & K_{*,*} - Q_{*,*} 
+\end{array} \right] + K_{(f,*),u} K_{u,u}^{-1} K_{(f,*),u}^T
+\right). \\
+& \mathcal{N} 
+\left( 0 , 
+\left[ 
+\begin{array}{c c} 
+K_{f,f} - Q_{f,f} + Q_{f,f}& Q_{f,*} \\
+Q_{*,f} & K_{*,*} - Q_{*,*} + Q_{*,*}
+\end{array} \right]\right).
+\end{split}
+\end{equation}
+
+By using \eqref{exactapproxinducing} in \eqref{GPRalternative}, we get:
+\begin{equation}
+\mathbf{f}^*|\mathbf{y} \approx \mathcal{N}(\mathbf{f}|Q_{*,f}(K_{f,f} + \sigma^2 I)^{-1} \mathbf{y},K_{*,*} - Q_{*,f}(K_{f,f} + \sigma^2 I)^{-1} Q_{f,*}).
+\end{equation}
+
+Nothing is really gained by considering the exact posteriors $p(\mathbf{f}|\mathbf{u})$ and $p(\mathbf{f}^*|\mathbf{u})$, since  still have the inverse of $K_{f,f} + \sigma^2 I$. Thus, there is need for further approximations, in turn to simplify the covariance matrix of $\mathbf{f}|\mathbf{u}$, thus simplifying $K_{f,f} + \sigma^2 I$ into something manageable for inversion. The main approximations of this kind are shown below. Notice that if the inducing points $\x_u$ are a subset of $\x$, then $Q_{f,f}$ is in fact a Nystrom extension of $K_{f,f}$.
+
+
+\subsubsection{Subset of regressors}
+The subset of regressors approximation for GPs was first proposed in \cite{Smola_2001}, adapting an idea from \cite{Silverman_1985}. It originally considered the generative model for \text{any} $\f^*$ (including the training values $\f$):
+\begin{equation}
+\f^* = K_{*,u} \mathbf{w}_u, \quad \mathbf{w}_u \sim \mathcal{N}(0,K^{-1}_{u,u}).
+\end{equation}
+In particular, this implies that $\u = K_{u,u} \mathbf{w}_u$, hence, within the prior approximation framework, the SoR technique approximates $\mathbf{f}|\mathbf{u}$ and $\mathbf{f}^*|\mathbf{u}$ by deterministic functions of their means, that is:
+\begin{equation}
+\begin{split}
+& p(\mathbf{f}|\mathbf{u}) \approx q_{SoR}(\mathbf{f}|\mathbf{u}) = \mathcal{N}(\mathbf{f}|K_{f,u} K_{u,u}^{-1} \mathbf{u},0) \\
+& p(\mathbf{f}|\mathbf{u}) \approx q_{SoR}(\mathbf{f}^*|\mathbf{u}) = \mathcal{N}(\mathbf{f}^{*}|K_{*,u} K_{u,u}^{-1} \mathbf{u},0).
+\end{split}
+\end{equation}
+Then:
+\begin{equation}
+q_{SoR}(\mathbf{f},\mathbf{f}^*) = \mathcal{N} 
+\left( 0 , 
+\left[ 
+\begin{array}{c c} 
+Q_{f,f}& Q_{f,*} \\
+Q_{*,f} & Q_{*,*}
+\end{array} \right]\right),
+\end{equation}
+which results in the approximation $p(\mathbf{f}|\mathbf{y}) \approx q_{SOR}(\mathbf{f}|\mathbf{y})$:
+\begin{equation}
+q_{SOR}(\mathbf{f}^*|\mathbf{y}) = \mathcal{N}(\mathbf{f}|Q_{*,f}(Q_{f,f} + \sigma^2 I)^{-1} \mathbf{y},Q_{*,*} - Q_{*,f}(Q_{f,f} + \sigma^2 I)^{-1} Q_{f,*}).
+\end{equation}
+
+Since the marginal distribution of $\mathbf{f}$ is approximated by $\mathbf{Q_{f,f}}$, there is also an approximation for the likelihood of $\mathcal{D}$:
+\begin{equation}
+\log p(\mathcal{D}|M) \approx \log p(\mathbf{y}|M_{SoR},\mathbf{x}_u) = \log \mathcal{N}(\mathbf{y}|0,Q_{f,f} + \sigma^2 I).
+\end{equation}
+Notice that, since the matrix $Q_{f,f} = K_{f,u} K_{u,u}^{-1} K_{u,f}$ has low rank, one can use the matrix inversion lemma \ref{matrixinversionlemma} to calculate the inverse of $Q_{f,f} + \sigma^2 I$ with $\mathcal{O}(m^3)$ computational cost. If $m \ll n$, this gives a considerable gain in computation.
+
+As noted in \cite{Smola_2001} subset of regressors approximation suffers from overconfident predictive variances, since the prior approximations for both training and testing points are degenerate, so caution must be taken with those.
+
+\subsection{Deterministic Training Conditional}
+
+The Deterministic Training Condition approximation, also called Projected Latent Variables when first proposed by \cite{Seeger_2003}, or Projected Process Approximation in \cite{Rasmussen06}, was originally proposed as a likelihood approximation for the training observations:
+\begin{equation}
+p(\y|\f) \approx \mathcal{N}(K_{f,u} K_{u,u}^{-1} \u, \sigma^2 I).
+\end{equation}
+
+In the prior approximation framework, an equivalent formulation can be made from by making a deterministic approximation the training points $\mathbf{f}|\mathbf{u}$, leaving $\mathbf{f}^*|\mathbf{u}$ unchanged, unlike the SoR method resulting in:
+\begin{equation}
+\begin{split}
+& p(\mathbf{f}|\mathbf{u}) \approx q_{DTC}(\mathbf{f}|\mathbf{u}) = \mathcal{N}(\mathbf{f}|K_{f,u} K_{u,u}^{-1} \mathbf{u},0) \\
+& p(\mathbf{f}|\mathbf{u}) \approx q_{DTC}(\mathbf{f}^*|\mathbf{u}) = \mathcal{N}(\mathbf{f}^{*}|K_{*,u} K_{u,u}^{-1} \mathbf{u},K_{*,*} - Q_{*,*}),
+\end{split}
+\end{equation}
+resulting in the joint prior approximation:
+\begin{equation}
+q_{DTC}(\mathbf{f},\mathbf{f}^*) = \mathcal{N} 
+\left( 0 , 
+\left[ 
+\begin{array}{c c} 
+Q_{f,f}& Q_{f,*} \\
+Q_{*,f} & K_{*,*}
+\end{array} \right]\right),
+\end{equation}
+which results in the posterior approximation 
+\begin{equation}\label{dtcprediction}
+q_{DTC}(\mathbf{f}^*|\mathbf{y}) = \mathcal{N}(\mathbf{f}|Q_{*,f}(Q_{f,f} + \sigma^2 I)^{-1} \mathbf{y},K_{*,*} - Q_{*,f}(Q_{f,f} + \sigma^2 I)^{-1} Q_{f,*}),
+\end{equation}
+and the same data likelihood as in the subset of regressors case.
+\begin{equation}\label{dtcobjective}
+\log p(\mathcal{D}|M) \approx \log p(\mathbf{y}|M_{DTC},\mathbf{x}_u) = \log \mathcal{N}(\mathbf{y}|0,Q_{f,f} + \sigma^2 I)
+\end{equation}
+
+The DTC approximation improves considerably the predictive variances over the SoR approximation, while retaining the same predictive means. However, it has an inconsistency property in the fact that, for the training values $\f$, the covariance between then is computed differently whether they are considered as training values (in this case being $Q_{f,f}$) or as test values on the same points as the training points (being $K_{f,f}$), hence \cite{Candela_2005} claiming that it does not correspond exactly to a Gaussian Process. In practice, the advantage of it in relation of the DTC approximation compensates for this theoretical issue.
+
+
+\subsection{Fully Independent Training Conditional and Fully Independent Conditional}
+
+In the Fully Independent Training Conditional, originally proposed by \cite{Snelson_2006} with the name Sparse Gaussian Processes using Pseudo-Inputs, there is also an likelihood approximation as in the original formulations of the DTC approximation: 
+\begin{equation}
+p(\y|\f) \approx \mathcal{N}(K_{f,u}K_{u,u}^{-1} \u, \text{diag}(K_{f,f} - Q_{f,f}) + \sigma^2 I)
+\end{equation}
+
+In the prior approximation framework, the FITC approximates $p(\mathbf{f}|\mathbf{u})$ by the product of its marginal distributions, thus making an independence approximation for the training points, resulting in
+
+\begin{equation}
+p(\mathbf{f}|\mathbf{u}) \approx q_{FITC}(\mathbf{f}|\mathbf{u}) = \prod_{i=1} p(f_i|\mathbf{u}) = \mathcal{N}(\mathbf{f}|K_{f,u} K_{u,u}^{-1} \mathbf{u},\text{diag}(K_{f,f} - Q_{f,f})), 
+\end{equation}
+keeping $\f|\u$ unchanged as in the DTC approximation, 
+resulting in the joint prior approximation:
+\begin{equation}
+q_{FITC}(\mathbf{f},\mathbf{f}^*) = \mathcal{N} 
+\left( 0 , 
+\left[ 
+\begin{array}{c c} 
+Q_{f,f} + \text{diag}(K_{f,f} - Q_{f,f})& Q_{f,*} \\
+Q_{*,f} & K_{*,*}
+\end{array} \right]\right),
+\end{equation}
+If there is only one evaluation point $\mathbf{f}^* = (\mathbf{f}_1)$, the FITC approximation can be seen as a diagonal correction of the DTC approximation for $p(\mathbf{f},\mathbf{f}^*|\mathbf{u})$. The FITC results in the posterior approximation
+\begin{equation}\label{fitcpred}
+\begin{split}
+q_{FITC}(\mathbf{f}^*|\mathbf{y}) = \mathcal{N}(\mathbf{f}| Q_{*,f}(Q_{f,f} + D)^{-1} \mathbf{y}, K_{*,*} - Q_{*,f}(Q_{f,f} + D_f)^{-1} Q_{f,*}),
+\end{split}
+\end{equation}
+
+Where $D_f := \sigma^2 I + \text{diag}(K_{f,f} - Q_{f,f})$. Hence the matrix inversion term is still tractable by the matrix inversion lemma. Finally, the likelihood approximation for $\mathbf{y}$ is given by:
+\begin{equation}
+\log p(\mathcal{D}|M) \approx \log p(\mathbf{y}|M_{FITC},\mathbf{x}_u) = \log \mathcal{N}(\mathbf{y}|0,Q_{f,f} + D_f).
+\end{equation}
+
+The FITC approximation also has the same inconsistency property as the DTC approximation. In \cite{Snelson_2006} it is proposed instead to approximate also the test points $\f^*|\u$ prior by $\prod_{i}  p(f^*_i|u)$, recovering the consistency property, resulting in the Fully Independent Conditional (FIC) approximation:
+
+\begin{equation}
+\begin{split}
+q_{FIC}(\mathbf{f}^*|\mathbf{y}) = \mathcal{N}(\mathbf{f}|&Q_{*,f}(Q_{f,f} + D)^{-1} \mathbf{y}, \\
+& Q_{*,*} + D_* - Q_{*,f}(Q_{f,f} + D_f)^{-1} Q_{f,*}),
+\end{split}
+\end{equation}
+where $D_* := \text{diag}(K_{*,*} - Q_{*,*})$.
+For a single test point, the FITC approximation and the FIC approximation returns exactly the same predictive distribution. In practice, the FITC approximation is used far more often than the FIC one.
+
+\section{Posterior approximation via variational free energy}
+
+Another popular approach to sparsification is given in \cite{Titsias_2009}, different in spirit from the ones presented above. To understand the idea of posterior approximations, consider:
+\begin{equation}
+p(\f^*|\y) = \int p(\f^*|\f) p(\f|\y) d \f
+\end{equation}
+We have 
+\begin{equation*}
+\begin{split}
+p(\f|\y) & = \mathcal{N}(\f|K_{f,f}(K_{f,f} + \sigma^2 I)^{-1} \y,K_{f,f} - K_{f,f}(K_{f,f} + \sigma^2 I)^{-1} K_{f,f}) \\
+& = \mathcal{N}(\f|\mu,A),
+\end{split}
+\end{equation*}
+and
+\begin{equation}
+p(\f^*|\f) = \mathcal{N}(\f^*|K_{*,f}(K_{f,f} + \sigma^2 I)^{-1} \y,K_{*,*} - K_{*,f}(K_{f,f} + \sigma^2 I)^{-1} K_{f,*}).
+\end{equation}
+We then have, by \eqref{margingaussian}:
+\begin{equation} \label{gpmarginy}
+p(\f^*|\y) := \mathcal{N}(\f|K_{*,f}K^{-1}_{*,*} \mu,K_{*,*} - K_{*,f}(K_{f,f}^{-1}-K_{f,f}^{-1} A K_{f,f}^{-1}) K_{f,*}),
+\end{equation}
+which by the definition of $\mu$ and $A$ above yields the usual posterior distribution. 
+
+Now consider again inducing point $\x_u$ with corresponding values $\f_u$, assuming that $\f$ and $\f^*$ are independent given $\f_u$. Notice that this implies $\f^*$ and $\y$ independent given $\f_u$, since $\y$ only depends on $\f$. Then, marginalizing on the inducing values:
+\begin{equation}
+p(\f^*|\y) \approx q(\f^*) =  \int p(\f^*|\f_u,\y) p(\f_u|\y) d\f_u = \int p(\f^*|\f_u) p(\f_u|\y) d\f_u.
+\end{equation}
+Therefore, changing $\f$ for $\f_u$, \eqref{gpmarginy} still holds. Since the true posterior $p(\f_u|\y)$ includes the inverse of $K_{f,f} + \sigma^2 I$, one option is to approximate $p(\f_u|\y)$ by a distribution $\phi(\f_u)$, also Gaussian with mean $\mu$ and covariance $A$, so that 
+\begin{equation} \label{qumargin}
+q(\f^*) = \int p(\f^*|\f_u) \phi(\f_u) = \int q(\f^*,\f_u),
+\end{equation} 
+in an manner that \eqref{gpmarginy} yields an sparse approximation.
+
+One way to do this is to seek approximating the posterior $p(\f|\y)$ itself by some distribution $q(\f)$, involving $\phi(\f_u)$ on the training evaluations. As a proxy for this objective, the VFE method seeks to approximate the posterior for training and inducing values $p(\f,\f_u|\y)$ by $q(\f,\f_u)$, which, by \eqref{qumargin} is of form $q(\f,\f_u) = p(\f|\f_u) \phi(\f_u)$. Crucially, this augmented posterior depends on the inducing points $\x_u$ through $p(\f|\f_u)$, making then parameters of this approximate distribution, but not of the prior model $p(\f)$.
+
+A natural way to find $q(\f,\f_u)$ is by minimizing the Kullback-Leibner divergence between $q(\f,\f_u)$ and $p(\f,\f_u|\y)$ 
+\begin{displaymath}
+KL(q(\f,\f_u)||p(\f,\f_u|\y) = - \int \int q(\f,\f_u) \log \frac{p(\f,\f_u|\y)}{q(\f,\f_u)} d\f d\f_u,
+\end{displaymath}
+which is equivalent to maximizing the evidence lower bound, or variational free energy (using $p(\f,\f_u|\y) \propto p(\y|\f) p(\f|\f_u) p(\f_u)$)
+\begin{equation}
+\begin{split}
+F_V(q(\f,\f_u)) = F_V(\x_u,\phi) & = \int \int p(\f|\f_u) \phi(\f_u) \log \frac{p(\y|\f) p(\f|\f_u) p(\f_u)}{p(\f|\f_u) \phi(\f_u)} d \f d \f_u \\
+& = \int \phi(\f_u) \left( \int p(\f|\f_u) \log p(\y|\f) d \f + \log \frac{p(\f_u)}{\phi(\f_u)} \right) d\f_m.
+\end{split}
+\end{equation}
+
+This quantity is maximized by maximizing
+\begin{equation}\label{vfeobjective}
+F_V(\x_u) = \log \mathcal{N}(\mathbf{y}|0,Q_{f,f} + \sigma^2 I) - \frac{1}{2 \sigma^2} \text{tr}(K_{f,f} - Q_{f,f}),
+\end{equation}
+and setting $\phi(\f_u) = \mathcal{N}(\f_u|\mu^\dagger,A^\dagger)$, with
+\begin{equation}\label{vfeobjective2}
+\begin{split}
+& \mu^\dagger = \sigma^{-2} K_{u,u} (K_{u,u} + \sigma^{-2} K_{u,f} K_{f,u})^{-1} K_{u,f} \y \\
+& A^\dagger = K_{u,u} (K_{u,u} + \sigma^{-2} K_{u,f} K_{f,u})^{-1} K_{u,u}.
+\end{split}
+\end{equation}
+The proof is given in \ref{vfemaxsection}. Substituting back in \eqref{gpmarginy}, we arrive at 
+\begin{equation}\label{vfeprediction}
+\begin{split}
+& q_{VFE}(\f^*|\y) := \mathcal{N}(\f|\m_{VFE}^*,\Sigma_{VFE}^*) \\
+& \m_{VFE}^* = \sigma^{-2} K_{*,u} (K_{u,u} + \sigma^{-2} K_{u,f} K_{f,u})^{-1} K_{u,f} \y \\
+& \Sigma_{VFE}^* = K_{*,*} - Q_{*,*} + K_{*,u} (K_{u,u} + \sigma^{-2} K_{u,f} K_{f,u})^{-1} K_{u,*}.\\
+\end{split}
+\end{equation}
+It can be show (\ref{vfeequipsection}) that these predictions correspond exactly to the DTC prediction. Thus, the VFE approach differs only in how the inducing points and kernel hyperparameters are trained, by maximizing \eqref{vfeobjective} instead of \eqref{dtcobjective}. Recent improvements of the VFE approach is be found in \cite{Bui_2016}, where an unification of the VFE and FITC approaches are proposed.
+
+\subsection{Bayesian Monte Carlo with Sparse Gaussian Processes}
+
+The extension for Bayesian Monte Carlo for the inducing points methods for sparsification presented in the previous section is straightforward. We will consider here only the FITC and the DTC approximations (being the case for the VFE approximation exactly the same as the DTC one). Considering $D = \sigma^2 I$ in the VFE approximation and $D = \sigma^2 I + \text{diag}(K_{f,f} - Q_{f,f})$ in the FITC one, by substituting the predictive mean and variance of \eqref{fitcpred} and \eqref{dtcprediction} in \eqref{evbmc} and \eqref{varbmc}, 
+\begin{equation}
+\begin{split}
+& \Ev[Z_\mathcal{D}] = \mathbf{z}_u K_{u,u}^{-1} K_{u,f} (Q_{f,f} + D)^{-1} \y \\
+& \Var[Z_{\mathcal{D}}] = \Gamma - \mathbf{z}_u^T K_{u,u}^{-1} K_{u,f} (Q_{f,f} + D) K_{f,u} K_{u,u}^{-1} \mathbf{z}_u,
+\end{split}
+\end{equation}
+where
+\begin{equation}
+z_{u,i} = \int k(x,x_{u,i}) p(x) dx,
+\end{equation}
+and $\Gamma$ is the same as given in \eqref{varcoef}.
+
+\subsection{VBMC and BVBMC with Sparse Gaussian Processes}
+One of the techniques that was tried to expand the BVBMC method to wider applications was to use one of the sparse GP techniques shown here. However, it was found that, under low noise, the resulting matrices where very unstable, while when forcing artificially high noise, the results became innacurate.
+
+It should be noted that, in that stage, only the SQE kernel was used, and it remains to be seen whether this problem still arises when using product of Matern kernels, which was a later development in this work.
+
+
+\chapter{RELEVANT GAUSSIAN AND MATRIX IDENTITIES}
+
+In the following, it is presented some relevant matrix and Gaussian distribution identities. All of those identities can be found in \cite{Petersen_2012}, except for \eqref{productgaussians}, which is slightly more general and can be found in \cite{Candela_2005}.
+\section{Matrix inversion lemma}
+If all the relevant inverses exists, then
+\begin{equation}\label{matrixinversionlemma}
+ (Z + UWV^T) = Z^{-1} - Z^{-1}U(W^{-1} + V^T Z^{-1} U)^{-1} V Z^{-1}.
+\end{equation}
+One consequence of the matrix inverse lemma is the formula
+\begin{equation}\label{matrixinverselemmalemma}
+\begin{split}
+ (D + A)^{-1} & = (D + D D^{-1} A D^{-1} D)^{-1} = \\
+			  & = (D - D^{-1} D ((D^{-1} A D^{-1})^{-1} + D D^{-1} D) D D^{-1})  = \\
+			  & = D^{-1} - (D + D A^{-1} D)^{-1}.
+\end{split}
+\end{equation}
+\section{Product of Gaussian densities}
+\begin{equation}\label{productgaussians}
+ \mathcal{N}(x|a,A) \mathcal{N}(Px|b,B) = z_c \mathcal{N}(x|c,C),
+\end{equation}
+where
+\begin{displaymath}
+ c = (A^{-1} + P B^{-1} P^T)^{-1}, \quad c = C(A^{-1}a + P^T B^{-1} b),
+\end{displaymath}
+and
+\begin{displaymath}
+ z_c = \mathcal{N}(Pa|b,B+P^T A P) = \mathcal{N}(b|Pa,B+P^T A P).
+\end{displaymath}
+In particular, this implies that
+\begin{equation}\label{margingaussian}
+ \int \mathcal{N}(b|Px,B) \mathcal{N}(x|a,A) dx = \mathcal{N}(b|Pa,B+P A P^T).
+\end{equation}
+\section{Conditional of a Gaussian density}\label{appendixconditional}
+If
+\begin{equation}
+\left[ \begin{array}{c} 
+\mathbf{x}_1 \\
+\mathbf{x}_2 \end{array} \right] \sim \mathcal{N} 
+\left( \left[ \begin{array}{c}
+\mu_1 \\
+\mu_2 \end{array} \right] , 
+\left[ \begin{array}{c c} 
+\Sigma_{11} & \Sigma_{12} \\
+\Sigma_{21} & \Sigma_{22} \end{array} \right]
+\right).
+\end{equation}
+then 
+\begin{equation}
+\mathbf{x}_1|\mathbf{x}_2 \sim \mathcal{N}\big(\mu_1 + \Sigma_{12} \Sigma_{22}^{-1}(\mathbf{x}_2 - \mu_2),\Sigma_{11} - \Sigma_{12}\Sigma_{22}^{-1} \Sigma_{21}\big).
+\end{equation}
+\clearpage
+
+\chapter{Alternative derivation of GP predictions}\label{alternativegpsection}
+
+Consider:
+\begin{equation} \label{GPRalternativeAppendix}
+p(\mathbf{f}^*|\mathbf{y}) = \int p(\mathbf{f},\mathbf{f}^*|\mathbf{y}) d \mathbf{f} 
+= \frac{1}{p(\mathbf{y})} \int p(\mathbf{y}|\mathbf{f}) p(\mathbf{f},\mathbf{f}^*) d \mathbf{f}.
+\end{equation}
+By letting $P_f$ be the projection $(\mathbf{f},\mathbf{f}^*) \to \mathbf{f}$, and equivalently for $P_*$, and letting $K = K((\mathbf{x},\mathbf{x}^*),(\mathbf{x},\mathbf{x}^*))$, then
+\begin{equation}
+\begin{split}
+ p((\f,\f^*|\y)) \propto p(\mathbf{y}|\mathbf{f}) p(\mathbf{f},\mathbf{f}^*) & = 
+  \mathcal{N}(\y|\f,\sigma^2 I) \mathcal{N}((\f,\f^*)|0,K) \\
+ & = \mathcal{N}(P_f(\f,\f^*)|\y,\sigma^2 I) \mathcal{N}((\f,\f^*|0,K)) \\
+ & \propto \mathcal{N}((\f,\f^*)|c,C),
+\end{split}
+\end{equation}
+where
+\begin{equation}
+ C = (K^{-1} + P_f^T \sigma^{-2} I P_f)^{-1}, \quad c = C P_f \sigma^{-2} \y.
+\end{equation}
+By the matrix inversion lemma
+\begin{equation}
+ C = K - K P_f^T (P_f K P_f^T + \sigma^2 I)^{-1} P_f K.
+\end{equation}
+Hence, by \eqref{margingaussian},
+\begin{equation}
+ p(\f^*|\y) = \mathcal{N}(\f|P_* c,P_* C P_*^T).
+\end{equation}
+We have for the posterior covariance
+\begin{equation}
+\begin{split}
+ P_* C P_*^T & = P_* K P_*^T - P_* K P_f^T (P_f K P_f^T + \sigma^2 I)^{-1} P_f K P_* \\
+ & = K_{*,*} - K_{*,f} (K_{f,f} + \sigma^2 I) K_{f,*},
+ \end{split}
+\end{equation}
+and for the posterior mean
+\begin{equation}
+\begin{split}
+ P_* c & = P_* K P_f \sigma^{-2} \y - P_* K P_f^T (P_f K P_f^T + \sigma^2 I)^{-1} P_f K P_f^T \y \\
+ & = K_{*,f} (\sigma^{-2} I - (K_{f,f} + \sigma^2 I)^{-1} K_{f,f} \sigma^{-2} I) \y \\
+ & = K_{*,f} (\sigma^{-2} I - (\sigma^2 I + \sigma^4 K_{f,f}^{-1})) \y \\
+ & = K_{*,f} (K_{f,f} + \sigma^2 I)  \y.
+ \end{split}
+\end{equation}
+where the last inequality comes from $\eqref{matrixinverselemmalemma}$ considering $D = \sigma^2 I$. Thus this derivation yields the same posterior distribution as in \eqref{meancovGPR}.
+
+\chapter{Spectral mixture kernels and Bayesian Monte Carlo}
+A kernel-distribution combination that yields analytical mean and variances for Bayesian Monte Carlo is the spectral mixture kernel in \eqref{spectralmixturekernel} combined with a Gaussian distribution $p(x) = \mathcal{N}(x|\mu,\Sigma)$ with diagonal covariance $\Sigma = \text{diag}(\sigma_1^2,\ldots,\sigma_D^{d})$, yielding 
+\begin{equation}
+\begin{split}
+& z_i = \sum_{q=1}^Q w_q \prod_{d=1}^D \bigg[(2 \pi v_q^{(d)})^{-0.5} \cos\left(2 \pi C_{q}^{(d)} \mu_q^{(d)}(x_{i,d} - m_{d})\right) e^{-\pi (C_q^{(d)})^2 \mu_q^{(d)}} \\
+& \qquad \qquad \qquad \qquad \mathcal{N}(x_{i,d}|m_d,(4\pi^2v_q^{(d)})^{-1}+\sigma_d^2)\bigg] \\
+& \Gamma = \sum_{q=1}^Q w_q \prod_{d=1}^D \bigg[ (2 \pi v_q^{(d)})^{-0.5} e^{-\pi (C_q^{(d)})^2 \mu_q^{(d)}}
+\exp\left(-\frac{1}{2} (A_q^{(d)} b_{q,d})^2 \right) (2\pi(\nu_{q,d}^2 + \sigma_d^2))^{-0.5}\bigg] \\
+& \text{where} \quad C_{q}^{(d)} = (4 \pi v_q^{(d)} + \sigma_d^{-2})^{-1}, \, b_{q,d} = 2 \pi C_{q}^{(d)} \mu_q^{(d)} ,\, \\
+& \qquad \qquad \nu_{q,d}^2 = (4\pi^2v_q^{(d)})^{-1}+\sigma_d^2 ,\, A_q^{(d)} = (\nu_{q,d}^{-2} + \sigma_d^{-2})^{-1}.
+\end{split}
+\end{equation}
+This combination interesting because the spectral mixture kernel is far more flexible than the squared exponential one, thus enabling using Bayesian Monte Carlo to calculate expectations of more complex functions. Next it is shown the derivation for those formulas.
+
+We will need first the result:
+\begin{equation}
+\begin{split}
+& \int \cos(b(x-m)) \mathcal{N}(x|m,\nu^2) \mathcal{N}(x|\mu,\sigma^2) dx \\
+& = \cos(C b (m - \mu)) \exp\left(-\frac{1}{2} C^2 b^2\right) \mathcal{N}(m|\mu,v^2 + \sigma^2) \\
+& \text{where} \quad C = (\nu^{-2} + \sigma^{-2})^{-1}.
+\end{split}
+\end{equation}
+To get it, use \eqref{productgaussians} in the integral, so it equals to:
+\begin{equation*}
+\begin{split}
+& \mathcal{N}(m|\mu,\nu^2 + \sigma^2) \int \cos(b(x-m)) \mathcal{N}(x|c,C) dx = \\
+& \mathcal{N}(m|\mu,\nu^2 + \sigma^2) \Re \left[\int e^{ib(x-m)} \mathcal{N}(x|c,C) dx \right] = \\
+& \mathcal{N}(m|\mu,\nu^2 + \sigma^2) \Re \left[e^{-ibm} \int e^{ibx} \mathcal{N}(x|c,C) \right] = \\
+& \mathcal{N}(m|\mu,v^2 + \sigma^2) \Re \left[e^{-ibm}e^{ibc - \frac{1}{2}C^2 b^2}\right] = \\
+& \mathcal{N}(m|\mu,\nu^2 + \sigma^2) e^{-\frac{1}{2}C^2 b^2} \cos(b(c-m)), \\
+& \text{where} \quad c = C (\nu^{-2} m + \sigma^{-2} \mu).
+\end{split}
+\end{equation*}
+From the third to the fourth line above, we use the formula for the characteristic function of a Gaussian distribution. Finally, since $c - m = C(\nu^{-2}m+\sigma^{-2}\mu - C^{-1} m) = C\sigma^{-2}(\mu - m)$, and using the symmetry of cosine, the equality follows.
+
+Letting $p(x) = \mathcal{N}(x|b,\text{diag}(\sigma_1^2,\ldots,\sigma_D^2))$ and $k(x,x_i) = k_{SM}(x - x_i)$:
+\begin{equation}
+\begin{split}
+& \int k_{SM}(x - x_i) \mathcal{N}(x|m,\text{diag}(\sigma_1^2,\ldots,\sigma_D^2)) dx \\
+& = \sum_{q=1}^Q w_q \int \left[\prod_{d=1}^D e^{-2 \pi^2 (x_d-x_{i,d})^2 v_{q}^{(d)}}
+\cos(2 \pi (x_d-x_{i,d}) \mu_q^{(d)}) \prod_{d=1}^D\mathcal{N}(x_d|m_d,\sigma_d^2) dx_d \right] \\
+&  = \sum_{q=1}^Q w_q \prod_{d=1}^D \int e^{-2 \pi^2 (x_d-x_{i,d})^2 v_{q}^{(d)}}
+\cos(2 \pi (x_d-x_{i,d}) \mu_q^{(d)}) \mathcal{N}(x_d|m_d,\sigma_d^2) dx_d \\
+& = \sum_{q=1}^Q w_q \prod_{d=1}^D (2 \pi v)^{-0.5}\int
+\cos(2 \pi \mu_q^{(d)} (x_d-x_{i,d})) \mathcal{N}(x_d|x_{i,d},(4 \pi^2 v)^{-1})\mathcal{N}(x_d|m_d,\sigma_d^2) dx_d \\
+& = \sum_{q=1}^Q w_q \prod_{d=1}^D (2 \pi v_q^{(d)})^{-0.5}\int
+\cos(2 \pi \mu_q^{(d)} (x_d-x_{i,d})) \mathcal{N}(x_d|x_{i,d},(4 \pi^2 v)^{-1})\mathcal{N}(x_d|m_d,\sigma_d^2) dx_d \\
+& = \sum_{q=1}^Q w_q \prod_{d=1}^D (2 \pi v_q^{(d)})^{-0.5} \cos\left(2 \pi C_{q}^{(d)} \mu_q^{(d)}(x_{i,d} - m_{d})\right) e^{-\pi (C_q^{(d)})^2 \mu_q^{(d)}} \mathcal{N}(x_{i,d}|m_d,(4\pi^2v_q^{(d)})^{-1}+\sigma_d^2) \\
+& \text{where} \quad C_{q}^{(d)} = (4 \pi^2 v_q^{(d)} + \sigma_d^{-2})^{-1},
+\end{split}
+\end{equation}
+and, letting $b_{q,d} = 2 \pi C_{q}^{(d)} \mu_q^{(d)}$ and $\nu_{q,d}^2 = (4\pi^2v_q^{(d)})^{-1}+\sigma_d^2$
+\begin{equation}
+\begin{split}
+& \int \int k_{SM}(x_i - x_j) \mathcal{N}(x_i|\mu,\text{diag}(\sigma_1^2,\ldots,\sigma_D^2)) \mathcal{N}(x_j|\mu,\text{diag}(\sigma_1^2,\ldots,\sigma_D^2)) dx_i,dx_j\\
+& = \sum_{q=1}^Q w_q \prod_{d=1}^D \bigg[(2 \pi v_q^{(d)})^{-0.5} e^{-\pi (C_q^{(d)})^2 \mu_q^{(d)}} \\ 
+& \qquad \qquad \qquad \int \cos\left(b_{q,d}(x_{i,d} - m_{d})\right) \mathcal{N}(x_{i,d}|m_d,\nu_{q,d}) \mathcal{N}(x_{j,d}|m_d,\sigma_d^2)dx_{j,d} \bigg] \\
+& = \sum_{q=1}^Q w_q \prod_{d=1}^D \bigg[ (2 \pi v_q^{(d)})^{-0.5} e^{-\pi (C_q^{(d)})^2 \mu_q^{(d)}} \exp\left(-\frac{1}{2} (A_q^{(d)} b_{q,d})^2 \right) (2\pi(\nu_{q,d}^2 + \sigma_d^2))^{-0.5}\bigg] \\
+& \text{where} \quad A_q^{(d)} = (\nu_{q,d}^{-2} + \sigma_d^{-2})^{-1}.
+\end{split}
+\end{equation}
+
+\chapter{Derivations for VFE}
+
+\section{Maximizaton of variational free energy}\label{vfemaxsection}
+For the integral inside parenthesis in \eqref{vfeobjective}, letting $\alpha = K_{f,u} K_{u,u} \f$ and $M = K_{f,f} - Q_{f,f}$, $p(\f|\f_u) = \mathcal{N}(\f|\alpha,M)$:
+\begin{equation*}
+\begin{split}
+\int p(\f|\f_u) \log p(\y|\f) d\f & = 
+\int p(\f|\f_u) \left[ -\frac{1}{2 \sigma^2} (\y - \f)^T (\y - \f) -\frac{d}{2} \log(2 \pi \sigma^2) \right] d \f \\
+ & = -\frac{n}{2}  \log(2 \pi \sigma^2) - \Ev_{\f|\f_u}\left[\text{tr}\left(\frac{1}{2\sigma^2}(\f - \y)(\f - \y)^T\right)\right] \\
+ & = -\frac{n}{2} \log(2 \pi \sigma^2) - \frac{1}{2\sigma^2} \text{tr}((\alpha-\y)(\alpha-\y)^T + A) = \\
+ & = \log \mathcal{N}(\y|\alpha,\sigma^2 I) - \text{tr}(K_{f,f} - Q_{f,f}).
+\end{split}
+\end{equation*}
+Substituing back in \eqref{vfeobjective}:
+\begin{equation}\label{vfeobjectivepartial}
+ F_V(\x_u,\phi) = \int \phi(\f_u) \log \frac{\mathcal{N}(\y|\alpha,\sigma^2 I) p(\f_u)}{\phi(\f_u)}d\f_u - \text{tr}(K_{f,f} - Q_{f,f}).
+\end{equation}
+For any $\x_u$ fixed, $F_V(\x_u,\phi)$ is then maximized by maximizing the integral term. But this is just the evidence lower bound between $\phi$ and the unnormalized distribution $\mathcal{N}(\y|\alpha,\sigma^2 I) p(\f_u)$, relative to $\f_u$. Without constraining $\phi$, then we must have:
+\begin{equation}
+\begin{split}
+ \phi(\f) & \propto \mathcal{N}(\y|\alpha,\sigma^2 I) p(\f_u) \\
+		  & \propto \exp \left( -\frac{1}{2 \sigma^2}(\y - \alpha)^T(\y - \alpha) -\frac{1}{2} \f_u^T K_{u,u} \f_u \right) \\
+		  & \propto \exp\left(\frac{1}{\sigma^2}\y^T K_{f,u} K_{u,u}^{-1} \f_u - 
+			  \frac{1}{2} \f_u^T \left(K_{u,u}^{-1} + 
+			  \frac{1}{\sigma^2} K_{u,u}^{-1} K_{u,f} K_{f,u} K_{u,u}^{-1} \right) \f_u \right).
+\end{split}
+\end{equation}
+The quadratic form can be completed relative to $\f_u$ to find:
+\begin{equation}
+\begin{split}
+& A^\dagger = (K_{u,u}^{-1} + \sigma^{-2} K_{u,u}^{-1}K_{u,f}K_{f,u}K_{u,u}^{-1})^{-1} = K_{u,u}(K_{u,u} + \sigma^{-2} K_{u,f}K_{f,u})^{-1} K_{u,u} \\
+& \mu^\dagger = \sigma^{-2} K_{u,u} (K_{u,u} + \sigma^{-2} K_{u,f} K_{f,u})^{-1} K_{u,f} \y.
+\end{split}
+\end{equation}
+Since $\phi$ is itself Gaussian, the unconstrained optimum is the same as for the constrained one. Finally, since $\phi(\f) = \frac{1}{Z}\mathcal{N}(\y|\alpha,\sigma^2 I) p(\f_u)$, with $Z = \int \mathcal{N}(\y|\alpha,\sigma^2 I) p(\f_u) d\f_u$, substituting back into \eqref{vfeobjectivepartial}, we find the objective function for $\x_u$,
+\begin{equation}
+\begin{split}
+ F_V(\x_u) & = \log \int \mathcal{N}(\y|K_{f,u} K_{u,u} \f,\sigma^2 I) \mathcal{N}(0,K_{u,u}) d\f_u - \text{tr}(K_{f,f} - Q_{f,f}) \\
+ & = \log \mathcal{N}(\y|0,Q_{f,f} + \sigma^2 I) - \text{tr}(K_{f,f} - Q_{f,f}).
+ \end{split}
+\end{equation}
+\section{Equivalence between VFE and DTC prediction}\label{vfeequipsection}
+
+Starting with \eqref{vfeprediction}, for the covariance, we use the matrix inversion lemma, by letting $\Delta = \sigma^2 I$:
+\begin{equation*}
+\begin{split}
+ & K_{*,u}(K_{u,u} + K_{u,f} \Delta^{-1} K_{f,u})^{-1} K_{u,*} = \\
+ & K_{*,u}(K_{u,u}^{-1} - K_{u,u}^{-1} K_{u,f} (K_{f,u} K_{u,u}^{-1} K_{u,f} + \Delta)^{-1} K_{f,u} K_{u,u}^{-1}) K_{u,*} = \\
+ & Q_{*,*} - Q_{*,f}(Q_{f,f} + \Delta)^{-1} Q_{f,*}.
+\end{split}
+\end{equation*}
+Substituting in the covariance term for \eqref{vfeprediction}, we find the same covariance as in \eqref{dtcprediction}. For the mean term, using again the matrix inversion lemma, we find:
+\begin{equation*}
+\begin{split}
+& K_{*,u} (K_{u,u} + K_{u,f} \Delta^{-1} K_{f,u})^{-1} K_{u,f} \Delta^{-1} \y = \\
+& K_{*,u} (K_{u,u}^{-1} - K_{u,u}^{-1} K_{u,f} (K_{f,u} K_{u,u}^{-1} K_{u,f} + \Delta)^{-1} K_{f,u} K_{u,u}^{-1}) K_{u,f} \Delta^{-1} \y = \\
+& (Q_{*,f} - Q_{*,f}(Q_{f,f} + \Delta)^{-1} Q_{f,f}) \Delta^{-1} \y = \\
+& Q_{*,f}(\Delta^{-1} - (Q_{f,f} + \Delta)^{-1} Q_{f,f} \Delta^{-1} )\y = \\
+& Q_{*,f}(\Delta^{-1} - (\Delta Q_{f,f}^{-1})(Q_{f,f} + \Delta))^{-1} \y = \\
+& Q_{*,f}(\Delta^{-1} - (\Delta + \Delta Q_{f,f}^{-1} \Delta)^{-1}) \y = \\
+& Q_{*,f}(Q_{f,f} + \Delta)^{-1} \y,
+\end{split}
+\end{equation*}
+where in the last equality it was used \eqref{matrixinverselemmalemma}. This is the same mean term as in \eqref{dtcprediction}, thus proving the equality.
+\chapter{REINFORCE gradient}
+We have that
+\begin{equation}
+\begin{split}
+& \nabla \Ev_{q(\theta;\lambda)}\left[\log \left(\frac{\gu(\theta)}{q(\theta;\lambda)}\right)\right] \\& = \nabla \int \log \left(\frac{\gu(\theta)}{q(\theta;\lambda)}\right) q(\theta;\lambda) d\theta \\
+& = \int \nabla_\lambda \left( \log \left( \frac{\gu(\theta)}{q(\theta;\lambda)}\right) q(\theta;\lambda) \right) d\theta \\
+& = \int q(\theta;\lambda) \nabla_\lambda \log q(\theta;\lambda) d\theta + \int \log \left( \frac{\gu(\theta)}{q(\theta;\lambda)}\right) \nabla_\lambda q(\theta;\lambda) d\theta
+\end{split}.
+\end{equation}
+The first term in the sum equals to
+\begin{equation}
+\begin{split}
+\int q(\theta;\lambda) \nabla_\lambda \log q(\theta;\lambda) d\theta & = \int q(\theta;\lambda) \frac{\nabla_\lambda q(\theta;\lambda)}{q(\theta;\lambda)} d\theta \\
+& = \nabla \int q(\theta;\lambda) d\theta \\
+& = \nabla 1 = 0,
+\end{split}
+\end{equation}
+while the second term equals to
+\begin{equation}
+\begin{split}
+& \int \log \left( \frac{\gu(\theta)}{q(\theta;\lambda)}\right) \nabla_\lambda q(\theta;\lambda) d\theta \\ & = \int \log \left( \frac{\gu(\theta)}{q(\theta;\lambda)}\right) \nabla_\lambda ( \log q(\theta;\lambda)) q(\theta;\lambda) d\theta \\
+& = \Ev_{q(\theta;\lambda)} \left[ \log \frac{\gu(\theta)}{q(\theta;\lambda)} \nabla_{\lambda} \log q(\theta;\lambda) \right]
+\end{split}
+\end{equation}
+Joining the two terms, we arrive at \eqref{reinforce}.

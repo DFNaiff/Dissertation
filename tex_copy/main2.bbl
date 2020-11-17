@@ -1,0 +1,60 @@
+\begin{thebibliography}{10}
+
+\bibitem{CIS-4647}
+Robert~J. Adler.
+\newblock {\em The geometry of random fields}.
+\newblock John Wiley & Sons, New York; Chichester, 1981.
+
+\bibitem{Chatfield_2004}
+Chris Chatfield.
+\newblock {\em The analysis of time series: an introduction}.
+\newblock CRC Press, Florida, US, 6th edition, 2004.
+
+\bibitem{Cox_1963}
+Richard~T. Cox and E.~T. Jaynes.
+\newblock The algebra of probable inference.
+\newblock {\em American Journal of Physics}, 31(1):66–67, Jan 1963.
+
+\bibitem{Dudley_2002}
+R.~M. Dudley.
+\newblock Real analysis and probability.
+\newblock 2002.
+
+\bibitem{hogben14}
+Leslie Hogben.
+\newblock {\em Handbook of Linear Algebra}.
+\newblock 2nd edition, 2014.
+
+\bibitem{jaynes03}
+E.~T. Jaynes.
+\newblock {\em Probability theory: The logic of science}.
+\newblock Cambridge University Press, Cambridge, 2003.
+
+\bibitem{Kanagawa_2018}
+Motonobu {Kanagawa}, Philipp {Hennig}, Dino {Sejdinovic}, and Bharath~K
+  {Sriperumbudur}.
+\newblock {Gaussian Processes and Kernel Methods: A Review on Connections and
+  Equivalences}.
+\newblock {\em arXiv e-prints}, page arXiv:1807.02582, Jul 2018.
+
+\bibitem{MacKay2003}
+David J.~C. MacKay.
+\newblock {\em Information Theory, Inference, and Learning Algorithms}.
+\newblock Copyright Cambridge University Press, 2003.
+
+\bibitem{Rasmussen06}
+Carl~Edward Rasmussen.
+\newblock Gaussian processes for machine learning.
+\newblock MIT Press, 2006.
+
+\bibitem{Shawe_Taylor_2004}
+John Shawe-Taylor and Nello Cristianini.
+\newblock Kernel methods for pattern analysis.
+\newblock 2004.
+
+\bibitem{Stein_1999}
+Michael~L. Stein.
+\newblock Interpolation of spatial data.
+\newblock {\em Springer Series in Statistics}, 1999.
+
+\end{thebibliography}

@@ -1,0 +1,101 @@
+\babel@toc {english}{}
+\contentsline {chapter}{\numberline {1}Summary}{1}{chapter.1}
+\contentsline {chapter}{\numberline {2}Bayesian inference and learning}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Learning described as Bayesian inference}{3}{section.2.1}
+\contentsline {section}{\numberline {2.2}Decision theory}{4}{section.2.2}
+\contentsline {section}{\numberline {2.3}Model selection}{6}{section.2.3}
+\contentsline {section}{\numberline {2.4}Approximate inference}{7}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Monte Carlo methods}{8}{subsection.2.4.1}
+\contentsline {subsubsection}{Importance sampling}{8}{section*.2}
+\contentsline {subsubsection}{Markov Chain Monte Carlo}{9}{section*.3}
+\contentsline {subsection}{\numberline {2.4.2}Laplace's approximation}{10}{subsection.2.4.2}
+\contentsline {subsubsection}{Remark on approximation}{11}{section*.4}
+\contentsline {section}{\numberline {2.5}Expensive and intractable likelihoods}{11}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}Pseudo-marginals}{11}{subsection.2.5.1}
+\contentsline {subsection}{\numberline {2.5.2}Approximate Bayesian computation}{12}{subsection.2.5.2}
+\contentsline {subsection}{\numberline {2.5.3}Expensive likelihoods}{13}{subsection.2.5.3}
+\contentsline {chapter}{\numberline {3}Gaussian processes}{14}{chapter.3}
+\contentsline {section}{\numberline {3.1}Parametric and nonparametric regression}{14}{section.3.1}
+\contentsline {section}{\numberline {3.2}Gaussian process regression}{14}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Gaussian noise}{16}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}General noise}{16}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Mean function}{17}{subsection.3.2.3}
+\contentsline {section}{\numberline {3.3}Covariance functions}{17}{section.3.3}
+\contentsline {subsubsection}{Stationary covariance functions}{17}{section*.6}
+\contentsline {subsection}{\numberline {3.3.1}Derived kernels}{19}{subsection.3.3.1}
+\contentsline {section}{\numberline {3.4}Model selection}{20}{section.3.4}
+\contentsline {section}{\numberline {3.5}Computational issues}{20}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Jittering}{20}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}Scaling with data}{21}{subsection.3.5.2}
+\contentsline {section}{\numberline {3.6}Online learning}{21}{section.3.6}
+\contentsline {chapter}{\numberline {4}Bayesian Monte Carlo}{23}{chapter.4}
+\contentsline {section}{\numberline {4.1}GP approximation for the integrand}{23}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Philosophical remark}{24}{subsection.4.1.1}
+\contentsline {section}{\numberline {4.2}Kernel-distribution combinations}{25}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}SQE kernel with Gaussian distributions}{25}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Mixture distributions}{26}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Tensor product kernels and diagonal-covariance Gaussian distributions}{27}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.4}Importance reweighting for Bayesian Monte Carlo}{28}{subsection.4.2.4}
+\contentsline {section}{\numberline {4.3}Bayesian Monte Carlo for positive integrands}{29}{section.4.3}
+\contentsline {section}{\numberline {4.4}Choosing evaluation points}{30}{section.4.4}
+\contentsline {section}{\numberline {4.5}Bayesian Monte Carlo and Bayesian Optimization}{32}{section.4.5}
+\contentsline {chapter}{\numberline {5}Variational inference}{33}{chapter.5}
+\contentsline {section}{\numberline {5.1}Variational inference}{33}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}KL divergence and evidence lower bound}{34}{subsection.5.1.1}
+\contentsline {subsubsection}{Qualitative interpretations}{35}{section*.8}
+\contentsline {section}{\numberline {5.2}Mean field variational inference}{35}{section.5.2}
+\contentsline {section}{\numberline {5.3}Generic variational inference}{37}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}REINFORCE}{37}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Reparameterization trick}{37}{subsection.5.3.2}
+\contentsline {section}{\numberline {5.4}Mixtures of gaussians for variational approximations}{38}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Boosting mixtures of gaussians}{41}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}Gradient boosting mixture of gaussians}{41}{subsection.5.4.2}
+\contentsline {section}{\numberline {5.5}Using Bayesian Monte Carlo in Variational Inference}{43}{section.5.5}
+\contentsline {subsection}{\numberline {5.5.1}Quadratic mean function}{45}{subsection.5.5.1}
+\contentsline {subsection}{\numberline {5.5.2}Remarks on acquisition functions for VBMC}{46}{subsection.5.5.2}
+\contentsline {subsubsection}{Uncertainty sampling and prospective prediction}{46}{section*.11}
+\contentsline {chapter}{\numberline {6}Boosted Variational Bayesian Monte Carlo}{48}{chapter.6}
+\contentsline {section}{\numberline {6.1}Boosting Variational Bayesian Monte Carlo}{48}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Practical issues}{49}{subsection.6.1.1}
+\contentsline {subsubsection}{RELBO stabilization}{49}{section*.13}
+\contentsline {subsubsection}{Output scaling}{51}{section*.14}
+\contentsline {subsubsection}{Component initialization}{52}{section*.15}
+\contentsline {subsubsection}{Component pruning}{52}{section*.16}
+\contentsline {subsubsection}{Mean functions}{52}{section*.17}
+\contentsline {subsubsection}{Periodic joint parameter updating}{53}{section*.18}
+\contentsline {subsubsection}{Other kernel functions}{53}{section*.19}
+\contentsline {subsection}{\numberline {6.1.2}Other acquisition functions for active evaluation}{53}{subsection.6.1.2}
+\contentsline {section}{\numberline {6.2}Implementation}{54}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Backpropagation}{54}{subsection.6.2.1}
+\contentsline {chapter}{\numberline {7}Experiments}{57}{chapter.7}
+\contentsline {section}{\numberline {7.1}1-d Mixture of Gaussians}{57}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}Passive evaluation}{57}{subsection.7.1.1}
+\contentsline {subsubsection}{Influence of kernel in approximation}{58}{section*.22}
+\contentsline {subsubsection}{Influence of training routine in approximation}{59}{section*.24}
+\contentsline {subsection}{\numberline {7.1.2}Active evaluation}{59}{subsection.7.1.2}
+\contentsline {section}{\numberline {7.2}N-d toy examples}{63}{section.7.2}
+\contentsline {section}{\numberline {7.3}Contamination source estimation}{64}{section.7.3}
+\contentsline {section}{\numberline {7.4}Checking performance}{67}{section.7.4}
+\contentsline {chapter}{\numberline {8}Future challenges and conclusion}{71}{chapter.8}
+\contentsline {section}{\numberline {8.1}Reparameterization trick with Gaussian Processes}{71}{section.8.1}
+\contentsline {section}{\numberline {8.2}Extending BVBMC to pseudo-marginal likelihoods}{71}{section.8.2}
+\contentsline {section}{\numberline {8.3}Scaling BVBMC to a larger number of evaluations}{72}{section.8.3}
+\contentsline {section}{\numberline {8.4}Conclusion}{72}{section.8.4}
+\contentsline {chapter}{\numberline {A}SPARSE GAUSSIAN PROCESSES}{73}{appendix.A}
+\contentsline {section}{\numberline {A.1}Nystrom extension}{73}{section.A.1}
+\contentsline {section}{\numberline {A.2}Prior approximations}{74}{section.A.2}
+\contentsline {subsubsection}{Subset of regressors}{75}{section*.32}
+\contentsline {subsection}{\numberline {A.2.1}Deterministic Training Conditional}{76}{subsection.A.2.1}
+\contentsline {subsection}{\numberline {A.2.2}Fully Independent Training Conditional and Fully Independent Conditional}{77}{subsection.A.2.2}
+\contentsline {section}{\numberline {A.3}Posterior approximation via variational free energy}{78}{section.A.3}
+\contentsline {subsection}{\numberline {A.3.1}Bayesian Monte Carlo with Sparse Gaussian Processes}{79}{subsection.A.3.1}
+\contentsline {subsection}{\numberline {A.3.2}VBMC and BVBMC with Sparse Gaussian Processes}{80}{subsection.A.3.2}
+\contentsline {chapter}{\numberline {B}RELEVANT GAUSSIAN AND MATRIX IDENTITIES}{81}{appendix.B}
+\contentsline {section}{\numberline {B.1}Matrix inversion lemma}{81}{section.B.1}
+\contentsline {section}{\numberline {B.2}Product of Gaussian densities}{81}{section.B.2}
+\contentsline {section}{\numberline {B.3}Conditional of a Gaussian density}{82}{section.B.3}
+\contentsline {chapter}{\numberline {C}Alternative derivation of GP predictions}{83}{appendix.C}
+\contentsline {chapter}{\numberline {D}Spectral mixture kernels and Bayesian Monte Carlo}{85}{appendix.D}
+\contentsline {chapter}{\numberline {E}Derivations for VFE}{88}{appendix.E}
+\contentsline {section}{\numberline {E.1}Maximizaton of variational free energy}{88}{section.E.1}
+\contentsline {section}{\numberline {E.2}Equivalence between VFE and DTC prediction}{89}{section.E.2}

@@ -1,0 +1,21 @@
+\chapter{Summary}
+
+\pagenumbering{arabic} %numeração de páginas em arábico começa a partir do primeiro capítulo
+
+The Bayesian framework for inference and learning is conceptually simple, while having good properties related to normative reasoning \cite{Ghahramani_2015}. However, behind its simplicity lies the computational challenge of sampling and integration, which drives much of research on the field. Methods such as Markov Chain Monte Carlo and variational inference have undergone major advances in the recent decades, driving Bayesian methods back to popularity.
+
+In general those methods assume that evaluation of a likelihood function $l(\theta) = p(\mathcal{D}|\theta)$ is computationally cheap enough to be done tens or hundred thousand of times, at least. However, in some cases this may not be true, as for example in cases where $l(\theta)$ must come from a computationally expensive simulation. This work presents a variational approximation method, using Gaussian process regression, that is adapted from \cite{Acerbi_2018,Guo_2016}, in order to deal with cases where $\theta$ is a continuous random variable, and $l(\theta)$ can be evaluated only tens, hundreds, or thousands of times. The current algorithm is suited for low and medium dimensional problems (around 10 dimensions at most).
+
+A Python package for deploying this method was developed, built mainly on top of PyTorch, and we test it in some cases. Currently, the package lacks complete documentation and unit testing, but an alpha version is already available in \url{https://github.com/DFNaiff/BVBMC}. Since this package may undergo changes in the future, all code used in the present work may be found in \url{https://github.com/DFNaiff/Dissertation}.
+
+Next, we presented a brief summary of each chapter of this dissertation.
+
+In Chapter 2, Bayesian theory is briefly reviewed, along with some approximate inference methods. Moreover, approaches to expensive or intractable likelihoods are discussed.
+
+In Chapter 3, the Gaussian process regression method is reviewed, while in Chapter 4, Bayesian Monte Carlo, a Gaussian process based integration method, is discussed.
+
+In Chapter 5, variational inference is reviewed, first in general, then focusing on the case where approximation is made by mixtures of Gaussian distributions, using the boosting approach found in \cite{Guo_2016}. Moreover, a recent method presented in \cite{Acerbi_2018}, using variational inference via Bayesian Monte Carlo, called Variational Bayesian Monte Carlo, is presented.
+
+In Chapter 6, we propose an adaptation of Variational Bayesian Monte Carlo, incorporating other ideas presented in chapter 2 and 3, particularly the boosting approach in \cite{Guo_2016}. This results in a new algorithm, which we call Boosted Variational Bayesian Monte Carlo. A small discussion on implementation follows, focused on backpropagation, which is the reason the developed package was built on PyTorch. In Chapter 7, the corresponding Python package is applied in a few toy examples, and in a contamination source problem.
+
+The work is concluded in Chapter 8, where we discuss future directions for both scaling the presented method to higher dimension and to increase its accuracy. In the appendix, among other things, there is an extended discussion on Sparse Gaussian Process, a technique that the author tried to use in order to extend the present method to higher dimensions and greater number of evaluations, although with limited success.
